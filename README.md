@@ -6,3 +6,4 @@
 - fixed scroll down
 - added link to changelog (this page)
 - reduced user budget and max nb of threads in single session to account for the additional cost of GPT-4
+- global parameter to enable privacy selection
