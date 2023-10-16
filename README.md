@@ -3,8 +3,6 @@
 ## 10-18-23
 - now calling the latest generic models in prediction mode
 - now showing risk assessment in prediction mode
-
-## 10-16-23
 - now calling GPT-4
 - added suggestions of follow-up questions in default mode
 - fixed scroll down
