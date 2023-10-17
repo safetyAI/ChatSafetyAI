@@ -1,7 +1,7 @@
 # ChatSafetyAI Version History
 
 ## 10-18-23
-- now calling the latest generic models in prediction mode
+- now calling the latest generic models (2023 update) in prediction mode
 - now showing risk assessment in prediction mode
 - now calling GPT-4
 - added suggestions of follow-up questions in default mode
