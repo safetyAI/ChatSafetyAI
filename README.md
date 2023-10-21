@@ -1,6 +1,6 @@
 # ChatSafetyAI Version History
 
-## 10-18-23
+## 10-22-23
 - new safety climate survey analysis mode
 - now calling the latest generic models in prediction mode (SUPER-COMPANY 2023 update)
 - now showing the latest generic risk assessment in prediction mode (SUPER-COMPANY 2023 update)
@@ -12,3 +12,12 @@
 - global parameter to enable privacy selection
 - `prettify_text` now handles double stars for bold
 - logo now links to website
+
+## TODO determine based on email announcements
+- OSHA and prediction modes
+- tab names are now automatically renamed as extreme summaries of their conversations
+- now using GPT-3.5-turbo 16k
+- TODO finish
+
+## TODO determine based on first email
+Initial release
