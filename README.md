@@ -12,6 +12,7 @@
 - global parameter to enable privacy selection
 - `prettify_text` now handles double stars for bold
 - logo now links to website
+- **TODO** give knowledge about energy wheel and HECA 
 
 ## TODO determine based on email announcements
 - OSHA and prediction modes
