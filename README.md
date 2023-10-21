@@ -10,3 +10,4 @@
 - reduced user budget and max nb of threads in single session to account for the additional cost of GPT-4
 - global parameter to enable privacy selection
 - `prettify_text` now handles double stars for bold
+- logo now links to website
