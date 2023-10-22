@@ -1,6 +1,8 @@
 # ChatSafetyAI Version History
 
 ## 10-22-23
+- **TODO** mode is now automatically detected for each query: several modes can now be used within the same chat, alleviating filtering false alarms and improving acceptance of follow-up questions 
+- **TODO** examples now randomly selected at the beginning of each chat
 - new safety climate survey analysis mode
 - now calling the latest generic models in prediction mode (SUPER-COMPANY 2023 update)
 - now showing the latest generic risk assessment in prediction mode (SUPER-COMPANY 2023 update)
