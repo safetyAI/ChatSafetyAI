@@ -3,8 +3,8 @@
 ## 10-22-23
 - **TODO** mode is now automatically detected for each query: several modes can now be used within the same chat, alleviating filtering false alarms and improving acceptance of follow-up questions
 - updated message at the bottom of the page
-- made textArea style consistent
-- slightly more page width
+- made textArea and scrollbar styles consistent with rest of the page
+- slightly more width for discussion thread
 - examples now randomly selected from a large pool at the beginning of each chat
 - new safety climate survey analysis mode
 - now calling the latest generic models in prediction mode (SUPER-COMPANY 2023 update)
