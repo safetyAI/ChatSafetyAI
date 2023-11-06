@@ -11,7 +11,7 @@
 - new safety climate survey analysis mode
 - now calling the latest generic models in prediction mode (SUPER-COMPANY 2023 update)
 - now showing the latest generic risk assessment in prediction mode (SUPER-COMPANY 2023 update)
-- now using GPT-4
+- now using GPT-4, and 11/06 version of GPT-3.5-turbo
 - added suggestions of follow-up questions in default mode
 - fixed scroll down
 - added link to changelog (this page)
