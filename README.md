@@ -4,7 +4,6 @@
 - **TODO** mode is now automatically detected for each query: several modes can now be used within the same chat, alleviating filtering false alarms and improving acceptance of follow-up questions
 - updated message at the bottom of the page
 - SHIFT + ENTER now does not trigger
-- now allowing empty lines in input
 - made textArea and scrollbar styles consistent with rest of the page
 - slightly more width for discussion thread
 - examples now randomly selected from a large pool at the beginning of each chat
