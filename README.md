@@ -2,6 +2,7 @@
 
 ## 10-22-23
 - **TODO** mode is now automatically detected for each query: several modes can now be used within the same chat, alleviating filtering false alarms and improving acceptance of follow-up questions
+- prettify now handles markdown tables and is called during generation
 - updated message at the bottom of the page
 - SHIFT + ENTER now does not trigger
 - made textArea and scrollbar styles consistent with rest of the page
