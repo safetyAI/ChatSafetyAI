@@ -1,6 +1,7 @@
 # ChatSafetyAI Version History
 
 ## 10-22-23
+- adversarial and off-topic classifiers now take the conversation as context to make better-informed decisions and reduce annoying false alarms, also better instructions
 - **TODO** mode is now automatically detected for each query: several modes can now be used within the same chat, alleviating filtering false alarms and improving acceptance of follow-up questions
 - prettify now handles markdown tables and is called during generation
 - updated message at the bottom of the page
