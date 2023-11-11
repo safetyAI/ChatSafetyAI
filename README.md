@@ -14,7 +14,7 @@
 - now calling the latest generic models in prediction mode (SUPER-COMPANY 2023 update)
 - now showing the latest generic risk assessment in prediction mode (SUPER-COMPANY 2023 update)
 - now using GPT-4, and 11/06 version of GPT-3.5-turbo
-- added suggestions of follow-up questions in default mode
+- follow-up questions are now suggested via function calling
 - fixed scroll down
 - added link to changelog (this page)
 - reduced user budget and max nb of threads in single session to account for the additional cost of GPT-4
