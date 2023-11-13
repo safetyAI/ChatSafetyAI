@@ -1,6 +1,8 @@
 # ChatSafetyAI Version History
 
 ## 10-22-23
+- ability to disable autoscroll
+- better formatting of tables
 - plenty of red teaming and legit example testing
 - proper handling of line breaks by sanitizing and HTML display functions
 - adversarial and off-topic classifiers now take the conversation as context to make better-informed decisions and reduce annoying false alarms, also better instructions
