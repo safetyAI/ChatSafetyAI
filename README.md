@@ -1,6 +1,7 @@
 # ChatSafetyAI Version History
 
 ## 10-22-23
+- adapted instructions and strategy of several modes to halve processing time
 - ability for the user to disable autoscroll
 - better formatting of tables
 - plenty of red teaming and legit example testing
