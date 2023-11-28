@@ -1,6 +1,9 @@
 # ChatSafetyAI Version History
 
 ## 10-22-23
+- adapted instructions to prevent Markdown formatting issues
+- multiple API keys to increase usage limits
+- generate a slideset summary out of any conversation
 - adapted instructions and strategy of several modes to halve processing time
 - ability for the user to disable autoscroll
 - better formatting of tables
