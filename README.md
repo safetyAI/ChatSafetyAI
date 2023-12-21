@@ -1,10 +1,13 @@
 # ChatSafetyAI Version History
 
-## 10-22-23
+## 12-21-23
+- regulations: added support for Alberta, British Columbia, Manitoba, New Brunswick, Newfound Land and Labrador, Nova Scotia, Ontario, and Quebec. 
 - adapted instructions to prevent Markdown formatting issues
 - multiple API keys to increase usage limits
 - generate a slideset summary out of any conversation
 - adapted instructions and strategy of several modes to halve processing time
+- UI improvements (placement and/or appearance of buttons, scrollbar, tables, search bar...)
+- ability for the user to disable suggestions of follow-up questions
 - ability for the user to disable autoscroll
 - better formatting of tables
 - plenty of red teaming and legit example testing
