@@ -38,11 +38,11 @@
 - improved several instruction files
 - injected knowledge about energy wheel and HECA 
 
-## TODO determine based on email announcements
+## 07-25-23
 - OSHA and prediction modes
 - tab names are now automatically renamed as extreme summaries of their conversations
 - now using GPT-3.5-turbo 16k
 - TODO finish
 
-## TODO determine based on first email
+## 05-12-23
 Initial release
