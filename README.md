@@ -1,6 +1,6 @@
 # ChatSafetyAI Version History
 
-## 12-21-23
+## 12-23-23
 - regulations: added support for Alberta, British Columbia, Manitoba, New Brunswick, Newfound Land and Labrador, Nova Scotia, Ontario, and Quebec. 
 - adapted instructions to prevent Markdown formatting issues
 - multiple API keys to increase usage limits
