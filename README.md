@@ -1,5 +1,8 @@
 # ChatSafetyAI Version History
 
+## 12-24-23
+- Fixed 'New chat' button placement for mobile devices
+
 ## 12-23-23
 - regulations: added support for Alberta, British Columbia, Manitoba, New Brunswick, Newfound Land and Labrador, Nova Scotia, Ontario, and Quebec. 
 - adapted instructions to prevent Markdown formatting issues
