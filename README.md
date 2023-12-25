@@ -1,10 +1,16 @@
 # ChatSafetyAI Version History
 
+## 12-26-23
+- shorter bottom info message
+- improved presentation instructions
+- global knowledge in presentation instructions
+- added one example of the presentation category
+  
 ## 12-25-23
-- Enforce the sampling of examples from different modes
+- enforce the sampling of examples from different categories (covering different modes)
 
 ## 12-24-23
-- Fixed 'New chat' button placement for mobile devices
+- fixed 'New chat' button placement for mobile devices
 
 ## 12-23-23
 - regulations: added support for Alberta, British Columbia, Manitoba, New Brunswick, Newfound Land and Labrador, Nova Scotia, Ontario, and Quebec. 
