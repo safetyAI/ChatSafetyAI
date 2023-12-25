@@ -1,5 +1,8 @@
 # ChatSafetyAI Version History
 
+## 12-25-23
+- Enforce the sampling of examples from different modes
+
 ## 12-24-23
 - Fixed 'New chat' button placement for mobile devices
 
