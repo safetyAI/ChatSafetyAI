@@ -1,10 +1,11 @@
 # ChatSafetyAI Version History
 
 ## 12-26-23
-- shorter bottom info message
 - improved presentation instructions
 - global knowledge in presentation instructions
+- better sanitization of presentation Markdown code (handle triple backquotes)
 - added one example of the presentation category
+- shorter bottom info message
   
 ## 12-25-23
 - enforce the sampling of examples from different categories (covering different modes)
