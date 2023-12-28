@@ -1,5 +1,9 @@
 # ChatSafetyAI Version History
 
+## 12-28-23
+- Fixed error vectors in if statements of NLP tool
+- NLP API error handling in get_attributes.R
+
 ## 12-26-23
 - improved presentation instructions
 - global knowledge in presentation instructions
