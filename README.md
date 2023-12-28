@@ -2,7 +2,7 @@
 
 ## 12-28-23
 - Fixed error vectors in if statements of NLP tool (new version of R issues error instead of warning)
-- NLP API error handling in get_attributes.R
+- NLP API error handling in `get_attributes.R`
 
 ## 12-26-23
 - improved presentation instructions
