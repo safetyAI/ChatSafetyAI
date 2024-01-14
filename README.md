@@ -1,5 +1,8 @@
 # ChatSafetyAI Version History
 
+## 01-14-24
+- First version of Prejob safety brief and paperwork filling mode
+
 ## 12-28-23
 - Fixed error vectors in if statements of NLP tool (new version of R issues error instead of warning)
 - NLP API error handling in `get_attributes.R`
