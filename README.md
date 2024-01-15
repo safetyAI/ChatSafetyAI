@@ -6,6 +6,7 @@
 - Number of examples adapts to screen width
 - Improved off-topic classifier to reduce false alarms
 - Improved presentation instructions to increase figures' inclusion rate
+- Replaced traffic safety example by fire prevention example (presentation mode)
 
 ## 12-28-23
 - Fixed error vectors in if statements of NLP tool (new version of R issues error instead of warning)
