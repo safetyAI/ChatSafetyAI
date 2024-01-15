@@ -1,5 +1,8 @@
 # ChatSafetyAI Version History
 
+## 01-16-24
+- Expanded knowledge about direct controls, HECA, and the energy method
+
 ## 01-15-24
 - First version of "prejob safety brief and paperwork filling" mode
 - Prejob mode examples
