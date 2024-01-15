@@ -2,6 +2,8 @@
 
 ## 01-15-24
 - First version of "prejob safety brief and paperwork filling" mode
+- Prejob mode examples
+- Number of examples adapts to screen width
 
 ## 12-28-23
 - Fixed error vectors in if statements of NLP tool (new version of R issues error instead of warning)
