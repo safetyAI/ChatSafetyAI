@@ -5,6 +5,7 @@
 - new "HECA" image mode.
 - Upgraded to latest models: `gpt-4-0125-preview`, `gpt-4-vision-preview`, and `gpt-3.5-turbo-0125`.
 - NSFW classifiers for text and images
+- off-topic classifier for images, handling of API refusals
 
 ## 01-16-24
 - Expanded knowledge about direct controls, HECA, and the energy method
