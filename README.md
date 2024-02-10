@@ -5,6 +5,7 @@
 - New "HECA" image mode.
 - Upgraded to latest models: `gpt-4-0125-preview`, `gpt-4-vision-preview`, and `gpt-3.5-turbo-0125`.
 - Now using full possible context of 128k everywhere.
+- Now 10 turns (9 real, 1 instructions) instead of 7
 - NSFW classifiers for text and images
 - Content file checking: adversarial, topic, language, file content truncation
 - Off-topic classifier for images, handling of API refusals
