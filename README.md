@@ -10,6 +10,7 @@
 - NSFW classifiers for text and images
 - Content file checking: adversarial, topic, language, file content truncation
 - Off-topic classifier for images, handling of API refusals
+- Rounded corners for message areas
 
 ## 01-16-24
 - Expanded knowledge about direct controls, HECA, and the energy method
