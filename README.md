@@ -2,6 +2,7 @@
 
 ## 02-13-24
 - Image, CSV, and PDF inputs.
+- File upload area allowing browse and drag and drop
 - New "HECA" image mode.
 - Upgraded to latest models: `gpt-4-0125-preview`, `gpt-4-vision-preview`, and `gpt-3.5-turbo-0125`.
 - Now using full possible context of 128k everywhere.
