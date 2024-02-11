@@ -1,6 +1,6 @@
 # ChatSafetyAI Version History
 
-## 02-10-24
+## 02-13-24
 - Image, CSV, and PDF inputs.
 - New "HECA" image mode.
 - Upgraded to latest models: `gpt-4-0125-preview`, `gpt-4-vision-preview`, and `gpt-3.5-turbo-0125`.
