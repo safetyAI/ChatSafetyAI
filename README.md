@@ -4,7 +4,8 @@
 - Image, CSV, and PDF inputs.
 - File upload area allowing browse and drag and drop
 - New "HECA" image mode.
-- Upgraded to latest models: `gpt-4-0125-preview`, `gpt-4-vision-preview`, and `gpt-3.5-turbo-0125`.
+- Now using `gpt-4-vision-preview`
+- `gpt-3.5-turbo-0125` and `gpt-4-0125-preview` were tested but not used for now due to breaking changes
 - Now using full possible context of 128k everywhere.
 - Now 10 turns (9 real, 1 instructions) instead of 7
 - NSFW classifiers for text and images
