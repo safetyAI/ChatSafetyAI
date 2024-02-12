@@ -11,6 +11,7 @@
 - Content file checking: adversarial, topic, language, file content truncation
 - Off-topic classifier for images, handling of API refusals
 - Rounded corners for message areas
+- UI improvement: placement and alignment of text bar and buttons
 
 ## 01-16-24
 - Expanded knowledge about direct controls, HECA, and the energy method
