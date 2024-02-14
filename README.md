@@ -13,6 +13,7 @@
 - Off-topic classifier for images, handling of API refusals
 - Rounded corners for message areas
 - UI improvement: placement and alignment of text bar and buttons
+- bug fix adversarial input classifier
 
 ## 01-16-24
 - Expanded knowledge about direct controls, HECA, and the energy method
