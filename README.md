@@ -1,6 +1,6 @@
 # ChatSafetyAI Version History
 
-## 02-13-24
+## 02-16-24
 - Image, CSV, and PDF inputs.
 - File upload area allowing browse and drag and drop
 - New "HECA" image mode.
