@@ -1,5 +1,9 @@
 # ChatSafetyAI Version History
 
+## 02-25-24
+- Graceful handling of API errors for regulations, predictions, attributes
+- Model aware of risk assessment and its meaning
+
 ## 02-16-24
 - Image, CSV, and PDF inputs.
 - File upload area allowing browse and drag and drop
