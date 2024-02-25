@@ -12,6 +12,7 @@
 - Graceful handling of API errors for regulations, predictions, attributes
 - Model aware of risk assessment and its meaning
 - Minimalized info message at the bottom, expanded README (this page)
+- Remove "click to populate" from Examples title
 
 ### 02-16-24
 - Image, CSV, and PDF inputs.
