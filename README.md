@@ -8,7 +8,10 @@
 
 ## Version History
 
-### 02-25-24
+### 02-27-24
+- conversation sharing functionality
+- errors during file checking and trucation are now handled
+- stringi's `stri_read_lines` now used instead of base's `readLines` to increase robustness to encoding issues when reading CSV files
 - Graceful handling of API errors for regulations, predictions, attributes
 - Model aware of risk assessment and its meaning
 - Minimalized info message at the bottom, expanded README (this page)
