@@ -8,7 +8,7 @@
 
 ## Version History
 
-### 03-01-24
+### 03-02-24
 - conversation sharing functionality
 - errors during file checking and trucation are now handled
 - stringi's `stri_read_lines` now used instead of base's `readLines` to increase robustness to encoding issues when reading CSV files
