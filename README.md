@@ -105,7 +105,6 @@
 - OSHA and prediction modes
 - tab names are now automatically renamed as extreme summaries of their conversations
 - now using GPT-3.5-turbo 16k
-- TODO finish
 
 ### 05-12-23
 - initial release
