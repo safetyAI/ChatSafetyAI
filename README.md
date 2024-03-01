@@ -9,8 +9,6 @@
 ## Version History
 
 ### 03-01-24
-- blue border now does not extend to the right of the fileInput element when drag-and-dropping
-- loader when generating follow-up questions
 - conversation sharing functionality
 - errors during file checking and trucation are now handled
 - stringi's `stri_read_lines` now used instead of base's `readLines` to increase robustness to encoding issues when reading CSV files
@@ -18,6 +16,9 @@
 - Model aware of risk assessment and its meaning
 - Minimalized info message at the bottom, expanded README (this page)
 - Removed "click to populate" from Examples title
+- fixed typo in one example
+- blue border now does not extend to the right of the fileInput element when drag-and-dropping
+- loader when generating follow-up questions
 
 ### 02-16-24
 - Image, CSV, and PDF inputs.
