@@ -8,7 +8,8 @@
 
 ## Version History
 
-### 02-27-24
+### 03-01-24
+- blue border now does not extend to the right of the fileInput element when drag-and-dropping
 - loader when generating follow-up questions
 - conversation sharing functionality
 - errors during file checking and trucation are now handled
