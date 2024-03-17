@@ -8,6 +8,9 @@
 
 ## Version History
 
+### 03-17-24
+- automatically close sidebar on mobile devices when tapping any sidebar button (new chat, switch chats, toggle suggestions, etc.)
+
 ### 03-02-24
 - conversation sharing functionality
 - errors during file checking and trucation are now handled
