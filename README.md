@@ -10,7 +10,8 @@
 
 ### 03-17-24
 - automatically close sidebar on mobile devices when tapping any sidebar button (new chat, switch chats, toggle suggestions, etc.)
-- bug fix: hitting enter now just submits query without modifying text. (Note that shift + enter can be used).
+- bug fix: hitting enter now just submits query without modifying text. (Note that shift + enter can be used)
+- cost recording for file inputs (including photos)
 
 ### 03-02-24
 - conversation sharing functionality
