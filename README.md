@@ -8,6 +8,10 @@
 
 ## Version History
 
+### 03-20-24
+- message when file size exceeds max allowed size
+- max allowed file size increased from 2 MB to 5 MB
+
 ### 03-17-24
 - automatically close sidebar on mobile devices when tapping any sidebar button (new chat, switch chats, toggle suggestions, etc.)
 - bug fix: hitting enter now just submits query without modifying text. (Note that shift + enter can be used)
