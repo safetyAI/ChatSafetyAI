@@ -11,7 +11,7 @@
 ### 03-22-24
 - Saskatchewan regulations
 - Regulation embeddings upgrade (`text-embedding-3-large` from Jan 25, 2024)
-- Query expansion to improve semantic search
+- Query expansion to improve semantic search results
 
 ### 03-20-24
 - message when file size exceeds max allowed size
