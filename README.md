@@ -15,6 +15,7 @@
 - bug fix bad function call handling for follow-up question suggestions
 - use of `gpt-4-0125-preview` for follow-up question suggestions, to generate proper accentuated chars in Spanish and French (related to bug below)
 - refactoring of supported language classifier to return language instead of just yes/no
+- more comprehensive cost measurement
 
 ### 03-22-24
 - Saskatchewan regulations
