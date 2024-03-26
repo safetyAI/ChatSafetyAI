@@ -9,12 +9,12 @@
 ## Version History
 
 ### 03-26-24
-- refactoring of off-topic classifier to reduce false alarms especially in non-English languages
+- private app, public demo
+- routines now reply in the language of the original query (except those relying on the `[START]` and `[END]` special tokens for non-English languages, due to bug: https://community.openai.com/t/gpt-4-1106-preview-is-not-generating-utf-8/482839)
+- refactoring of adversarial and off-topic classifiers to reduce false alarms, especially in non-English languages
 - bug fix bad function call handling for follow-up question suggestions
 - use of `gpt-4-0125-preview` for follow-up question suggestions, to generate proper accentuated chars in Spanish and French (related to bug below)
 - refactoring of supported language classifier to return language instead of just yes/no
-- routines now reply in the language of the original query (except those relying on the `[START]` and `[END]` special tokens for non-English languages, due to bug: https://community.openai.com/t/gpt-4-1106-preview-is-not-generating-utf-8/482839)
-- private app, public demo
 
 ### 03-22-24
 - Saskatchewan regulations
