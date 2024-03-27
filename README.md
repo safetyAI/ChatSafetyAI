@@ -29,7 +29,7 @@ Note: we do not currently offer plans for individuals.
 
 ## Version History
 
-### 03-26-24
+### 03-28-24
 - private app, public demo
 - routines now reply in the language of the original query (except those relying on the `[START]` and `[END]` special tokens for non-English languages, due to bug: https://community.openai.com/t/gpt-4-1106-preview-is-not-generating-utf-8/482839)
 - refactoring of adversarial and off-topic classifiers to reduce false alarms, especially in non-English languages
