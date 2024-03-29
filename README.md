@@ -10,7 +10,7 @@
 ## Usage Tiers
 The demo is free to use for limited testing purposes.<br>
 Contact us for membership pricing (see contact info at the bottom of this page, or on our [website](https://www.safetyfunction.com/safetyai-details)).<br>
-Note: we do not currently offer plans for individuals.
+Note: we do not currently offer plans for individuals, SafetyAI membership is for companies only.
 <table border=1>
 <tr> <th>  </th> <th> Demo </th> <th> SafetyAI Members </th>  </tr>
   <tr> <td align="right"> Engine </td> <td> GPT-3.5 </td> <td> GPT-4 </td> </tr>
