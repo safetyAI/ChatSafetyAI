@@ -37,6 +37,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - refactoring of supported language classifier to return language instead of just yes/no
 - more comprehensive cost measurement
 - knowledge of time on session start, with time zone (previously was just date, w/o time zone)
+- bug fix: handling tokens that are not character (e.g., list, when fake function call)
 
 ### 03-22-24
 - Saskatchewan regulations
