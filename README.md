@@ -11,8 +11,6 @@
 The demo is free to use for limited testing purposes.<br>
 Contact us for Enterprise pricing (see contact info at the bottom of this page, or on our [website](https://www.safetyfunction.com/safetyai-details)).<br>
 Note: we do not currently offer plans for individuals.
-<!-- html table generated in R 4.3.2 by xtable 1.8-4 package -->
-<!-- Wed Mar 27 20:36:22 2024 -->
 <table border=1>
 <tr> <th>  </th> <th> Demo </th> <th> Enterprise </th>  </tr>
   <tr> <td align="right"> Engine </td> <td> GPT-3.5 </td> <td> GPT-4 </td> </tr>
@@ -29,13 +27,13 @@ Note: we do not currently offer plans for individuals.
 
 ## Version History
 
-### 03-28-24
+### 03-29-24
 - private app, public demo
-- routines now reply in the language of the original query (except those relying on the `[START]` and `[END]` special tokens for non-English languages, due to bug: https://community.openai.com/t/gpt-4-1106-preview-is-not-generating-utf-8/482839)
+- routines now reply in the language of the original query (except, only in the GPT-4 case, those relying on the `[START]` and `[END]` special tokens for non-English languages, due to a bug: https://community.openai.com/t/gpt-4-1106-preview-is-not-generating-utf-8/482839)
 - support for non-English headlines
 - refactoring of adversarial and off-topic classifiers to reduce false alarms, especially in non-English languages
 - bug fix bad function call handling for follow-up question suggestions
-- use of `gpt-4-0125-preview` for follow-up question suggestions, to generate proper accentuated chars in Spanish and French (related to bug below)
+- use of the `0125` GPT installments for follow-up question suggestions, to generate proper accentuated chars in Spanish and French (related to bug above)
 - refactoring of supported language classifier to return language instead of just yes/no
 - more comprehensive cost measurement
 
