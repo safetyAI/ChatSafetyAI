@@ -36,6 +36,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - use of the `0125` GPT installments for follow-up question suggestions, to generate proper accentuated chars in Spanish and French (related to bug above)
 - refactoring of supported language classifier to return language instead of just yes/no
 - more comprehensive cost measurement
+- knowledge of time on session start, with time zone (previously was just date, w/o time zone)
 
 ### 03-22-24
 - Saskatchewan regulations
