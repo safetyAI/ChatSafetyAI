@@ -11,15 +11,16 @@
 The demo is free to use for limited testing purposes.<br>
 Contact us for membership pricing (see contact info at the bottom of this page, or on our [website](https://www.safetyfunction.com/safetyai-details)).<br>
 Note: we do not currently offer plans for individuals, SafetyAI membership is for companies only.
+
 <!-- html table generated in R 4.3.2 by xtable 1.8-4 package -->
-<!-- Fri Mar 29 19:10:38 2024 -->
+<!-- Sat Mar 30 01:52:57 2024 -->
 <table border=1>
-<tr> <th>  </th> <th> Demo </th> <th> SafetyAI board </th>  </tr>
+<tr> <th>  </th> <th> Demo </th> <th> SafetyAI Board </th>  </tr>
   <tr> <td align="right"> Engine </td> <td> GPT-4 </td> <td> GPT-4 </td> </tr>
   <tr> <td align="right"> Conversation History </td> <td> 10k words, 5 turns </td> <td> 100k words, 10 turns </td> </tr>
   <tr> <td align="right"> Max Chats per Session </td> <td> 4 </td> <td> 12 </td> </tr>
   <tr> <td align="right"> PDF/CSV/Photo Upload </td> <td> max 3 pages, 2 MB per file </td> <td> max 75 pages, 10 MB per file </td> </tr>
-  <tr> <td align="right"> Budget per Session </td> <td> 300k words </td> <td> Unlimited </td> </tr>
+  <tr> <td align="right"> Budget per Session </td> <td> 80k words </td> <td> unlimited </td> </tr>
   <tr> <td align="right"> Budget per User </td> <td> 0.4M words </td> <td> custom, min 10M words </td> </tr>
   <tr> <td align="right"> Custom Databases </td> <td> No </td> <td> Yes </td> </tr>
   <tr> <td align="right"> Custom Predictive Models </td> <td> No </td> <td> Yes </td> </tr>
