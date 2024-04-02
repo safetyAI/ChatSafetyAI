@@ -30,6 +30,9 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 
 ## Version History
 
+### 04-02-24
+- URLs and long words no wrap in tables
+
 ### 03-29-24
 - private app, public demo
 - routines now reply in the language of the original query (except, only in the GPT-4 case, those relying on the `[START]` and `[END]` special tokens for non-English languages, due to a bug: https://community.openai.com/t/gpt-4-1106-preview-is-not-generating-utf-8/482839)
