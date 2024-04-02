@@ -31,7 +31,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 ## Version History
 
 ### 04-02-24
-- URLs and long words no wrap in tables
+- URLs and long words now wrap in tables
 - Bug fix OSHA reference table in regulations mode for non-English languages
 
 ### 03-29-24
