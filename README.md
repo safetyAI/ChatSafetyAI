@@ -32,6 +32,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 
 ### 04-02-24
 - URLs and long words no wrap in tables
+- Bug fix reference table in regulations mode for non-English languages
 
 ### 03-29-24
 - private app, public demo
