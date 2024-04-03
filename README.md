@@ -8,7 +8,7 @@
 - Screencast demos (not necessarily up-to-date) can be found on our [website](https://www.safetyfunction.com/safetyai-details).
 
 ## Usage Tiers
-The demo is free to use for limited testing purposes.<br>
+There is a free [demo](https://safetyapp.shinyapps.io/chatsafetyai_demo_access_request/) with a limited budget, just for quick testing purposes.<br>
 Contact us for membership pricing (see contact info at the bottom of this page, or on our [website](https://www.safetyfunction.com/safetyai-details)).<br>
 Note: we do not currently offer plans for individuals, SafetyAI membership is for companies only.
 
