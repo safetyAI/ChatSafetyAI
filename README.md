@@ -30,6 +30,10 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 
 ## Version History
 
+### 04-09-24
+- one additional example on desktops
+- added examples
+
 ### 04-05-24
 - fix word wrapping in tables
 - fix long URL regulation mode in tables
