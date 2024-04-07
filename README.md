@@ -31,8 +31,8 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 ## Version History
 
 ### 04-07-24
-- updating number of conversations on session end
-- one additional example on desktops
+- updating total number of conversations file on session end
+- one additional example on desktops (7 instead of 6)
 - added examples in "misc" category
 - start to improve HECA knowledge and instructions (work in progress)
 
