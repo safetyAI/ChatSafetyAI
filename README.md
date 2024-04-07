@@ -30,7 +30,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 
 ## Version History
 
-### 04-09-24
+### 04-07-24
 - updating number of conversations on session end
 - one additional example on desktops
 - added examples in "misc" category
