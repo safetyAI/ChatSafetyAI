@@ -34,6 +34,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - updating number of conversations on session end
 - one additional example on desktops
 - added examples in "misc" category
+- start to improve HECA knowledge and instructions (work in progress)
 
 ### 04-05-24
 - fix word wrapping in tables
