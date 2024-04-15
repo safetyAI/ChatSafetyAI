@@ -30,6 +30,10 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 
 ## Version History
 
+### 04-15-24
+- improved HECA mode (knowledge, instructions, conversation-awareness for follow-ups & special instructions)
+- knowledged about the SCL model and a few online resources / tools
+
 ### 04-07-24
 - updating total number of conversations file on session end
 - one additional example on desktops (7 instead of 6)
