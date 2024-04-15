@@ -32,7 +32,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 
 ### Upcoming
 - improved HECA mode (knowledge, instructions, conversation-awareness for follow-ups & special instructions)
-- knowledged about the SCL model and a few online resources / tools
+- knowledge about the SCL model and a few online resources / tools
 
 ### 04-07-24
 - updating total number of conversations file on session end
