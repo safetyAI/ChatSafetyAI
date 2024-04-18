@@ -208,7 +208,7 @@ Our mission is to do R&D that improves safety in the construction industry.
 
 **Our Use of Content.** We may use Content to provide, maintain, develop, and improve our Services, comply with applicable law, enforce our terms and policies, and keep our Services safe.
 
-**Opt Out.** If you do not want us to use your Content to provide, maintain, develop, and improve our Services, you can opt out by emailing antoine.tixier AT safetyfunction DOT com. Please note that this may limit the ability of our Services to better address your specific use cases.
+**Opt Out.** If you do not want us to use your Content to provide, maintain, develop, and improve our Services, you can opt out by emailing `antoine.tixier AT safetyfunction DOT com`. Please note that this may limit the ability of our Services to better address your specific use cases.
 
 **Accuracy.** Artificial intelligence and machine learning are rapidly evolving fields of study. We are constantly working to improve our Services to make them more accurate, reliable, safe, and beneficial. Given the probabilistic nature of machine learning, use of our Services may, in some situations, result in Output that is not factually correct. 
 
@@ -231,8 +231,11 @@ We at the Colorado Construction Safety Laboratory, LLC ('we', 'our' or 'us') res
 - *Account Information:* email address.
 
 **Personal Information We Receive Automatically From Your Use of the Services:** When you use the Services, we receive the following information:
-- *User Content:* the date and time of each conversation, as well as the conversation content. This is necessary to allow saving and reloading the chat history from session to session.
-- *IP address, device and browser information, and other analytics:* we do not record such information. We
+- *User Content:* the date and time of each conversation, as well as the conversation content. Nothing more. This is necessary to allow saving and reloading the chat history from session to session. We also anonymously analyze conversations for continuous improvement purposes. If you do not want us to use your conversations for improvement of our models, or if you do not want your conversations to be saved at all (no chat history from session to session), you may opt out by emailing `antoine.tixier AT safetyfunction DOT com`. Please note that this may limit the ability of our Services to better address your specific use cases.
+- *Content Disclosure:* we do not share your content with anyone. It is used only for improvement of our models, if you have not opted out.
+- *IP address, device and browser information, logs, and other analytics:* we **do not** record such information. We may ask for your location (latitude and longitude) for the sole purpose of knowing your local weather, in order for our incident characteristics predictive models to generate more accurate predictions.
+
+- *Cookies:* shinyapps.io, on which ChatSafetyAI is deployed, may collect a cookie for the sole purpose of logging in without having to re-enter username and password every time.
 
 ### Our IP Rights
 We own all rights, title, and interest in and to the Services. You may only use our name and logo in accordance with our Brand Guidelines.
