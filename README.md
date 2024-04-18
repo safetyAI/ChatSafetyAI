@@ -231,14 +231,15 @@ We at the Colorado Construction Safety Laboratory, LLC ('we', 'our' or 'us') res
 - *Account Information:* email address.
 
 **Personal Information We Receive Automatically From Your Use of the Services:** When you use the Services, we receive the following information:
-- *User Content:* the date and time of each conversation, as well as the conversation content. Nothing more. This is necessary to allow saving and reloading the chat history from session to session. We also anonymously analyze conversations for continuous improvement purposes. If you do not want us to use your conversations for improvement of our models, or if you do not want your conversations to be saved at all (no chat history from session to session), you may opt out by emailing `antoine.tixier AT safetyfunction DOT com`. Please note that this may limit the ability of our Services to better address your specific use cases.
-- *Content Disclosure:* we do not share your content with anyone. It is used only for improvement of our models, if you have not opted out.
+- *User Content:* the date and time of each conversation, as well as the conversation content. This is necessary to allow saving and reloading the chat history from session to session. We use Dropbox as our data storage solution. ChatSafetyAI is deployed on Posit's shinyapps.io but data is only saved there temporarily, for the duration of the session. We also analyze conversations for continuous improvement purposes. If you do not want us to use your conversations for improvement of our models, or if you do not want your conversations to be saved at all (no chat history from session to session), you may opt out by emailing `antoine.tixier AT safetyfunction DOT com`. Please note that this may limit the ability of our Services to better address your specific use cases.
+- *OpenAI API:* To function, ChatSafetyAI relies on the OpenAI API's Chat and Embeddings endpoints. OpenAI [does not](https://platform.openai.com/docs/models/how-we-use-your-data) use the conversations passed to their API for training their models, and only temporarily saves the conversations (for 30 days) for moderation purposes, after which they are permanently deleted.
+- *Content Disclosure:* we **do not** share or sell your content with/to anyone. We record and analyze your conversations for the sole purpose of improving our models, if you have not opted out.
 - *IP address, device and browser information, logs, and other analytics:* we **do not** record such information. We may ask for your location (latitude and longitude) for the sole purpose of knowing your local weather, in order for our incident characteristics predictive models to generate more accurate predictions.
 
 - *Cookies:* shinyapps.io, on which ChatSafetyAI is deployed, may collect a cookie for the sole purpose of logging in without having to re-enter username and password every time.
 
 ### Our IP Rights
-We own all rights, title, and interest in and to the Services. You may only use our name and logo in accordance with our Brand Guidelines.
+We own all rights, title, and interest in and to the Services. You may only use our name and logo by asking us first.
 
 ### Discontinuation of Services
 We may decide to discontinue our Services, but if we do, we will give you advance notice and a refund for any prepaid, unused Services.
@@ -249,6 +250,8 @@ OUR SERVICES ARE PROVIDED "AS IS." EXCEPT TO THE EXTENT PROHIBITED BY LAW, WE MA
 YOU ACCEPT AND AGREE THAT ANY USE OF OUTPUTS FROM OUR SERVICE IS AT YOUR SOLE RISK AND YOU WILL NOT RELY ON OUTPUT AS A SOLE SOURCE OF TRUTH OR FACTUAL INFORMATION, OR AS A SUBSTITUTE FOR PROFESSIONAL ADVICE.
 
 ### Limitation of Liability
+WE MAKE NO CLAIM OF RESPONSIBILITY FOR ANY PARTIAL OR TOTAL LOSS, ALTERATION, DELETION, DESTRUCTION, DAMAGE, FAILURE TO MAINTAIN OR STORE, RELEASE, LEAKAGE, OR DENIAL OF ACCESS, OF ANY OF THE DATA UPLOADED TO DROPBOX, POSIT'S SHINYAPPS.IO, THE OPENAI API, OR ANY OTHER THIRD PARTY SERVER OR CLOUD-BASED SOLUTION USED BY VENDOR AS PART OF THEIR WORK FOR CLIENT, FOR ANY REASON WHATSOEVER.
+
 WE WILL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR EXEMPLARY DAMAGES, INCLUDING DAMAGES FOR LOSS OF PROFITS, GOODWILL, USE, OR DATA OR OTHER LOSSES, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. OUR AGGREGATE LIABILITY UNDER THESE TERMS WILL NOT EXCEED ​​THE GREATER OF THE AMOUNT YOU PAID FOR THE SERVICE THAT GAVE RISE TO THE CLAIM DURING THE 12 MONTHS BEFORE THE LIABILITY AROSE. THE LIMITATIONS IN THIS SECTION APPLY ONLY TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW.
 
 Some countries and states do not allow the disclaimer of certain warranties or the limitation of certain damages, so some or all of the terms above may not apply to you, and you may have additional rights. In that case, these Terms only limit our responsibilities to the maximum extent permissible in your country of residence.
