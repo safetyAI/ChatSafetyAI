@@ -177,3 +177,44 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 
 ## Contact
 Bug reports, questions: `antoine DOT tixier AT safetyfunction .com`
+
+## Terms of use
+These Terms of Use apply to your use of ChatSafetyAI, along with any associated models, APIs, software applications and websites (all together, "Services"). These Terms form an agreement between you and the Colorado Construction Safety Laboratory, LLC, a Colorado company, and they include our Service Terms and important provisions for resolving disputes through arbitration. By using our Services, you agree to these Terms.
+
+### Who We Are
+ChatSafetyAI is developed by SafetyAI, an entity within Safety Function, d/b/a the Colorado Construction Safety Laboratory, LLC.
+Our mission is to do R&D that improves safety in the construction industry.
+
+### Using Our Services
+**What you can do.** Subject to your compliance with these Terms, you may access and use our Services. In using our Services, you must comply with all applicable laws as well as any other documentation, guidelines, or policies we make available to you.
+
+**What You Cannot Do.** You may not use our Services for any illegal, harmful, or abusive activity. For example, you may not:
+- Use our Services in a way that infringes, misappropriates or violates anyone’s rights.
+- Modify, copy, lease, sell or distribute any of our Services.
+- Attempt to or assist anyone to reverse engineer, decompile or discover the source code or underlying components of our Services, including our models, algorithms, or systems (except to the extent this restriction is prohibited by applicable law).
+- Automatically or programmatically extract data or Output (defined below).
+- Represent that Output was human-generated when it was not.
+- Interfere with or disrupt our Services, including circumvent any rate limits or restrictions or bypass any protective measures or safety mitigations we put on our Services.
+- Use Output to develop models that compete with the Colorado Construction Safety Laboratory, LLC.
+
+**Feedback.** We appreciate your feedback, and you agree that we may use it without restriction or compensation to you.
+
+### Content
+**Your Content.** You may provide input to the Services ("Input"), and receive output from the Services based on the Input ("Output"). Input and Output are collectively "Content." You are responsible for Content, including ensuring that it does not violate any applicable law or these Terms. You represent and warrant that you have all rights, licenses, and permissions needed to provide Input to our Services.
+
+**Ownership of Content.** As between you and the Colorado Construction Safety Laboratory, LLC, and to the extent permitted by applicable law, you (a) retain your ownership rights in Input and (b) own the Output. We hereby assign to you all our right, title, and interest, if any, in and to Output.
+
+**Similarity of Content.** Due to the nature of our Services and artificial intelligence generally, output may not be unique and other users may receive similar output from our Services. Our assignment above does not extend to other users' output or any Third Party Output. 
+
+**Our Use of Content.** We may use Content to provide, maintain, develop, and improve our Services, comply with applicable law, enforce our terms and policies, and keep our Services safe.
+
+**Opt Out.** If you do not want us to use your Content to provide, maintain, develop, and improve our Services, you can opt out by emailing antoine.tixier AT safetyfunction DOT com. Please note that this may limit the ability of our Services to better address your specific use cases.
+
+**Accuracy.** Artificial intelligence and machine learning are rapidly evolving fields of study. We are constantly working to improve our Services to make them more accurate, reliable, safe, and beneficial. Given the probabilistic nature of machine learning, use of our Services may, in some situations, result in Output that is not factually correct. 
+
+When you use our Services you understand and agree:
+
+- Output may not always be accurate. You should not rely on Output from our Services as a sole source of truth or factual information, or as a substitute for professional advice.
+- You must evaluate Output for accuracy and appropriateness for your use case, including using human review as appropriate, before using or sharing Output from the Services.
+- You must not use any Output relating to a person for any purpose that could have a legal or material impact on that person, such as making credit, educational, employment, housing, insurance, legal, medical, or other important decisions about them. 
+- Our Services may provide incomplete, incorrect, or offensive Output that does not represent the Colorado Construction Safety Laboratory's views. If Output references any third party products or services, it doesn't mean the third party endorses or is affiliated with the Colorado Construction Safety Laboratory.
