@@ -186,7 +186,7 @@ ChatSafetyAI is developed by SafetyAI, an entity within Safety Function, d/b/a t
 Our mission is to do R&D that improves safety in the construction industry.
 
 ### Using Our Services
-**What you can do.** Subject to your compliance with these Terms, you may access and use our Services. In using our Services, you must comply with all applicable laws as well as any other documentation, guidelines, or policies we make available to you.
+**What You Can Do.** Subject to your compliance with these Terms, you may access and use our Services. In using our Services, you must comply with all applicable laws as well as any other documentation, guidelines, or policies we make available to you.
 
 **What You Cannot Do.** You may not use our Services for any illegal, harmful, or abusive activity. For example, you may not:
 - Use our Services in a way that infringes, misappropriates or violates anyone’s rights.
@@ -218,3 +218,51 @@ When you use our Services you understand and agree:
 - You must evaluate Output for accuracy and appropriateness for your use case, including using human review as appropriate, before using or sharing Output from the Services.
 - You must not use any Output relating to a person for any purpose that could have a legal or material impact on that person, such as making credit, educational, employment, housing, insurance, legal, medical, or other important decisions about them. 
 - Our Services may provide incomplete, incorrect, or offensive Output that does not represent the Colorado Construction Safety Laboratory's views. If Output references any third party products or services, it doesn't mean the third party endorses or is affiliated with the Colorado Construction Safety Laboratory.
+
+### Our IP Rights
+We own all rights, title, and interest in and to the Services. You may only use our name and logo in accordance with our Brand Guidelines.
+
+### Discontinuation of Services
+We may decide to discontinue our Services, but if we do, we will give you advance notice and a refund for any prepaid, unused Services.
+
+### Disclaimer of Warranties
+OUR SERVICES ARE PROVIDED "AS IS." EXCEPT TO THE EXTENT PROHIBITED BY LAW, WE MAKE NO WARRANTIES (EXPRESS, IMPLIED, STATUTORY OR OTHERWISE) WITH RESPECT TO THE SERVICES, AND DISCLAIM ALL WARRANTIES INCLUDING, BUT NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, SATISFACTORY QUALITY, NON-INFRINGEMENT, AND QUIET ENJOYMENT, AND ANY WARRANTIES ARISING OUT OF ANY COURSE OF DEALING OR TRADE USAGE. WE DO NOT WARRANT THAT THE SERVICES WILL BE UNINTERRUPTED, ACCURATE OR ERROR FREE, OR THAT ANY CONTENT WILL BE SECURE OR NOT LOST OR ALTERED.
+
+YOU ACCEPT AND AGREE THAT ANY USE OF OUTPUTS FROM OUR SERVICE IS AT YOUR SOLE RISK AND YOU WILL NOT RELY ON OUTPUT AS A SOLE SOURCE OF TRUTH OR FACTUAL INFORMATION, OR AS A SUBSTITUTE FOR PROFESSIONAL ADVICE.
+
+### Limitation of Liability
+WE WILL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR EXEMPLARY DAMAGES, INCLUDING DAMAGES FOR LOSS OF PROFITS, GOODWILL, USE, OR DATA OR OTHER LOSSES, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. OUR AGGREGATE LIABILITY UNDER THESE TERMS WILL NOT EXCEED ​​THE GREATER OF THE AMOUNT YOU PAID FOR THE SERVICE THAT GAVE RISE TO THE CLAIM DURING THE 12 MONTHS BEFORE THE LIABILITY AROSE. THE LIMITATIONS IN THIS SECTION APPLY ONLY TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW.
+
+Some countries and states do not allow the disclaimer of certain warranties or the limitation of certain damages, so some or all of the terms above may not apply to you, and you may have additional rights. In that case, these Terms only limit our responsibilities to the maximum extent permissible in your country of residence.
+
+### Indemnity
+To the extent permitted by law, you will indemnify and hold harmless us and our personnel, from and against any costs, losses, liabilities, and expenses (including attorneys' fees) from third party claims arising out of or relating to your use of the Services and Content or any violation of these Terms.
+
+### Dispute Resolution
+YOU AND THE COLORADO CONSTRUCTION SAFETY LABORATORY AGREE TO THE FOLLOWING MANDATORY ARBITRATION AND CLASS ACTION WAIVER PROVISIONS:
+
+**MANDATORY ARBITRATION.** You and The Colorado Construction Safety Laboratory agree to resolve any claims arising out of or relating to these Terms or our Services, regardless of when the claim arose, even if it was before these Terms existed (a "Dispute"), through final and binding arbitration.
+
+**Informal Dispute Resolution.** We would like to understand and try to address your concerns prior to formal legal action. Before either of us files a claim against the other, we both agree to try to resolve the Dispute informally. If we are unable to resolve a Dispute within 60 days, either of us has the right to initiate arbitration.
+
+**Governing Law.** Colorado law will govern these Terms except for its conflicts of laws principles. Except as provided in the dispute resolution section above, all claims arising out of or relating to these Terms will be brought exclusively in the federal or state courts of Boulder or Denver, Colorado.
+
+### General Terms
+**Assignment.** You may not assign or transfer any rights or obligations under these Terms and any attempt to do so will be void. We may assign our rights or obligations under these Terms to any affiliate, subsidiary, or successor in interest of any business associated with our Services.
+
+**Changes to These Terms or Our Services.** We are continuously working to develop and improve our Services. We may update these Terms or our Services accordingly from time to time. For example, we may make changes to these Terms or the Services due to:
+
+- Changes to the law or regulatory requirements.
+- Security or safety reasons.
+- Circumstances beyond our reasonable control.
+- Changes we make in the usual course of developing our Services.
+- To adapt to new technologies.
+- All other changes will be effective as soon as we post them to our website. If you do not agree to the changes, you must stop using our Services.
+
+**Delay in Enforcing These Terms.** Our failure to enforce a provision is not a waiver of our right to do so later. Except as provided in the dispute resolution section above, if any portion of these Terms is determined to be invalid or unenforceable, that portion will be enforced to the maximum extent permissible and it will not affect the enforceability of any other terms.
+
+**Trade Controls.** You must comply with all applicable trade laws, including sanctions and export control laws. Our Services may not be used in or for the benefit of, or exported or re-exported to (a) any U.S. embargoed country or territory or (b) any individual or entity with whom dealings are prohibited or restricted under applicable trade laws. Our Services may not be used for any end use prohibited by applicable trade laws, and your Input may not include material or information that requires a government license for release or export. 
+
+**Entire Agreement.** These Terms contain the entire agreement between you and the Colorado Construction Safety Laboratory regarding the Services and, other than any Service-specific terms, supersedes any prior or contemporaneous agreements between you and the Colorado Construction Safety Laboratory. 
+
+**Governing Law.** Colorado law will govern these Terms except for its conflicts of laws principles. Except as provided in the dispute resolution section above, all claims arising out of or relating to these Terms will be brought exclusively in the federal or state courts of Boulder or Denver, Colorado.
