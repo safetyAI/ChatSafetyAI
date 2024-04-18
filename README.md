@@ -219,6 +219,21 @@ When you use our Services you understand and agree:
 - You must not use any Output relating to a person for any purpose that could have a legal or material impact on that person, such as making credit, educational, employment, housing, insurance, legal, medical, or other important decisions about them. 
 - Our Services may provide incomplete, incorrect, or offensive Output that does not represent the Colorado Construction Safety Laboratory's views. If Output references any third party products or services, it doesn't mean the third party endorses or is affiliated with the Colorado Construction Safety Laboratory.
 
+### Confidentiality
+**Use and Nondisclosure.** "Confidential Information" means any business, technical or financial information, materials, or other subject matter disclosed by one party ("Discloser") to the other party ("Recipient") that is identified as confidential at the time of disclosure or should be reasonably understood by Recipient to be confidential under the circumstances. For the avoidance of doubt, Confidential Information includes Customer Content. Recipient agrees it will: (a) only use Discloser's Confidential Information to exercise its rights and fulfill its obligations under this Agreement, (b) take reasonable measures to protect the Confidential Information, and (c) not disclose the Confidential Information to any third party except as expressly permitted in this Agreement.
+
+**Exceptions.** These obligations do not apply to any information that (a) is or becomes generally available to the public through no fault of Recipient, (b) was in Recipient’s possession or known by it prior to receipt from Discloser, (c) was rightfully disclosed to Recipient without restriction by a third party, or (d) was independently developed without use of Discloser’s Confidential Information. Recipient may disclose Confidential Information only to its employees, contractors, and agents who have a need to know and who are bound by confidentiality obligations at least as restrictive as those of this Agreement. Recipient will be responsible for any breach of this section by its employees, contractors, and agents. Recipient may disclose Confidential Information to the extent required by law, provided that Recipient uses reasonable efforts to notify Discloser in advance.
+
+### Privacy
+We at the Colorado Construction Safety Laboratory, LLC ('we', 'our' or 'us') respect your privacy and are strongly committed to keeping secure any information we obtain from you or about you. This Privacy Policy describes our practices with respect to Personal Information we collect from or about you when you use our Services.
+
+**Personal Information You Provide:** We collect Personal Information if you create an account to use our Services or communicate with us as follows:
+- *Account Information:* email address.
+
+**Personal Information We Receive Automatically From Your Use of the Services:** When you use the Services, we receive the following information:
+- *User Content:* the date and time of each conversation, as well as the conversation content. This is necessary to allow saving and reloading the chat history from session to session.
+- *IP address, device and browser information, and other analytics:* we do not record such information. We
+
 ### Our IP Rights
 We own all rights, title, and interest in and to the Services. You may only use our name and logo in accordance with our Brand Guidelines.
 
