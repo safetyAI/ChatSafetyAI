@@ -7,6 +7,10 @@
 - We at SafetyAI record conversations for continuous improvement purposes.
 - Screencast demos (not necessarily up-to-date) can be found on our [website](https://www.safetyfunction.com/safetyai-details).
 
+- [Version History](https://github.com/safetyAI/ChatSafetyAI/blob/main/README.md#version-history)
+- [Contact](https://github.com/safetyAI/ChatSafetyAI/blob/main/README.md#contact)
+- [Terms of Use](https://github.com/safetyAI/ChatSafetyAI/blob/main/README.md#terms-of-use)
+
 ## Usage Tiers
 There is a free [demo](https://safetyapp.shinyapps.io/chatsafetyai_demo_access_request/) with a limited budget, just for quick testing purposes.<br>
 Contact us for membership pricing (see contact info at the bottom of this page, or on our [website](https://www.safetyfunction.com/safetyai-details)).<br>
