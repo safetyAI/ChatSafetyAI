@@ -239,6 +239,16 @@ We at the Colorado Construction Safety Laboratory, LLC ('we', 'our' or 'us') res
 ### Our IP Rights
 We own all rights, title, and interest in and to the Services. You may only use our name and logo by asking us first.
 
+### Permission to Access the Services
+We grant you a limited, non-exclusive permission subject to conditions, to access our Services.
+You shall have no right to copy, modify, save, reproduce, publish or convey any part of our Services, and shall acquire no ownership in our Services.
+ChatSafetyAI is deployed on the Posit's shinyapps.io server and is accessible as a web application.
+We make no claim of responsibility for interruptions in the server.
+You will receive an invitation by email to access ChatSafetyAI with no ability to install or save software.
+Constant access to the Internet will be required to use ChatSafetyAI.
+
+We shall own all right, title and interest in our Services and all other intellectual property rights inherent therein, including all modifications, improvements, and derivative works relating to our Services. Other than where we provide prior written consent, the foregoing permission does not include any right to reproduce our Services or to make and/or distribute or sublicense variations of or derivative works developed from our Services, or any right to utilize our Services or information relating to them other than as expressly permitted herein.
+
 ### Discontinuation of Services
 We may decide to discontinue our Services, but if we do, we will give you advance notice and a refund for any prepaid, unused Services.
 
