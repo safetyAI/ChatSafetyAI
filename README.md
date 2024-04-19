@@ -8,6 +8,7 @@
 - Screencast demos (not necessarily up-to-date) can be found on our [website](https://www.safetyfunction.com/safetyai-details).
 
 Table of Contents
+- [Usage Tiers](https://github.com/safetyAI/ChatSafetyAI/blob/main/README.md#usage-tiers)
 - [Version History](https://github.com/safetyAI/ChatSafetyAI/blob/main/README.md#version-history)
 - [Contact](https://github.com/safetyAI/ChatSafetyAI/blob/main/README.md#contact)
 - [Terms of Use](https://github.com/safetyAI/ChatSafetyAI/blob/main/README.md#terms-of-use)
