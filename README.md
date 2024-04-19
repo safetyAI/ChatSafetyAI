@@ -202,7 +202,7 @@ Our mission is to do R&D that improves safety in the construction industry.
 ### Content
 **Your Content.** You may provide input to the Services ("Input"), and receive output from the Services based on the Input ("Output"). Input and Output are collectively "Content." You are responsible for Content, including ensuring that it does not violate any applicable law or these Terms. You represent and warrant that you have all rights, licenses, and permissions needed to provide Input to our Services.
 
-**Similarity of Content.** Due to the nature of our Services and artificial intelligence generally, output may not be unique and other users may receive similar output from our Services. Our assignment above does not extend to other users' output or any Third Party Output. 
+**Similarity of Content.** Due to the nature of our Services and artificial intelligence generally, output may not be unique and other users may receive similar output from our Services.
 
 **Our Use of Content.** We may use Content to provide, maintain, develop, and improve our Services, comply with applicable law, enforce our terms and policies, and keep our Services safe.
 
