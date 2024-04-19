@@ -208,7 +208,7 @@ Our mission is to do R&D that improves safety in the construction industry.
 
 **Opt Out.** If you do not want us to use your Content to provide, maintain, develop, and improve our Services, you can opt out by emailing `antoine.tixier AT safetyfunction DOT com`. Please note that this may limit the ability of our Services to better address your specific use cases.
 
-**Accuracy.** Artificial intelligence and machine learning are rapidly evolving fields of study. We are constantly working to improve our Services to make them more accurate, reliable, safe, and beneficial. Given the probabilistic nature of machine learning, use of our Services may, in some situations, result in Output that is not factually correct. 
+**Accuracy.** ChatSafetyAI relies on the GPT family of Large Language Models (LLMs) via the OpenAI API. GPTs, like other LLMs, can make mistakes in some situations. Therefore, use of our Services may, in some situations, result in Output that is not factually correct.
 
 When you use our Services you understand and agree:
 
