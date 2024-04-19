@@ -234,7 +234,7 @@ We at the Colorado Construction Safety Laboratory, LLC ('we', 'our' or 'us') res
 - *Content Disclosure:* we **do not** share or sell your content with/to anyone. We record and analyze your conversations for the sole purpose of improving our models, if you have not opted out.
 - *IP address, device and browser information, logs, and other analytics:* we **do not** record such information. We may ask for your location (latitude and longitude) for the sole purpose of knowing your local weather, in order for our incident characteristics predictive models to generate more accurate predictions.
 
-- *Cookies:* we **do not** use cookies. Shinyapps.io, on which ChatSafetyAI is deployed, may collect a cookie for the sole purpose of logging in without having to re-enter username and password every time.
+- *Cookies:* we **do not** use cookies. Shinyapps.io, on which ChatSafetyAI is deployed, may collect a cookie for the sole purpose of allowing you to log in without having to re-enter your username and password every time.
 
 ### Our IP Rights
 We own all rights, title, and interest in and to the Services. You may only use our name and logo by asking us first.
