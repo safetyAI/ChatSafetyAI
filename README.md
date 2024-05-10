@@ -36,7 +36,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 
 ## Version History
 
-### 05-09-24
+### 05-10-24
 - improved "HECA from photo" mode (knowledge, instructions, conversation-awareness, special instructions as optional function call argument)
 - knowledge about the SCL model and a few online resources / tools
 - EC2 APIs
