@@ -39,6 +39,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 ### upcoming
 - now using `gpt-4o` as the main engine and for the vision microservice
 - regulations: improved chunking and indexing, especially for tables and equations
+- chat history
 - log out button
 
 ### 05-12-24
