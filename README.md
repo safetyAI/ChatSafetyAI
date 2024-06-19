@@ -209,7 +209,7 @@ Our mission is to do R&D that improves safety in the construction industry.
 **What You Cannot Do.** You may not use our Services for any illegal, harmful, or abusive activity. For example, you may not:
 - Use our Services in a way that infringes, misappropriates or violates anyone’s rights.
 - Modify, copy, lease, sell or distribute any of our Services.
-- Attempt to or assist anyone to reverse engineer, decompile or discover the source code or underlying components of our Services, including our models, algorithms, or systems (except to the extent this restriction is prohibited by applicable law).
+- Attempt to or assist anyone to reverse engineer, decompile or discover the source code or underlying components of our Services, including our models, algorithms, or systems.
 - Automatically or programmatically extract data or Output (defined below).
 - Represent that Output was human-generated when it was not.
 - Interfere with or disrupt our Services, including circumvent any rate limits or restrictions or bypass any protective measures or safety mitigations we put on our Services.
@@ -218,7 +218,7 @@ Our mission is to do R&D that improves safety in the construction industry.
 **Feedback.** We appreciate your feedback, and you agree that we may use it without restriction or compensation to you.
 
 ### Content
-**Your Content.** You may provide input to the Services ("Input"), and receive output from the Services based on the Input ("Output"). Input and Output are collectively "Content." You are responsible for Content, including ensuring that it does not violate any applicable law or these Terms. You represent and warrant that you have all rights, licenses, and permissions needed to provide Input to our Services.
+**Your Content.** You may provide input to the Services ("Input"), and receive output from the Services based on the Input ("Output"). Input and Output are collectively "Content". You are responsible for Content, including ensuring that it does not violate any applicable law or these Terms. You represent and warrant that you have all rights, licenses, and permissions needed to provide Input to our Services.
 
 **Similarity of Content.** Due to the nature of our Services and artificial intelligence generally, output may not be unique and other users may receive similar output from our Services.
 
