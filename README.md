@@ -196,7 +196,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 ## Contact
 Bug reports, questions: `antoine DOT tixier AT safetyfunction .com`
 
-## Terms of use
+## Terms of Use
 These Terms of Use apply to your use of ChatSafetyAI, along with any associated models, APIs, software applications and websites (all together, "Services"). These Terms form an agreement between you and the Colorado Construction Safety Laboratory, LLC, a Colorado company, and they include our Service Terms and important provisions for resolving disputes through arbitration. By using our Services, you agree to these Terms.
 
 ### Who We Are
