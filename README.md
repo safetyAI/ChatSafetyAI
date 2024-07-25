@@ -37,10 +37,11 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 ## Version History
 
 ### upcoming
-- now using `gpt-4o` as the main engine and for the vision microservice
-- regulations: improved chunking and indexing, especially for tables and equations
+- `gpt-4o` as the main engine and for the vision microservice
+- Canadian regulations: improved chunking and indexing, especially for tables and equations. Combination of two approaches of high and low granularity (new & old).
 - chat history
 - log out button
+- shorter greeting
 
 ### 05-12-24
 - support for Canada Occupational Health and Safety Regulations (COHSR) for federally regulated companies
