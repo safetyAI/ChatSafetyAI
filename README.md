@@ -39,6 +39,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 ### upcoming
 - `gpt-4o` as the main engine and for the vision microservice
 - Canadian regulations: improved chunking and indexing, especially for tables and equations. Combination of two approaches of high and low granularity (new & old).
+- regulations: slightly more neighbors and slightly lower similarity threshold, to improve recall and work better with generation (unconstrained output format), allowing more than just question answering which was too limited (information retrieval with fixed output format).
 - chat history
 - log out button
 - shorter greetings
