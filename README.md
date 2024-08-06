@@ -38,11 +38,12 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 
 ### upcoming
 - `gpt-4o` as the main engine and for the vision microservice
-- Canadian regulations: improved chunking and indexing, especially for tables and equations. Combination of two approaches of high and low granularity (new & old).
-- regulations: slightly more neighbors and slightly lower similarity threshold, to improve recall and work better with generation (unconstrained output format), allowing more than just question answering which was too limited (information retrieval with fixed output format).
+- regulations: improved scraping and chunking, especially for tables, equations, and long chunks. Also now using an approach with larger chunks in combination with the original small-chunk approach, to better balance precision and recall, and because some documents just cannot afford to be split.
+- regulations: slightly more neighbors and slightly lower similarity threshold, to improve recall
+- regulations: new instructions with unconstrained output format, to better suit generation scenarios. This allows the regulation mode to be more than just a question answering mode (information retrieval with fixed output format), which was too limited.
 - chat history
 - log out button
-- shorter greetings
+- shorter greetings to save the user time and budget
 
 ### 05-12-24
 - support for Canada Occupational Health and Safety Regulations (COHSR) for federally regulated companies
