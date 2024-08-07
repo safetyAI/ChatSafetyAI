@@ -44,6 +44,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - chat history
 - log out button
 - shorter greetings to save the user time and budget
+- bug fix consumption measurement in build_context.R (regulations)
 
 ### 05-12-24
 - support for Canada Occupational Health and Safety Regulations (COHSR) for federally regulated companies
