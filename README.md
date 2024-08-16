@@ -42,8 +42,11 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - regulations: slightly more neighbors and slightly lower similarity threshold, to improve recall
 - regulations: new instructions with unconstrained output format, to better suit generation scenarios. This allows the regulation mode to be more than just a question answering mode (information retrieval with fixed output format), which was too limited.
 - chat history
-- log out button
-- shorter greetings to save the user time and budget
+- TODO incognito mode
+- all files saved to Dropbox and embedded into the chats via URLs
+- wrappers to gracefully handle Dropbox API errors and retry
+- log out
+- shorter greetings to save time and budget
 - bug fix consumption measurement in build_context.R (regulations)
 - bug fix name to url mapping for long documents (regulations, original approach for OSHA)
 - more budget for CSV and PDF file uploads in terms of amount of text taken into account before truncation
