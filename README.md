@@ -36,16 +36,15 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 
 ## Version History
 
-### upcoming
+### 08-21-24
 - `gpt-4o-2024-08-06` as the main engine and for the vision microservice
 - regulations: improved scraping and chunking, especially for tables, equations, and long chunks. Also now using an approach with larger chunks in combination with the original small-chunk approach, to better balance precision and recall, and because some documents just cannot afford to be split.
 - regulations: slightly more neighbors and slightly lower similarity threshold, to improve recall
 - regulations: new instructions with unconstrained output format, to better suit generation scenarios. This allows the regulation mode to be more than just a question answering mode (information retrieval with fixed output format), which was too limited.
-- chat history
+- chat history and log out
 - TODO incognito mode
 - all files saved to Dropbox and embedded into the chats via URLs
 - wrappers to gracefully handle Dropbox API errors and retry
-- log out
 - shorter greetings to save time and budget
 - bug fix consumption measurement in build_context.R (regulations)
 - bug fix name to url mapping for long documents (regulations, original approach for OSHA)
