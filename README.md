@@ -36,7 +36,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 
 ## Version History
 
-### 08-21-24
+### 08-22-24
 - `gpt-4o-2024-08-06` as the main engine and for the vision microservice
 - regulations: improved scraping and chunking, especially for tables, equations, and long chunks. Also now using an approach with larger chunks in combination with the original small-chunk approach, to better balance precision and recall, and because some documents just cannot afford to be split.
 - regulations: slightly more neighbors and slightly lower similarity threshold, to improve recall
@@ -49,6 +49,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - bug fix consumption measurement in build_context.R (regulations)
 - bug fix name to url mapping for long documents (regulations, original approach for OSHA)
 - more budget for CSV and PDF file uploads in terms of amount of text taken into account before truncation
+- improved off-topic classifer, to remove false alarms
 
 ### 05-12-24
 - support for Canada Occupational Health and Safety Regulations (COHSR) for federally regulated companies
