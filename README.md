@@ -37,7 +37,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 ## Version History
 
 ### 08-22-24
-- `gpt-4o-2024-08-06` as the main engine and for the vision microservice
+- gpt-4o as the main engine and for the vision microservice
 - regulations: improved scraping and chunking, especially for tables, equations, and long chunks. Also now using an approach with larger chunks in combination with the original small-chunk approach, to better balance precision and recall, and because some documents just cannot afford to be split.
 - regulations: slightly more neighbors and slightly lower similarity threshold, to improve recall
 - regulations: new instructions with unconstrained output format, to better suit generation scenarios. This allows the regulation mode to be more than just a question answering mode (information retrieval with fixed output format), which was too limited.
