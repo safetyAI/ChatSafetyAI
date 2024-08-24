@@ -36,6 +36,13 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 
 ## Version History
 
+### Upcoming
+- take conversation into account for adversarial classifier too
+- session termination after some time of inactivity
+- file upload check on session termination
+- incognito mode
+- chat sharing as icons?
+
 ### 08-22-24
 - gpt-4o as the main engine and for the vision microservice
 - regulations: improved scraping and chunking, especially for tables, equations, and long chunks. Also now using an approach with larger chunks in combination with the original small-chunk approach, to better balance precision and recall, and because some documents just cannot afford to be split.
