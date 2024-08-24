@@ -38,6 +38,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 
 ### Upcoming
 - take conversation into account for adversarial classifier too
+- show reason for rejection in off-topic and adversarial classifiers
 - session termination after some time of inactivity
 - file upload check on session termination
 - incognito mode
