@@ -51,7 +51,6 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - regulations: new instructions with unconstrained output format, to better suit generation scenarios. This allows the regulation mode to be more than just a question answering mode (information retrieval with fixed output format), which was too limited.
 - regulations: added OSHA 1910 (general industry)
 - chat history and log out
-- TODO incognito mode
 - all files saved to Dropbox and embedded into the chats via URLs
 - wrappers to gracefully handle Dropbox API errors and retry
 - shorter greetings to save time and budget
