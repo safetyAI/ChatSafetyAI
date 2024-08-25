@@ -37,12 +37,14 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 ## Version History
 
 ### Upcoming
+- incognito mode
+- chat sharing as icons?
+
+### 08-26-24
 - take conversation into account for adversarial classifier too
 - show reason for rejection in off-topic and adversarial classifiers
 - session termination after some time of inactivity
 - file upload check on session termination
-- incognito mode
-- chat sharing as icons?
 
 ### 08-22-24
 - gpt-4o as the main engine and for the vision microservice
