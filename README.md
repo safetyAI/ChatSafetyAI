@@ -39,11 +39,15 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 ### Upcoming
 - incognito mode
 - chat sharing as icons?
+- HECA from photo mode now aware of original query (enabling compound questions)
+
+### 08-30-24
+- saving user data during the session to make onSessionEnded only handle unlocking and cleaning
 
 ### 08-29-24
-- exponential backoff for file deletion (useful for unlocking)
+- exponential backoff for file deletion
 - upload flag if unlocking failed
-- regulation mode now aware of original query (useful for compound questions)
+- regulation mode now aware of original query (enabling compound questions)
 
 ### 08-26-24
 - take conversation into account for adversarial classifier too
