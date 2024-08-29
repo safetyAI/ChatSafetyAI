@@ -40,6 +40,11 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - incognito mode
 - chat sharing as icons?
 
+### 08-29-24
+- exponential backoff for file deletion (useful for unlocking)
+- upload flag if unlocking failed
+- regulation mode now aware of original query (useful for compound questions)
+
 ### 08-26-24
 - take conversation into account for adversarial classifier too
 - show reason for rejection in off-topic and adversarial classifiers
