@@ -43,6 +43,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 
 ### 08-30-24
 - saving user data during the session to make onSessionEnded only handle unlocking and cleaning
+- disabled parallel function calling
 
 ### 08-29-24
 - exponential backoff for file deletion
