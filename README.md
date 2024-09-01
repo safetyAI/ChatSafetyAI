@@ -42,7 +42,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - HECA from photo mode now aware of original query (enabling compound questions)
 
 ### 08-30-24
-- saving user data during the session to make onSessionEnded only handle unlocking and cleaning
+- saving user data after each turn to make onSessionEnded only handle unlocking and cleaning
 - disabled parallel function calling
 
 ### 08-29-24
