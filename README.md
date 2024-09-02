@@ -42,7 +42,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - HECA from photo mode now aware of original query (enabling compound questions)
 
 ### 09-02-24
-- edited function descriptions to reduce false starts on calls
+- edited regulation and prediction's function descriptions to reduce false starts on calls
 
 ### 08-30-24
 - saving user data after each turn to make onSessionEnded only handle unlocking and cleaning
