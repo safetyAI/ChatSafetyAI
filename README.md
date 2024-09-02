@@ -40,6 +40,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - incognito mode
 - chat sharing as icons?
 - HECA from photo mode now aware of original query (enabling compound questions)
+- forbid chat deletion while a response is being generated
 
 ### 09-02-24
 - edited regulation and prediction's function descriptions to reduce false starts on calls
