@@ -42,8 +42,9 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - HECA from photo mode now aware of original query (enabling compound questions)
 - forbid chat deletion while a response is being generated
 
-### 09-02-24
+### 09-03-24
 - edited regulation and prediction's function descriptions to reduce false starts on calls
+- internal hazard listing in addition to description upon image upload, to improve HECA mode
 
 ### 08-30-24
 - saving user data after each turn to make onSessionEnded only handle unlocking and cleaning
