@@ -44,6 +44,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 ### 09-08-24
 - initial hazard identification step before HECA call with minimal instructions, to benefit from unconstrained, unbiased eye. Hazards passed to mode thru conversation history.
 - refined HECA instructions
+- function instructions now reject HECA on photos not depicting job site situations
 - knowledge of acronyms to off-topic classifier
 
 ### 09-03-24
