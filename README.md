@@ -39,11 +39,10 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 ### Upcoming
 - incognito mode
 - chat sharing as icons?
-- HECA from photo mode now aware of original query (enabling compound questions)
 - forbid chat deletion while a response is being generated
 
 ### 09-08-24
-- initial hazard identification step before HECA call with minimal instructions, to benefit from unconstrained, unbiased eye
+- initial hazard identification step before HECA call with minimal instructions, to benefit from unconstrained, unbiased eye. Hazards passed to mode thru conversation history.
 - refined HECA instructions
 - knowledge of acronyms to off-topic classifier
 
