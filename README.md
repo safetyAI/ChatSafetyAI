@@ -39,13 +39,13 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 ### Upcoming
 - incognito mode
 - chat sharing as icons?
-- forbid chat deletion while a response is being generated
 
 ### 09-10-24
 - initial hazard identification step before HECA call with minimal instructions, to benefit from unconstrained, unbiased eye. Hazards passed to mode thru conversation history.
 - refined HECA instructions
 - function instructions now reject HECA for photos not depicting job site situations
 - knowledge of acronyms to off-topic classifier and better instructions
+- no green light for chat deletion while a response is being generated
 
 ### 09-03-24
 - edited regulation and prediction's function descriptions to reduce false starts on calls
