@@ -26,8 +26,8 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
   <tr> <td align="right"> Conversation History </td> <td> 20k words, 5 turns </td> <td> 100k words, 10 turns </td> </tr>
   <tr> <td align="right"> Max Chats per Session </td> <td> 4 </td> <td> Unlimited </td> </tr>
   <tr> <td align="right"> PDF/CSV/Photo Upload </td> <td> Max 4 pages, 3 MB per file </td> <td> Max 120 pages, 10 MB per file </td> </tr>
-  <tr> <td align="right"> Budget per Session </td> <td> 150k words </td> <td> 18800k words </td> </tr>
-  <tr> <td align="right"> Budget per User </td> <td> 0.8M words </td> <td> Unlimited (company budget cap) </td> </tr>
+  <tr> <td align="right"> Budget per Session </td> <td> 150k words </td> <td> Unlimited (within company budget) </td> </tr>
+  <tr> <td align="right"> Budget per User </td> <td> 0.8M words </td> <td> Unlimited (within company budget) </td> </tr>
   <tr> <td align="right"> Custom Databases </td> <td> No </td> <td> Yes </td> </tr>
   <tr> <td align="right"> Custom Predictive Models </td> <td> No </td> <td> Yes </td> </tr>
   <tr> <td align="right"> Custom Risk Analysis </td> <td> No </td> <td> Yes </td> </tr>
