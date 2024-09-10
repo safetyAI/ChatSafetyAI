@@ -19,19 +19,19 @@ Contact us for membership pricing (see contact info at the bottom of this page, 
 Note: we do not currently offer plans for individuals, SafetyAI membership is for companies only.
 
 <!-- html table generated in R 4.3.2 by xtable 1.8-4 package -->
-<!-- Fri May 10 17:51:45 2024 -->
+<!-- Tue Sep 10 11:07:27 2024 -->
 <table border=1>
-<tr> <th>  </th> <th> Demo </th> <th> SafetyAI Board </th>  </tr>
-  <tr> <td align="right"> Engine </td> <td> GPT-4 </td> <td> GPT-4 </td> </tr>
+<tr> <th>  </th> <th> Demo </th> <th> SafetyAI Council </th>  </tr>
+  <tr> <td align="right"> Engine </td> <td> GPT-4o </td> <td> GPT-4o </td> </tr>
   <tr> <td align="right"> Conversation History </td> <td> 20k words, 5 turns </td> <td> 100k words, 10 turns </td> </tr>
-  <tr> <td align="right"> Max Chats per Session </td> <td> 4 </td> <td> 12 </td> </tr>
-  <tr> <td align="right"> PDF/CSV/Photo Upload </td> <td> max 4 pages, 3 MB per file </td> <td> max 75 pages, 10 MB per file </td> </tr>
-  <tr> <td align="right"> Budget per Session </td> <td> 150k words </td> <td> unlimited </td> </tr>
-  <tr> <td align="right"> Budget per User </td> <td> 0.8M words </td> <td> custom, min 20M words </td> </tr>
+  <tr> <td align="right"> Max Chats per Session </td> <td> 4 </td> <td> Unlimited </td> </tr>
+  <tr> <td align="right"> PDF/CSV/Photo Upload </td> <td> max 4 pages, 3 MB per file </td> <td> max 120 pages, 10 MB per file </td> </tr>
+  <tr> <td align="right"> Budget per Session </td> <td> 150k words </td> <td> 18800k words </td> </tr>
+  <tr> <td align="right"> Budget per User </td> <td> 0.8M words </td> <td> Unlimited (company budget cap) </td> </tr>
   <tr> <td align="right"> Custom Databases </td> <td> No </td> <td> Yes </td> </tr>
   <tr> <td align="right"> Custom Predictive Models </td> <td> No </td> <td> Yes </td> </tr>
   <tr> <td align="right"> Custom Risk Analysis </td> <td> No </td> <td> Yes </td> </tr>
-  <tr> <td align="right"> Chat History </td> <td> No </td> <td> Yes </td> </tr>
+  <tr> <td align="right"> Chat History </td> <td> Yes </td> <td> Yes </td> </tr>
    </table>
 
 ## Version History
@@ -41,11 +41,11 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - chat sharing as icons?
 - forbid chat deletion while a response is being generated
 
-### 09-08-24
+### 09-10-24
 - initial hazard identification step before HECA call with minimal instructions, to benefit from unconstrained, unbiased eye. Hazards passed to mode thru conversation history.
 - refined HECA instructions
-- function instructions now reject HECA on photos not depicting job site situations
-- knowledge of acronyms to off-topic classifier
+- function instructions now reject HECA for photos not depicting job site situations
+- knowledge of acronyms to off-topic classifier and better instructions
 
 ### 09-03-24
 - edited regulation and prediction's function descriptions to reduce false starts on calls
