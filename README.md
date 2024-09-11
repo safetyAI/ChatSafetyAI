@@ -80,7 +80,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - bug fix consumption measurement in build_context.R (regulations)
 - bug fix name to url mapping for long documents (regulations, original approach for OSHA)
 - more budget for CSV and PDF file uploads in terms of amount of text taken into account before truncation
-- improved off-topic classifer, to reduce false alarms
+- improved off-topic and adversarial classifers, to reduce false alarms on both text queries and file uploads
 
 ### 05-12-24
 - support for Canada Occupational Health and Safety Regulations (COHSR) for federally regulated companies
