@@ -39,6 +39,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 ### Upcoming
 - incognito mode
 - chat sharing as icons?
+- image passed to every call
 
 ### 09-10-24
 - initial hazard identification step before HECA call with minimal instructions, to benefit from unconstrained, unbiased eye. Hazards passed to mode thru conversation history.
