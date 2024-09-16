@@ -1,5 +1,7 @@
 # ChatSafetyAI
 
+Help us improve ChatSafetyAI by taking this [quick survey](https://forms.gle/E6sK87u7DdoL4Kg86) !
+
 ## About
 - ChatSafetyAI is built with care by [SafetyAI](https://www.safetyfunction.com/safetyai-details) 🛠️❤️.
 - ChatSafetyAI relies on the [OpenAI API](https://platform.openai.com/docs/api-reference/introduction).
