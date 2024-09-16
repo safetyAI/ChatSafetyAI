@@ -41,6 +41,11 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - chat sharing as icons?
 - image passed to every call
 
+### 09-16-24
+- fixed vertical space avatar badge mobile
+- fixed budget bars in avatar modal (demo)
+- added link to survey in avatar modal
+
 ### 09-10-24
 - initial hazard identification step before HECA call with minimal instructions, to benefit from unconstrained, unbiased eye. Hazards passed to mode thru conversation history.
 - refined HECA instructions
