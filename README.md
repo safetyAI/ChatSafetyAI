@@ -42,6 +42,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - incognito mode
 - chat sharing as icons?
 - image passed to every call
+- search engine for chats?
 
 ### 09-16-24
 - fixed vertical space avatar badge mobile
