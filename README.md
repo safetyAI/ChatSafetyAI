@@ -44,6 +44,10 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - image passed to every call
 - search engine for chats?
 
+### 10-18-24
+- C3 and D3 JS libraries now local (attempt to fix MIME type issues for Atkins)
+- favicon attempt (turns out it works locally but not on shinyapps.io)
+
 ### 09-16-24
 - fixed vertical space avatar badge mobile
 - fixed budget bars in avatar modal (demo)
