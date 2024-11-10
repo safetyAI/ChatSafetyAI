@@ -38,12 +38,16 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 
 ## Version History
 
-### Upcoming
+### Wishlist
 - incognito mode
-- chat sharing as icons?
+- chat sharing as individual icons
 - image passed to every call
-- search engine for chats?
+- search engine for chats
 
+### 11-10-24
+- Image and text anonymization: Face and logo blurred in photos; names of people, places, and organizations redacted in text.
+- LLM switch for vision things, to fix the "Sorry, I can't help with this request" issue with GPT.
+  
 ### 10-18-24
 - C3 and D3 JS libraries now local (attempt to fix MIME type issues for Atkins)
 - favicon attempt (turns out it works locally but not on shinyapps.io)
