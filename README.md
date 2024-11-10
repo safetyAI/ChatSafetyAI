@@ -45,7 +45,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - search engine for chats
 
 ### 11-10-24
-- Image and text anonymization: Face and logo blurred in photos; names of people, places, and organizations redacted in text.
+- Image and text anonymization: Face and logo blurred in photos; names of people, places, and organizations redacted in text (optional, TRUE by default).
 - LLM switch for vision things, to fix the "Sorry, I can't help with this request" issue with GPT.
   
 ### 10-18-24
