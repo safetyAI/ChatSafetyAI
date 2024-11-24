@@ -44,6 +44,10 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - image passed to every call
 - search engine for chats
 
+### 11-24-24
+- Support for new file types: DOCX, XLSX, PPTX (MS Word, Excel, and PowerPoint files)
+- Removed dependency on `rdrop2` for communication with the database
+
 ### 11-10-24
 - Image and text anonymization: Face and logo blurred in photos; names of people, places, and organizations redacted in text (optional, TRUE by default).
 - LLM switch for vision things, to fix the "Sorry, I can't help with this request" issue with GPT.
