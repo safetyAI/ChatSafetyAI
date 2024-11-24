@@ -43,6 +43,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - chat sharing as individual icons
 - image passed to every call
 - search engine for chats
+- input multiple files at once
 
 ### 11-24-24
 - Support for new file types: DOCX, XLSX, PPTX (MS Word, Excel, and PowerPoint files)
