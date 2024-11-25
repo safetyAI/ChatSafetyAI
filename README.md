@@ -39,7 +39,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 ## Version History
 
 ### Next steps / wish list
-- explore Gemini for reasoning on very long documents (1M-token context and more)
+- explore Gemini for reasoning on very long documents (2M-token context)
 - incognito mode
 - chat sharing as individual icons
 - image passed to every call
