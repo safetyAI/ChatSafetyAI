@@ -46,9 +46,10 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - search engine for chats
 - input multiple files at once
 
-### 11-24-24
+### 11-30-24
 - Support for new file types: DOCX, XLSX, PPTX (MS Word, Excel, and PowerPoint files)
 - Removed dependency on `rdrop2` for communication with the database
+- Better wrapping of file content to avoid any confusion with user query, clarified that SCL has nothing to do with safety climate in function description and general instructions (to address TCE bug report)
 
 ### 11-10-24
 - Image and text anonymization: Face and logo blurred in photos; names of people, places, and organizations redacted in text (optional, TRUE by default).
