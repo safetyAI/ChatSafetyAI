@@ -46,7 +46,8 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - search engine for chats
 - input multiple files at once
 
-### 11-30-24
+### 12-04-24
+- Better description of the SCL model and criteria for high-energy
 - Support for new file types: DOCX, XLSX, PPTX (MS Word, Excel, and PowerPoint files)
 - Removed dependency on `rdrop2` for communication with the database
 - Better wrapping of file content to avoid any confusion with user query, clarified that SCL has nothing to do with safety climate in function description and general instructions (to address TCE bug report)
