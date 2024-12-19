@@ -47,8 +47,8 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - input multiple files at once
 
 ### 12-19-24
-- fix issue parsing XLSX files
-- made PPTX and DOCX parsing functions more robust
+- fixed bug in XLSX file scraping function
+- made PPTX and DOCX file scraping functions more robust
 
 ### 12-04-24
 - Better description of the SCL model and criteria for high-energy
