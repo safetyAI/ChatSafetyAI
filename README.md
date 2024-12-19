@@ -46,6 +46,10 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - search engine for chats
 - input multiple files at once
 
+### 12-19-24
+- fix issue parsing XLSX files
+- made PPTX and DOCX parsing functions more robust
+
 ### 12-04-24
 - Better description of the SCL model and criteria for high-energy
 - Support for new file types: DOCX, XLSX, PPTX (MS Word, Excel, and PowerPoint files)
