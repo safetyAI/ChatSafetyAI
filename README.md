@@ -46,7 +46,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - search engine for chats
 - input multiple files at once
 
-### 02-02-25
+### 03-03-25
 - support for deployment relying 100% on Azure services
 - better handling of unknown language in mode instructions ("cannot tell") to avoid "sorry, I can't help" responses
 - pagination in Dropbox file listing function to support directories containing many files
