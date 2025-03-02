@@ -51,6 +51,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - better handling of unknown language in mode instructions ("cannot tell") to avoid "sorry, I can't help" responses
 - pagination in Dropbox file listing function to support directories containing many files
 - generated PDFs and presentations now have a unique ID and contain the chat index, so can be deleted w/ the conv
+- sensitive info now passed as environment variables
 
 ### 12-19-24
 - fixed bug in XLSX file scraping function
