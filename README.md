@@ -51,7 +51,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - better handling of unknown language in mode instructions ("cannot tell") to avoid "sorry, I can't help" responses
 - pagination in Dropbox file listing function to support directories containing many files
 - generated PDFs and presentations now have a unique ID and contain the chat index, so can be deleted w/ the conv
-- sensitive info now passed as environment variables
+- sensitive info, and local/demo, now passed as environment variables
 - greater budgets for demo users
 
 ### 12-19-24
