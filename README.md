@@ -276,7 +276,7 @@ Bug reports, questions: `antoine DOT tixier AT safetyfunction .com`
 These Terms of Use apply to your use of ChatSafetyAI, along with any associated models, APIs, software applications and websites (all together, "Services"). These Terms form an agreement between you and the Colorado Construction Safety Laboratory, LLC, a Colorado company, and they include our Service Terms and important provisions for resolving disputes through arbitration. By using our Services, you agree to these Terms.
 
 ### Who We Are
-ChatSafetyAI is developed by SafetyAI, an entity within Safety Function, d/b/a the Colorado Construction Safety Laboratory, LLC.
+ChatSafetyAI is developed by SafetyAI, Inc.
 Our mission is to do R&D that improves safety in the construction industry.
 
 ### Using Our Services
