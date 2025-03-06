@@ -46,6 +46,10 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - search engine for chats
 - input multiple files at once
 
+### 03-07-25
+- azure support for metadata, and new metada (mode counters)
+- fixed unwanted line breaks in regulation mode output
+
 ### 03-03-25
 - support for deployment relying 100% on Azure services
 - better handling of unknown language in mode instructions ("cannot tell") to avoid "sorry, I can't help" responses
