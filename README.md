@@ -46,6 +46,10 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - search engine for chats
 - input multiple files at once
 
+### 03-16-25
+- bug fix introductory text attribute detection
+- fixed Azure paths
+
 ### 03-07-25
 - azure support for metadata, and new metada (mode counters)
 - fixed unwanted line breaks in regulation mode output
