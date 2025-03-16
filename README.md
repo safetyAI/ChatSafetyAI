@@ -49,6 +49,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 ### 03-16-25
 - bug fix introductory text attribute detection
 - fixed Azure paths
+- favicon
 
 ### 03-07-25
 - azure support for metadata, and new metada (mode counters)
