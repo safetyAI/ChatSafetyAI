@@ -46,6 +46,9 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - search engine for chats
 - input multiple files at once
 
+### 04-04-25
+- logs to debug scaling and load balancing on Azure
+
 ### 03-16-25
 - bug fix introductory text attribute detection
 - fixed Azure paths
