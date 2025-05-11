@@ -46,7 +46,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - input multiple files at once
 
 ### 05-11-25
-- Invisible handling of automatic scroll-down (like in ChatGPT)
+- Invisible handling of automatic scroll-down
 - Allowing drag and drop in full conversation container
 
 ### 05-08-25
