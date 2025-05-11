@@ -45,6 +45,10 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - search engine for chats
 - input multiple files at once
 
+### 05-11-25
+- Invisible handling of automatic scroll-down (like in ChatGPT)
+- Allowing drag and drop in full conversation container
+
 ### 05-08-25
 - Using GPT-4.1
 - Increased context size, number of turns, and file size before truncation
