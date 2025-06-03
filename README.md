@@ -45,9 +45,13 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - search engine for chats
 - input multiple files at once
 
+### 06-03-25
+- Graham's internal documentation (SOPs, guidelines, standards)
+- NYC's TBTA agency regulations
+
 ### 05-11-25
 - Invisible handling of automatic scroll-down
-- Allowing drag and drop in full conversation container
+- Allowing file drag and drop in full conversation container
 
 ### 05-08-25
 - Using GPT-4.1
