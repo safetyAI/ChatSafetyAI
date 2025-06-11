@@ -45,9 +45,10 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - search engine for chats
 - input multiple files at once
 
-### 06-10-25
+### 06-11-25
 - Graham's internal documentation (SOPs, guidelines, standards)
 - NYC's TBTA agency regulations
+- Support for Azure OpenAI in SaaS (faster), tested but not yet activated
 
 ### 05-11-25
 - Invisible handling of automatic scroll-down
