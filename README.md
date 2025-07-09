@@ -45,6 +45,9 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - search engine for chats
 - input multiple files at once
 
+### 07-08-25
+- bug fix pillow's image save when 4 channels
+
 ### 06-11-25
 - Graham's internal documentation (SOPs, guidelines, standards)
 - NYC's TBTA agency regulations
