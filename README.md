@@ -7,7 +7,7 @@ Help us improve ChatSafetyAI by taking this [quick survey](https://forms.gle/E6s
 - ChatSafetyAI relies on the [OpenAI API](https://platform.openai.com/docs/api-reference/introduction).
 - OpenAI [does not](https://platform.openai.com/docs/models/how-we-use-your-data) use the conversations for training their models, and does not store the conversations permanently.
 - We at SafetyAI record conversations for continuous improvement purposes. Conversations are inspected at random. Only one person has access.
-- Screencast demos (not necessarily up-to-date) can be found on our [website](https://www.safetyfunction.com/safetyai-details).
+- Screencast demos (not necessarily up-to-date) can be found on our [website](https://www.safetyai.io).
 
 Table of Contents
 - [Usage Tiers](https://github.com/safetyAI/ChatSafetyAI/blob/main/README.md#usage-tiers)
@@ -17,7 +17,7 @@ Table of Contents
 
 ## Usage Tiers
 There is a free [demo](https://safetyapp.shinyapps.io/chatsafetyai_demo_access_request/) with a limited budget, just for quick testing purposes.<br>
-Contact us for membership pricing (see contact info at the bottom of this page, or on our [website](https://www.safetyfunction.com/safetyai-details)).<br>
+Contact us for membership pricing (see contact info at the bottom of this page, or on our [website](https://www.safetyai.io)).<br>
 Note: we do not currently offer plans for individuals, SafetyAI membership is for companies only.
 
 <!-- html table generated in R 4.3.2 by xtable 1.8-4 package -->
@@ -297,10 +297,10 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - initial release
 
 ## Contact
-Bug reports, questions: `antoine DOT tixier AT safetyfunction .com`
+Bug reports, questions: `antoine DOT tixier AT safetyai .com`
 
 ## Terms of Use
-These Terms of Use apply to your use of ChatSafetyAI, along with any associated models, APIs, software applications and websites (all together, "Services"). These Terms form an agreement between you and the Colorado Construction Safety Laboratory, LLC, a Colorado company, and they include our Service Terms and important provisions for resolving disputes through arbitration. By using our Services, you agree to these Terms.
+These Terms of Use apply to your use of ChatSafetyAI, along with any associated models, APIs, software applications and websites (all together, "Services"). These Terms form an agreement between you and SafetyAI, Inc., a Colorado company, and they include our Service Terms and important provisions for resolving disputes through arbitration. By using our Services, you agree to these Terms.
 
 ### Who We Are
 ChatSafetyAI is developed by SafetyAI, Inc.
@@ -316,7 +316,7 @@ Our mission is to do R&D that improves safety in the construction industry.
 - Automatically or programmatically extract data or Output (defined below).
 - Represent that Output was human-generated when it was not.
 - Interfere with or disrupt our Services, including circumvent any rate limits or restrictions or bypass any protective measures or safety mitigations we put on our Services.
-- Use Output to develop models that compete with the Colorado Construction Safety Laboratory, LLC.
+- Use Output to develop models that compete with SafetyAI, Inc.
 
 **Feedback.** We appreciate your feedback, and you agree that we may use it without restriction or compensation to you.
 
@@ -327,7 +327,7 @@ Our mission is to do R&D that improves safety in the construction industry.
 
 **Our Use of Content.** We may use Content to provide, maintain, develop, and improve our Services, comply with applicable law, enforce our terms and policies, and keep our Services safe.
 
-**Opt Out.** If you do not want us to use your Content to provide, maintain, develop, and improve our Services, you can opt out by emailing `antoine.tixier AT safetyfunction DOT com`. Please note that this may limit the ability of our Services to better address your specific use cases.
+**Opt Out.** If you do not want us to use your Content to provide, maintain, develop, and improve our Services, you can opt out by emailing `antoine.tixier AT safetyai DOT com`. Please note that this may limit the ability of our Services to better address your specific use cases.
 
 **Accuracy.** ChatSafetyAI relies on the GPT family of Large Language Models (LLMs) via the OpenAI API. GPTs, like other LLMs, can make mistakes in some situations. Therefore, use of our Services may, in some situations, result in Output that is not factually correct.
 
@@ -336,7 +336,7 @@ When you use our Services you understand and agree:
 - Output may not always be accurate. You should not rely on Output from our Services as a sole source of truth or factual information, or as a substitute for professional advice.
 - You must evaluate Output for accuracy and appropriateness for your use case, including using human review as appropriate, before using or sharing Output from the Services.
 - You must not use any Output relating to a person for any purpose that could have a legal or material impact on that person, such as making credit, educational, employment, housing, insurance, legal, medical, or other important decisions about them. 
-- Our Services may provide incomplete, incorrect, or offensive Output that does not represent the Colorado Construction Safety Laboratory's views. If Output references any third party products or services, it doesn't mean the third party endorses or is affiliated with the Colorado Construction Safety Laboratory.
+- Our Services may provide incomplete, incorrect, or offensive Output that does not represent SafetyAI's views. If Output references any third party products or services, it doesn't mean the third party endorses or is affiliated with SafetyAI, Inc.
 
 ### Confidentiality
 **Use and Nondisclosure.** "Confidential Information" means any business, technical or financial information, materials, or other subject matter disclosed by one party ("Discloser") to the other party ("Recipient") that is identified as confidential at the time of disclosure or should be reasonably understood by Recipient to be confidential under the circumstances. For the avoidance of doubt, Confidential Information includes Customer Content. Recipient agrees it will: (a) only use Discloser's Confidential Information to exercise its rights and fulfill its obligations under this Agreement, (b) take reasonable measures to protect the Confidential Information, and (c) not disclose the Confidential Information to any third party except as expressly permitted in this Agreement.
@@ -344,13 +344,13 @@ When you use our Services you understand and agree:
 **Exceptions.** These obligations do not apply to any information that (a) is or becomes generally available to the public through no fault of Recipient, (b) was in Recipient’s possession or known by it prior to receipt from Discloser, (c) was rightfully disclosed to Recipient without restriction by a third party, or (d) was independently developed without use of Discloser’s Confidential Information. Recipient may disclose Confidential Information only to its employees, contractors, and agents who have a need to know and who are bound by confidentiality obligations at least as restrictive as those of this Agreement. Recipient will be responsible for any breach of this section by its employees, contractors, and agents. Recipient may disclose Confidential Information to the extent required by law, provided that Recipient uses reasonable efforts to notify Discloser in advance.
 
 ### Privacy
-We at the Colorado Construction Safety Laboratory, LLC ('we', 'our' or 'us') respect your privacy and are strongly committed to keeping secure any information we obtain from you or about you. This Privacy Policy describes our practices with respect to Personal Information we receive from or about you when you use our Services.
+We, at SafetyAI, Inc. ('we', 'our' or 'us') respect your privacy and are strongly committed to keeping secure any information we obtain from you or about you. This Privacy Policy describes our practices with respect to Personal Information we receive from or about you when you use our Services.
 
 **Personal Information You Provide:** We receive Personal Information if you create an account to use our Services or communicate with us as follows:
 - email address.
 
 **Personal Information We Receive Automatically From Your Use of the Services:** When you use the Services, we receive the following information:
-- *User Content:* the date and time of each conversation, as well as the conversation content. This is necessary to allow saving and reloading the chat history from session to session. We use Dropbox as our main data storage solution, Google Drive for hosting the automatically generated PPT files (presentation mode...) and PDF files (prejob brief summarization, chat sharing...), and Amazon EC2 for some data storage and to host the microservices of ours that ChatSafetyAI calls (regulations, predictions, etc.). ChatSafetyAI is deployed on Posit's shinyapps.io but data is only saved there temporarily, for the duration of the session. We record and analyze conversations for sole continuous improvement purposes. If you do not want us to use your conversations for improvement of our Services, or if you do not want your conversations to be saved at all (no chat history from session to session), you may opt out by emailing `antoine.tixier AT safetyfunction DOT com`. Please note that this may limit the ability of our Services to better address your specific use cases.
+- *User Content:* the date and time of each conversation, as well as the conversation content. This is necessary to allow saving and reloading the chat history from session to session. We use Dropbox as our main data storage solution, Google Drive for hosting the automatically generated PPT files (presentation mode...) and PDF files (prejob brief summarization, chat sharing...), and Amazon EC2 for some data storage and to host the microservices of ours that ChatSafetyAI calls (regulations, predictions, etc.). ChatSafetyAI is deployed on Posit's shinyapps.io but data is only saved there temporarily, for the duration of the session. We record and analyze conversations for sole continuous improvement purposes. If you do not want us to use your conversations for improvement of our Services, or if you do not want your conversations to be saved at all (no chat history from session to session), you may opt out by emailing `antoine.tixier AT safetyai DOT com`. Please note that this may limit the ability of our Services to better address your specific use cases.
 - *OpenAI API:* To function, ChatSafetyAI relies on the OpenAI API's Chat and Embeddings endpoints. OpenAI [does not](https://platform.openai.com/docs/models/how-we-use-your-data) use the data passed to their API for training their models, and only temporarily saves the data (for 30 days) for moderation purposes, after which it is permanently deleted.
 - *Content Disclosure:* we **do not** share or sell your content with/to anyone. We record and analyze your conversations for the sole purpose of improving our models, if you have not opted out.
 - *IP address, device and browser information, logs, and other analytics:* we **do not** record such information. We may ask for your location (latitude and longitude) for the sole purpose of knowing your local weather, in order for our incident characteristics predictive models to generate more accurate predictions.
@@ -396,9 +396,9 @@ USER ACKNOWLEDGES THAT THE FEES APPLICABLE FOR THE SERVICES REFLECT THE ALLOCATI
 To the extent permitted by law, you will indemnify and hold harmless us and our personnel, from and against any costs, losses, liabilities, and expenses (including attorneys' fees) from third party claims arising out of or relating to your use of the Services and Content or any violation of these Terms.
 
 ### Dispute Resolution
-YOU AND THE COLORADO CONSTRUCTION SAFETY LABORATORY AGREE TO THE FOLLOWING MANDATORY ARBITRATION AND CLASS ACTION WAIVER PROVISIONS:
+YOU AND SAFETYAI, INC. AGREE TO THE FOLLOWING MANDATORY ARBITRATION AND CLASS ACTION WAIVER PROVISIONS:
 
-**MANDATORY ARBITRATION.** You and The Colorado Construction Safety Laboratory agree to resolve any claims arising out of or relating to these Terms or our Services, regardless of when the claim arose, even if it was before these Terms existed (a "Dispute"), through final and binding arbitration.
+**MANDATORY ARBITRATION.** You and SafetyAI, Inc. agree to resolve any claims arising out of or relating to these Terms or our Services, regardless of when the claim arose, even if it was before these Terms existed (a "Dispute"), through final and binding arbitration.
 
 **Informal Dispute Resolution.** We would like to understand and try to address your concerns prior to formal legal action. Before either of us files a claim against the other, we both agree to try to resolve the Dispute informally. If we are unable to resolve a Dispute within 60 days, either of us has the right to initiate arbitration.
 
@@ -420,6 +420,6 @@ YOU AND THE COLORADO CONSTRUCTION SAFETY LABORATORY AGREE TO THE FOLLOWING MANDA
 
 **Trade Controls.** You must comply with all applicable trade laws, including sanctions and export control laws. Our Services may not be used in or for the benefit of, or exported or re-exported to (a) any U.S. embargoed country or territory or (b) any individual or entity with whom dealings are prohibited or restricted under applicable trade laws. Our Services may not be used for any end use prohibited by applicable trade laws, and your Input may not include material or information that requires a government license for release or export. 
 
-**Entire Agreement.** These Terms contain the entire agreement between you and the Colorado Construction Safety Laboratory regarding the Services and, other than any Service-specific terms, supersedes any prior or contemporaneous agreements between you and the Colorado Construction Safety Laboratory. 
+**Entire Agreement.** These Terms contain the entire agreement between you and SafetyAI, Inc. regarding the Services and, other than any Service-specific terms, supersedes any prior or contemporaneous agreements between you and SafetyAI, Inc. 
 
 **Governing Law.** Colorado law will govern these Terms except for its conflicts of laws principles. Except as provided in the dispute resolution section above, all claims arising out of or relating to these Terms will be brought exclusively in the federal or state courts of Boulder or Denver, Colorado.
