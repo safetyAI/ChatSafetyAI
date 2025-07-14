@@ -46,7 +46,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - input multiple files at once
 
 ### 07-14-25
-- news ENV VARs, CHECK_LOCK_FILE and MAX_INACTIVE_TIME
+- new ENV VARs, CHECK_LOCK_FILE and MAX_INACTIVE_TIME
 
 ### 07-08-25
 - bug fix pillow's image save when 4 channels
