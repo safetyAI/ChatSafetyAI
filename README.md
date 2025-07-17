@@ -46,7 +46,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - input multiple files at once
 
 ### 07-16-25
-- full support of managed identities, greeting user by first name
+- full support of managed identities
 
 ### 07-14-25
 - new ENV VARs, CHECK_LOCK_FILE and MAX_INACTIVE_TIME
