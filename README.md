@@ -46,6 +46,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - input multiple files at once
 - voice input and output
 - generate PDF out of anything
+- rating (thumbs up/down) each conversation or response
 
 ### 07-16-25
 - full support of managed identities
