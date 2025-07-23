@@ -47,6 +47,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - voice input and output
 - generate PDF out of anything
 - rating (thumbs up/down) each conversation or response
+- support for Hindi, Portuguese, Arabic
 
 ### 07-16-25
 - full support of managed identities
