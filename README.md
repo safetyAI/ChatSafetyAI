@@ -38,7 +38,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 
 ## Version History
 
-### Next steps / wish list (non-exhaustive)
+### Next steps / wish list (not in order, non-exhaustive)
 - incognito mode
 - chat sharing as individual icons
 - image passed to every call
@@ -50,7 +50,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - support for Hindi, Portuguese, Arabic
 
 ### 07-16-25
-- full support of managed identities
+- managed identities
 
 ### 07-14-25
 - new ENV VARs, CHECK_LOCK_FILE and MAX_INACTIVE_TIME
