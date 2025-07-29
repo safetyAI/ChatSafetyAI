@@ -177,6 +177,18 @@ az containerapp update \
 
 # b. ChatSafetyAI
 
+# NOTES (no action needed, just for your knowledge):
+
+# - UTILITIES_ADDRESS, PREDICTIONS_ADDRESS, and NLP_ADDRESS can be found in the respective overview pages of the apps in the Azure Portal ("Application Url") - they must end with a "/"
+
+# - AZURE_OPENAI_ADDRESS_GPT4 and AZURE_OPENAI_ADDRESS_GPT35 can be found the "Endpoint" area in the Azure AI Foundry page of the corresponding deployment
+
+# - AZURE_MODERATION_ADDRESS, AZURE_VISION_ADDRESS, and AZURE_LANGUAGE_ADDRESS can be found in the "Keys and Endpoint" tab of the Azure AI Foundry service, under the "AI Services" subtab at the bottom of the page. "/contentsafety/text:analyze?api-version=2024-09-01" should be appended to AZURE_MODERATION_ADDRESS.
+
+# - The default container allocation of 0.5 CPU and 1G of RAM (container = replica here) allows max 2 users per replica, since one ChatSafetyAI session consumes approx 400MB of RAM. The default consumption-based workload profile has a hard limit of 4 CPUs and 8 GBs of RAM, so it allows 4/0.5 = 8 replicas to be started, CPU being the limiting factor here (hence the --max-replicas 8 below). This setup supports up to 8 × 2 = 16 concurrent users. If more is needed, switch to a general-purpose workload profile: https://learn.microsoft.com/en-us/azure/container-apps/workload-profiles-overview
+
+# - Enable session affinity in the app's page on the Azure Portal, under Ingress.
+
 az containerapp update \
   --name csai-mre-chatbot \
   --resource-group $RESOURCE_GROUP \
