@@ -1,4 +1,4 @@
-## USER VARIABLES
+### USER VARIABLES
 #### Edit these values for your environment
 
 ```
@@ -77,28 +77,28 @@ az cognitiveservices account create \
   --yes
 ```
 
-##### In Azure Portal:
-##### a) Click "Generate Custom Domain name" to be able to use managed identities. Use the resource name (here, `$AISERVICES_NAME`), as the custom domain name.
+In Azure Portal:
+- a) Click "Generate Custom Domain name" to be able to use managed identities. Use the resource name (here, `$AISERVICES_NAME`), as the custom domain name.
 
-##### b) Click "go to Azure AI Foundry portal", and on the "Models + endpoints" tab, deploy the following base models:
-- gpt-4.1-2025-04-14
-- gpt-4.1-mini-2025-04-14
-- text-embedding-3-large
+- b) Click "go to Azure AI Foundry portal", and on the "Models + endpoints" tab, deploy the following base models:
+  - gpt-4.1-2025-04-14
+  - gpt-4.1-mini-2025-04-14
+  - text-embedding-3-large
+  - NOTE: in "Customize":
+    - Opt out of automatic model version upgrades !!!
+    - Check quotas! If less than 1k requests per minute (RPM) and 1M tokens per minute (TPM), request increase here: https://aka.ms/oai/quotaincrease
 
-##### NOTE: in "Customize":
-- Opt out of automatic model version upgrades !!!
-- Check quotas! If less than 1k requests per minute (RPM) and 1M tokens per minute (TPM), request increase here: https://aka.ms/oai/quotaincrease
+- c) In "Guardrails + controls", create a new content filter with all thresholds set to minimum, and jailbreak and indirect attacks set to "annotate only". Do that for input and output, and apply filter to all deployments.
 
-##### c) In "Guardrails + controls", create a new content filter with all thresholds set to minimum, and jailbreak and indirect attacks set to "annotate only". Do that for input and output, and apply filter to all deployments.
+## SafetyAI-Managed Services
 
-#### SafetyAI-Managed Services
-
-# 5) Upload Docker images to container registry
-
+#### 5) Upload Docker images to container registry
+```
 sudo docker login $ACR_NAME.azurecr.io
+```
+Enter credentials (found in the Azure Portal page of the container registry, under "Access keys").
 
-# enter credentials (found in the Azure Portal page of the container registry, under "Access keys")
-
+```
 for image in \
   chatsafetyai \
   dashboard \
@@ -109,20 +109,25 @@ do
   sudo docker tag $image $ACR_NAME.azurecr.io/$image:latest
   sudo docker push $ACR_NAME.azurecr.io/$image:latest
 done
+```
 
-# 6) Create Azure Container Apps environment
+#### 6) Create Azure Container Apps environment
 
+```
 az extension add --name containerapp
-
 az provider register -n Microsoft.OperationalInsights --wait
+```
 
-# a. Create Log Analytics workspace
+##### a. Create Log Analytics workspace
+```
 az monitor log-analytics workspace create \
   --resource-group $RESOURCE_GROUP \
   --workspace-name $LOG_WORKSPACE \
   --location $LOCATION
+```
 
-# b. Get workspace ID and key
+##### b. Get workspace ID and key
+```
 WORKSPACE_ID=$(az monitor log-analytics workspace show \
   --resource-group $RESOURCE_GROUP \
   --workspace-name $LOG_WORKSPACE \
@@ -134,8 +139,10 @@ WORKSPACE_KEY=$(az monitor log-analytics workspace get-shared-keys \
   --workspace-name $LOG_WORKSPACE \
   --query primarySharedKey \
   --output tsv)
+```
 
-# c. Create Container Apps environment with system-assigned identity and logging
+##### c. Create Container Apps environment with system-assigned identity and logging
+```
 az containerapp env create \
   --name $CONTAINERAPPS_ENV \
   --resource-group $RESOURCE_GROUP \
@@ -143,10 +150,11 @@ az containerapp env create \
   --mi-system-assigned \
   --logs-workspace-id $WORKSPACE_ID \
   --logs-workspace-key $WORKSPACE_KEY
+```
 
+#### 7) Create services
 
-# 7) Create services
-
+```
 for app in \
   "csai-mre-prediction $ACR_NAME.azurecr.io/safetyai_prediction:latest 4387" \
   "csai-mre-attribute-detection $ACR_NAME.azurecr.io/safetyai_attribute_detection:latest 4388" \
@@ -167,14 +175,15 @@ do
     --min-replicas 1 \
     --system-assigned
 done
+```
 
+#### 8) Set arguments and environment variables needed by each service
 
-# 8) Set arguments and environment variables needed by each service
+NOTE: AZURE_STORAGE_ACCOUNT_KEY should be copied from the "Access keys" tab of the Storage account's page in Azure Portal
 
-# NOTE: AZURE_STORAGE_ACCOUNT_KEY should be copied from the "Access keys" tab of the Storage account's page in Azure Portal
+##### a. Utilities API
 
-# a. Utilities API
-
+```
 az containerapp update \
   --name csai-mre-utilities \
   --resource-group $RESOURCE_GROUP \
@@ -185,26 +194,25 @@ az containerapp update \
     IS_AZURE=TRUE \
     ADDRESS_AZURE_EMBEDDINGS="https://$AISERVICES_NAME.cognitiveservices.azure.com/openai/deployments/text-embedding-3-large/embeddings?api-version=2023-05-15" \
     AZURE_STORAGE_ACCOUNT_KEY='<your-storage-account-key>'
+```
 
+##### b. ChatSafetyAI
 
-# b. ChatSafetyAI
+##### NOTES:
 
-# NOTES:
+- Enable session affinity in the app's page on the Azure Portal, under Ingress.
 
-# - Enable session affinity in the app's page on the Azure Portal, under Ingress.
+The notes below are just for your knowledge, no action needed in principle with the new commands:
 
-# The notes below are just for your knowledge, no action needed in principle with the new commands:
+- UTILITIES_ADDRESS, PREDICTIONS_ADDRESS, and NLP_ADDRESS can be found in the respective overview pages of the apps in the Azure Portal ("Application Url") - they must end with a "/"
 
-# - UTILITIES_ADDRESS, PREDICTIONS_ADDRESS, and NLP_ADDRESS can be found in the respective overview pages of the apps in the Azure Portal ("Application Url") - they must end with a "/"
+- AZURE_OPENAI_ADDRESS_GPT4 and AZURE_OPENAI_ADDRESS_GPT35 can be found the "Endpoint" area in the Azure AI Foundry page of the corresponding deployment
 
-# - AZURE_OPENAI_ADDRESS_GPT4 and AZURE_OPENAI_ADDRESS_GPT35 can be found the "Endpoint" area in the Azure AI Foundry page of the corresponding deployment
+- AZURE_MODERATION_ADDRESS, AZURE_VISION_ADDRESS, and AZURE_LANGUAGE_ADDRESS can be found in the "Keys and Endpoint" tab of the Azure AI Foundry service, under the "AI Services" subtab at the bottom of the page. "/contentsafety/text:analyze?api-version=2024-09-01" should be appended to AZURE_MODERATION_ADDRESS.
 
-# - AZURE_MODERATION_ADDRESS, AZURE_VISION_ADDRESS, and AZURE_LANGUAGE_ADDRESS can be found in the "Keys and Endpoint" tab of the Azure AI Foundry service, under the "AI Services" subtab at the bottom of the page. "/contentsafety/text:analyze?api-version=2024-09-01" should be appended to AZURE_MODERATION_ADDRESS.
+- The default container allocation of 0.5 CPU and 1G of RAM (container = replica here) allows max 2 users per replica, since one ChatSafetyAI session consumes approx 400MB of RAM. The default consumption-based workload profile has a hard limit of 4 CPUs and 8 GBs of RAM, so it allows 4/0.5 = 8 replicas to be started, CPU being the limiting factor here (hence the --max-replicas 8 below). This setup supports up to 8 × 2 = 16 concurrent users. If more is needed, switch to a general-purpose workload profile: https://learn.microsoft.com/en-us/azure/container-apps/workload-profiles-overview
 
-# - The default container allocation of 0.5 CPU and 1G of RAM (container = replica here) allows max 2 users per replica, since one ChatSafetyAI session consumes approx 400MB of RAM. The default consumption-based workload profile has a hard limit of 4 CPUs and 8 GBs of RAM, so it allows 4/0.5 = 8 replicas to be started, CPU being the limiting factor here (hence the --max-replicas 8 below). This setup supports up to 8 × 2 = 16 concurrent users. If more is needed, switch to a general-purpose workload profile: https://learn.microsoft.com/en-us/azure/container-apps/workload-profiles-overview
-
-
-
+```
 az containerapp update \
   --name csai-mre-chatbot \
   --resource-group $RESOURCE_GROUP \
@@ -231,9 +239,11 @@ az containerapp update \
     AZURE_VISION_ADDRESS="https://$AISERVICES_NAME.services.ai.azure.com/" \
     AZURE_LANGUAGE_ADDRESS="https://$AISERVICES_NAME.services.ai.azure.com/" \
     USE_MANAGED_IDENTITY=TRUE
+```
 
-# c. Dashboard
+##### c. Dashboard
 
+```
 az containerapp update \
   --name csai-mre-dashboard \
   --resource-group $RESOURCE_GROUP \
@@ -244,11 +254,13 @@ az containerapp update \
     IS_AZURE=TRUE \
     IS_LOCAL=FALSE \
     USE_MANAGED_IDENTITY=TRUE
+```
 
-# 9) Set up Azure Entra ID for the two user-facing apps
+#### 9) Set up Azure Entra ID for the two user-facing apps
 
-# a. Register apps in Entra ID, create service principals, and enable authentication
+##### a. Register apps in Entra ID, create service principals, and enable authentication
 
+```
 for app in csai-mre-chatbot csai-mre-dashboard; do
   # Register the app and get appId
   appId=$(az ad app create \
@@ -268,28 +280,30 @@ for app in csai-mre-chatbot csai-mre-dashboard; do
     --enabled true \
     --unauthenticated-client-action RedirectToLoginPage
 done
+```
 
-# b. In the Azure Portal, for each app:
-# - go to "Add identity provider" in the "Authentication" tab, and set:
-#    - Provider: Microsoft
-#    - Tenant type: Workforce
-#    - App registration type: Pick an existing app registration
-#    - Set Client secret expiration to 24 months
-#    - Issuer URL: https://login.microsoftonline.com/<tenant-id>/v2.0 (use the URL printed below, same for both apps)
+##### b. In the Azure Portal, for each app:
+- Go to "Add identity provider" in the "Authentication" tab, and set:
+  - Provider: Microsoft
+  - Tenant type: Workforce
+  - App registration type: Pick an existing app registration
+  - Set Client secret expiration to 24 months
+  - Issuer URL: https://login.microsoftonline.com/<tenant-id>/v2.0 (use the URL printed below, same for both apps)
 
+```
 TENANT_ID=$(az account show --query tenantId --output tsv)
 echo "Issuer URL: https://login.microsoftonline.com/$TENANT_ID/v2.0"
+```
 
+##### c. In the Azure Portal:
 
-# c. In the Azure Portal:
+- In Entra ID App, click "Applications", "All applications", and for each app:
+- In the "Authentication" tab, "Settings" tab, ensure ID tokens is checked.
 
-# In Entra ID App, click "Applications", "All applications", and for each app:
-#     in the "Authentication" tab, "Settings" tab, ensure ID tokens is checked.
+#### 10) Assign managed identity roles 
 
-# 10) Assign managed identity roles 
-
-# helper shell function
-
+Helper shell function
+```
 assign_role_to_containerapp_identity() {
   local containerapp_name="$1"
   local resource_group="$2"
@@ -350,9 +364,10 @@ assign_role_to_containerapp_identity() {
       --scope "$scope"
   fi
 }
+```
 
-# Format: app_name resource_group resource_name resource_type role_name
-
+Format: `app_name resource_group resource_name resource_type role_name`
+```
 assignments=(
   # ChatSafetyAI (chatbot)
   "csai-mre-chatbot $RESOURCE_GROUP $STORAGE_ACCOUNT storage 'Storage Blob Data Contributor'"
@@ -371,10 +386,10 @@ for assignment in "${assignments[@]}"; do
   role_name=${role_name//\'/}
   assign_role_to_containerapp_identity "$app" "$resource_group" "$resource_name" "$resource_type" "$role_name"
 done
+```
 
-# - - - -> Verify Configuration manually in the Azure AI Portal
-# - On the Container:
-#   Go to Portal > Container App > Identity
-#   Ensure System-assigned is On and principal ID is shown
-# - On the Target Resource:
-#   Go to Access Control (IAM) > Role assignments
+Verify Configuration manually in the Azure AI Portal. On the Container:
+- Go to Portal > Container App > Identity
+- Ensure System-assigned is On and principal ID is shown
+- On the Target Resource:
+- Go to Access Control (IAM) > Role assignments
