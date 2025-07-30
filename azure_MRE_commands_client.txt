@@ -1,0 +1,1 @@
+See new file with Markdown formatting here: https://github.com/safetyAI/ChatSafetyAI/blob/main/azure_MRE_commands_client.md
