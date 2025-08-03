@@ -48,7 +48,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - generate PDF out of anything
 - image and table width on mobile
 
-### 07-16-25
+### 08-04-25
 - support for Hindi, Arabic, Portuguese
 - support for .heic images
 - rating (thumbs up/down) each conversation or response
