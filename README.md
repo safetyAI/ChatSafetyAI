@@ -51,7 +51,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 ### 08-04-25
 - support for Hindi, Arabic, Portuguese
 - support for .heic images
-- rating (thumbs up/down) each conversation or response
+- rating (thumbs up/down) each response, with integration in dashboard
 
 ### 07-16-25
 - managed identities
