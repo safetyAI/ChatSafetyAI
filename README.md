@@ -46,12 +46,12 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - input multiple files at once
 - voice input and output
 - generate PDF out of anything
-- rating (thumbs up/down) each conversation or response
 - image and table width on mobile
 
 ### 07-16-25
 - support for Hindi, Arabic, Portuguese
 - support for .heic images
+- rating (thumbs up/down) each conversation or response
 
 ### 07-16-25
 - managed identities
@@ -70,6 +70,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 ### 05-11-25
 - Invisible handling of automatic scroll-down
 - Allowing file drag and drop in full conversation container
+- Greater streaming output speed
 
 ### 05-08-25
 - Using GPT-4.1
