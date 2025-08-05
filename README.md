@@ -1,6 +1,10 @@
 # ChatSafetyAI
 
-Help us improve ChatSafetyAI by taking this [quick survey](https://forms.gle/E6sK87u7DdoL4Kg86) !
+- Request your free demo [here](https://safetyapp.shinyapps.io/chatsafetyai_demo_access_request/) !
+
+- For our SafetyAI Council Members employees, request your access [here](https://safetyapp.shinyapps.io/chatsafetyai_access_request/) !
+
+- Help us improve ChatSafetyAI by taking this [quick survey](https://forms.gle/E6sK87u7DdoL4Kg86) !
 
 ## About
 - ChatSafetyAI is built with care by [SafetyAI](https://www.safetyai.io) 🛠️❤️.
