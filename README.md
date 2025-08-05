@@ -7,7 +7,7 @@
 - Help us improve ChatSafetyAI by taking this [quick survey](https://forms.gle/E6sK87u7DdoL4Kg86) !
 
 ## About
-- ChatSafetyAI is built with care by [SafetyAI](https://www.safetyai.io) 🛠️❤️.
+- ChatSafetyAI is built with care by Antoine Tixier at [SafetyAI](https://www.safetyai.io) 🛠️❤️.
 - ChatSafetyAI relies on the [OpenAI API](https://platform.openai.com/docs/api-reference/introduction).
 - OpenAI [does not](https://platform.openai.com/docs/models/how-we-use-your-data) use the conversations for training their models, and does not store the conversations permanently.
 - We at SafetyAI record conversations for continuous improvement purposes. Conversations are inspected at random. Only one person has access.
