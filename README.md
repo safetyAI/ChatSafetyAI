@@ -49,6 +49,9 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - generate PDF out of anything
 - image and table width on mobile
 
+### 08-08-25
+- files streamed from new utilities endpoint with managed identities in Azure
+
 ### 08-05-25
 - support for Hindi, Arabic, Portuguese
 - support for .heic images
