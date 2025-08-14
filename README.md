@@ -322,127 +322,198 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 ## Contact
 Bug reports, questions: `antoine DOT tixier AT safetyai .com`
 
-## Terms of Use
-These Terms of Use apply to your use of ChatSafetyAI, along with any associated models, APIs, software applications and websites (all together, "Services"). These Terms form an agreement between you and SafetyAI, Inc., a Colorado company, and they include our Service Terms and important provisions for resolving disputes through arbitration. By using our Services, you agree to these Terms.
+# Terms of Use
 
-### Who We Are
-ChatSafetyAI is developed by SafetyAI, Inc.
-Our mission is to do R&D that improves safety in the construction industry.
+These Terms of Use ("Terms") govern your use of ChatSafetyAI, along with any associated models, APIs, software applications, websites, and related services (collectively, the **"Services"**). These Terms form a binding agreement between you and SafetyAI, Inc., a Colorado corporation ("**SafetyAI**," "**we**," "**our**," or "**us**"). By accessing or using our Services, you agree to be bound by these Terms.
 
-### Using Our Services
-**What You Can Do.** Subject to your compliance with these Terms, you may access and use our Services. In using our Services, you must comply with all applicable laws as well as any other documentation, guidelines, or policies we make available to you.
+---
 
-**What You Cannot Do.** You may not use our Services for any illegal, harmful, or abusive activity. For example, you may not:
-- Use our Services in a way that infringes, misappropriates or violates anyone’s rights.
-- Modify, copy, lease, sell or distribute any of our Services.
-- Attempt to or assist anyone to reverse engineer, decompile or discover the source code or underlying components of our Services, including our models, algorithms, or systems.
-- Automatically or programmatically extract data or Output (defined below).
-- Represent that Output was human-generated when it was not.
-- Interfere with or disrupt our Services, including circumvent any rate limits or restrictions or bypass any protective measures or safety mitigations we put on our Services.
-- Use Output to develop models that compete with SafetyAI, Inc.
+## 1. Who We Are
 
-**Feedback.** We appreciate your feedback, and you agree that we may use it without restriction or compensation to you.
+ChatSafetyAI is developed by SafetyAI, Inc. Our mission is to conduct research and development to improve safety in the construction industry.
 
-### Content
-**Your Content.** You may provide input to the Services ("Input"), and receive output from the Services based on the Input ("Output"). Input and Output are collectively "Content". You are responsible for Content, including ensuring that it does not violate any applicable law or these Terms. You represent and warrant that you have all rights, licenses, and permissions needed to provide Input to our Services.
+---
 
-**Similarity of Content.** Due to the nature of our Services and artificial intelligence generally, output may not be unique and other users may receive similar output from our Services.
+## 2. Permission to Access and Use the Services
 
-**Our Use of Content.** We may use Content to provide, maintain, develop, and improve our Services, comply with applicable law, enforce our terms and policies, and keep our Services safe.
+We grant you a limited, non-exclusive, non-transferable, revocable right to access and use the Services, subject to these Terms and all applicable laws.
 
-**Opt Out.** If you do not want us to use your Content to provide, maintain, develop, and improve our Services, you can opt out by emailing `antoine.tixier AT safetyai DOT com`. Please note that this may limit the ability of our Services to better address your specific use cases.
+You acquire **no ownership rights** in the Services. You may not install, download, or save our software except where expressly permitted. Constant internet access is required to use the Services.
 
-**Accuracy.** ChatSafetyAI relies on the GPT family of Large Language Models (LLMs) via the OpenAI API. GPTs, like other LLMs, can make mistakes in some situations. Therefore, use of our Services may, in some situations, result in Output that is not factually correct.
+---
 
-When you use our Services you understand and agree:
+## 3. What You Can Do
 
-- Output may not always be accurate. You should not rely on Output from our Services as a sole source of truth or factual information, or as a substitute for professional advice.
-- You must evaluate Output for accuracy and appropriateness for your use case, including using human review as appropriate, before using or sharing Output from the Services.
-- You must not use any Output relating to a person for any purpose that could have a legal or material impact on that person, such as making credit, educational, employment, housing, insurance, legal, medical, or other important decisions about them. 
-- Our Services may provide incomplete, incorrect, or offensive Output that does not represent SafetyAI's views. If Output references any third party products or services, it doesn't mean the third party endorses or is affiliated with SafetyAI, Inc.
+Subject to these Terms, you may:
+- Access and use the Services for lawful purposes.
+- Use the Services in compliance with our documentation, guidelines, and policies.
 
-### Confidentiality
-**Use and Nondisclosure.** "Confidential Information" means any business, technical or financial information, materials, or other subject matter disclosed by one party ("Discloser") to the other party ("Recipient") that is identified as confidential at the time of disclosure or should be reasonably understood by Recipient to be confidential under the circumstances. For the avoidance of doubt, Confidential Information includes Customer Content. Recipient agrees it will: (a) only use Discloser's Confidential Information to exercise its rights and fulfill its obligations under this Agreement, (b) take reasonable measures to protect the Confidential Information, and (c) not disclose the Confidential Information to any third party except as expressly permitted in this Agreement.
+---
 
-**Exceptions.** These obligations do not apply to any information that (a) is or becomes generally available to the public through no fault of Recipient, (b) was in Recipient’s possession or known by it prior to receipt from Discloser, (c) was rightfully disclosed to Recipient without restriction by a third party, or (d) was independently developed without use of Discloser’s Confidential Information. Recipient may disclose Confidential Information only to its employees, contractors, and agents who have a need to know and who are bound by confidentiality obligations at least as restrictive as those of this Agreement. Recipient will be responsible for any breach of this section by its employees, contractors, and agents. Recipient may disclose Confidential Information to the extent required by law, provided that Recipient uses reasonable efforts to notify Discloser in advance.
+## 4. What You Cannot Do
 
-### Privacy
-We, at SafetyAI, Inc. ('we', 'our' or 'us') respect your privacy and are strongly committed to keeping secure any information we obtain from you or about you. This Privacy Policy describes our practices with respect to Personal Information we receive from or about you when you use our Services.
+You may not:
+1. Use the Services in a way that infringes, misappropriates, or violates any third-party rights.
+2. Modify, copy, lease, sell, sublicense, or distribute any part of the Services.
+3. Reverse engineer, decompile, or attempt to derive the source code or underlying components of the Services, including models, algorithms, or systems.
+4. Automatically or programmatically extract data or Output (as defined below).
+5. Represent that Output was human-generated when it was not.
+6. Interfere with or circumvent any access controls, safety measures, or usage limits.
+7. Use Output to develop, train, or improve any model that competes with SafetyAI.
+8. Remove or alter any proprietary notices, branding, or logos from the Services.
+9. Embed the Services into another system in a way that conceals SafetyAI’s branding or identity.
 
-**Personal Information You Provide:** We receive Personal Information if you create an account to use our Services or communicate with us as follows:
-- email address.
+---
 
-**Personal Information We Receive Automatically From Your Use of the Services:** When you use the Services, we receive the following information:
-- *User Content:* the date and time of each conversation, as well as the conversation content. This is necessary to allow saving and reloading the chat history from session to session. We use Dropbox as our main data storage solution, Google Drive for hosting the automatically generated PPT files (presentation mode...) and PDF files (prejob brief summarization, chat sharing...), and Amazon EC2 for some data storage and to host the microservices of ours that ChatSafetyAI calls (regulations, predictions, etc.). ChatSafetyAI is deployed on Posit's shinyapps.io but data is only saved there temporarily, for the duration of the session. We record and analyze conversations for sole continuous improvement purposes. If you do not want us to use your conversations for improvement of our Services, or if you do not want your conversations to be saved at all (no chat history from session to session), you may opt out by emailing `antoine.tixier AT safetyai DOT com`. Please note that this may limit the ability of our Services to better address your specific use cases.
-- *OpenAI API:* To function, ChatSafetyAI relies on the OpenAI API's Chat and Embeddings endpoints. OpenAI [does not](https://platform.openai.com/docs/models/how-we-use-your-data) use the data passed to their API for training their models, and only temporarily saves the data (for 30 days) for moderation purposes, after which it is permanently deleted.
-- *Content Disclosure:* we **do not** share or sell your content with/to anyone. We record and analyze your conversations for the sole purpose of improving our models, if you have not opted out.
-- *IP address, device and browser information, logs, and other analytics:* we **do not** record such information. We may ask for your location (latitude and longitude) for the sole purpose of knowing your local weather, in order for our incident characteristics predictive models to generate more accurate predictions.
+## 5. Token Usage & Metering
 
-- *Cookies:* we **do not** use cookies. Shinyapps.io, on which ChatSafetyAI is deployed, may collect a cookie for the sole purpose of allowing you to log in without having to re-enter your username and password every time.
+- **Company Accounts (Production).** Token allocations are set **at the company level** under the applicable subscription/plan. Only **Client-designated administrative “power users”** may access the usage dashboard and view company-level consumption.
 
-### Our IP Rights
-We own all rights, title, and interest in and to the Services. You may only use our name and logo by asking us first.
+- **Demo Accounts (Non-production).** Individuals using the demo may view their **personal demo token balance** by clicking their avatar in the chatbot app. Demo usage is separate from any company allocation, is **not transferable**, and may be throttled or limited at any time.
 
-### Permission to Access the Services
-We grant you a limited, non-exclusive permission subject to conditions, to access our Services.
-You shall have no right to copy, modify, save, reproduce, publish or convey any part of our Services, and shall acquire no ownership in our Services.
-ChatSafetyAI is deployed on the Posit's shinyapps.io server and is accessible as a web application.
-We make no claim of responsibility for interruptions in the server.
-You will receive an invitation by email to access ChatSafetyAI with no ability to install or save software.
-Constant access to the Internet will be required to use ChatSafetyAI.
+- **Definition of “Token.”** A “token” is a unit of input or output text (including intermediate queries) processed by the large language model(s) underlying the Services, **as measured by the applicable LLM provider’s tokenizer**. On average, one token corresponds to **approximately four characters** of text; the exact count may vary with content.
 
-We shall own all right, title and interest in our Services and all other intellectual property rights inherent therein, including all modifications, improvements, and derivative works relating to our Services. Other than where we provide prior written consent, the foregoing permission does not include any right to reproduce our Services or to make and/or distribute or sublicense variations of or derivative works developed from our Services, or any right to utilize our Services or information relating to them other than as expressly permitted herein.
+- **Overages & Enforcement (Production).** If company usage exceeds the applicable allocation, **overage charges** apply at the then-current rates per the subscription or service plan and are invoiced as specified therein. We may **throttle, limit, or suspend** access for material over-consumption or unpaid overages after notice.
 
-### Discontinuation of Services
-We may decide to discontinue our Services, but if we do, we will give you advance notice and a refund for any prepaid, unused Services.
+- **Visibility & Privacy.** Company-level dashboards may display aggregated and per-user usage details. Access to such dashboards must be limited by Client to a **small group of authorized power users** due to the sensitivity of this information.
 
-### Disclaimer of Warranties
-OUR SERVICES ARE PROVIDED "AS IS." EXCEPT TO THE EXTENT PROHIBITED BY LAW, WE MAKE NO WARRANTIES (EXPRESS, IMPLIED, STATUTORY OR OTHERWISE) WITH RESPECT TO THE SERVICES, AND DISCLAIM ALL WARRANTIES INCLUDING, BUT NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, SATISFACTORY QUALITY, NON-INFRINGEMENT, AND QUIET ENJOYMENT, AND ANY WARRANTIES ARISING OUT OF ANY COURSE OF DEALING OR TRADE USAGE. WE DO NOT WARRANT THAT THE SERVICES WILL BE UNINTERRUPTED, ACCURATE OR ERROR FREE, OR THAT ANY CONTENT WILL BE SECURE OR NOT LOST OR ALTERED.
+---
 
-IN NO EVENT SHALL WE BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY OR PUNITIVE DAMAGES, INCLUDING WITHOUT LIMITATION DAMAGES FOR LOSS OF PROFITS, LOSS OF GOOD WILL, LOSS OF DATA OR USE, OR ANY BUSINESS INTERRUPTION OR DISRUPTION, INCURRED BY EITHER USER OR ANY THIRD PARTY, WHETHER IN AN ACTION SOUNDING IN CONTRACT, TORT (INCLUDING NEGLIGENCE), INDEMNITY, WARRANTY, FIDUCIARY DUTY, STATUTORY CLAIM UNDER ANY FEDERAL, STATE, LOCAL LAW OF THE UNITED STATES OF AMERICA OR ANY OTHER JURISDICTION, OR ANY OTHER TYPE OF LEGAL CLAIM, EVEN IF THE OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+## 6. Content
 
-FURTHER, NEITHER WE WILL BE RESPONSIBLE FOR ANY COMPENSATION, REIMBURSEMENT, LOSSES, COSTS OR DAMAGES ARISING IN CONNECTION WITH: (A) USER'S INABILITY TO USE THE SERVICES, INCLUDING AS A RESULT OF ANY (I) TERMINATION OR SUSPENSION OF THIS AGREEMENT OR USER'S USE OF OR ACCESS TO THE SERVICES, (II)  OUR DISCONTINUATION OF ANY OR ALL ACCESS TO THE SERVICES, OR (III) ANY UNANTICIPATED OR UNSCHEDULED DOWNTIME OF ALL OR A PORTION OF THE ACCESS TO THE SERVICES FOR ANY REASON WHATSOEVER, INCLUDING AS A RESULT OF POWER OUTAGES, SYSTEM FAILURES OR OTHER INTERRUPTIONS; (B) THE COST OF PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; (C) ANY INVESTMENTS, EXPENDITURES, OR COMMITMENTS BY USER TO ANY THIRD PARTIES IN CONNECTION WITH THIS AGREEMENT OR USER'S USE OF OR ACCESS TO THE SERVICES; OR (D) ANY UNAUTHORIZED ACCESS TO, ALTERATION OF, OR THE DELETION, DESTRUCTION, DAMAGE, LOSS, DENIAL OF ACCESS, OR FAILURE TO MAINTAIN OR STORE ANY OF USER'S CONTENT OR OTHER DATA.
+**Your Content** — You may provide input to the Services ("**Input**") and receive output generated by the Services based on the Input ("**Output**"). Input and Output are collectively "**Content**". You are responsible for ensuring your Content complies with all applicable laws and these Terms. You represent and warrant that you have all rights, licenses, and permissions needed for your Content.
 
-YOU ACCEPT AND AGREE THAT ANY USE OF OUTPUTS FROM OUR SERVICE IS AT YOUR SOLE RISK AND YOU WILL NOT RELY ON OUTPUT AS A SOLE SOURCE OF TRUTH OR FACTUAL INFORMATION, OR AS A SUBSTITUTE FOR PROFESSIONAL ADVICE.
+**Similarity of Content** — Due to the nature of AI, Output may not be unique and other users may receive similar output.
 
-### Limitation of Liability
-WE MAKE NO CLAIM OF RESPONSIBILITY FOR ANY PARTIAL OR TOTAL LOSS, ALTERATION, DELETION, DESTRUCTION, DAMAGE, FAILURE TO MAINTAIN OR STORE, RELEASE, LEAKAGE, OR DENIAL OF ACCESS, OF ANY OF THE DATA UPLOADED TO CHATSAFETYAI, DROPBOX, AMAZON EC2, GOOGLE DRIVE, POSIT'S SHINYAPPS.IO, THE OPENAI API, OR ANY OTHER THIRD PARTY SERVER OR CLOUD-BASED SOLUTION USED BY US AS PART OF PROVIDING OUR SERVICES, FOR ANY REASON WHATSOEVER.
+**Our Use of Content** — We may use Content to operate, maintain, improve, and develop our Services, comply with law, enforce our terms, and ensure safety.
 
-WE WILL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR EXEMPLARY DAMAGES, INCLUDING DAMAGES FOR LOSS OF PROFITS, GOODWILL, USE, OR DATA OR OTHER LOSSES, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. OUR AGGREGATE LIABILITY UNDER THESE TERMS WILL NOT EXCEED ​​THE GREATER OF THE AMOUNT YOU PAID FOR THE SERVICE THAT GAVE RISE TO THE CLAIM DURING THE 12 MONTHS BEFORE THE LIABILITY AROSE. THE LIMITATIONS IN THIS SECTION APPLY ONLY TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW.
+**Opt-Out** — You may opt out of our use of your Content for improvement purposes by emailing `antoine.tixier@safetyai.io`. Opting out may limit the Services’ ability to address your specific needs.
 
-Some countries and states do not allow the disclaimer of certain warranties or the limitation of certain damages, so some or all of the terms above may not apply to you, and you may have additional rights. In that case, these Terms only limit our responsibilities to the maximum extent permissible in your country of residence.
+**Accuracy** — Large Language Models (LLMs) can produce incorrect or misleading Output. You agree:
+- Output may not be accurate and should not be your sole source of truth or professional advice.
+- You will verify Output for accuracy and appropriateness before use.
+- You will not use Output relating to a person in decisions with legal or material impacts (e.g., employment, housing, insurance, medical, or legal matters).
 
-OUR AGGREGATE AND CUMULATIVE TOTAL LIABILITY FOR DAMAGES, INCLUDING FOR DIRECT DAMAGES, UNDER THIS AGREEMENT, SHALL IN NO EVENT EXCEED THE AMOUNT OF FEES PAID BY USER UNDER THIS AGREEMENT THAT GAVE RISE TO THE CLAIM DURING THE 12 MONTHS PRECEDING THE CLAIM, AND IF SUCH DAMAGES RELATE TO PARTICULAR SERVICES, SUCH LIABILITY SHALL BE LIMITED TO FEES PAID FOR THE SERVICES GIVING RISE OR RELATED TO THE ALLEGED LIABILITY AND DAMAGES UNDER THIS AGREEMENT DURING THE 12 MONTHS PRECEDING THE CLAIM.
-USER ACKNOWLEDGES THAT THE FEES APPLICABLE FOR THE SERVICES REFLECT THE ALLOCATION OF RISK SET FORTH IN THIS AGREEMENT AND THAT WE WOULD NOT HAVE ENTERED INTO THIS AGREEMENT WITHOUT THE DISCLAIMERS OF WARRANTY AND LIMITATIONS OF BOTH LIABILITY AND DAMAGES SET FORTH IN THIS AGREEMENT.
+**No Endorsement or Representation** — Our Services may provide incomplete, incorrect, or offensive Output that does not represent SafetyAI's views. If Output references any third party products or services, it does not imply endorsement or affiliation.
 
-### Indemnity
-To the extent permitted by law, you will indemnify and hold harmless us and our personnel, from and against any costs, losses, liabilities, and expenses (including attorneys' fees) from third party claims arising out of or relating to your use of the Services and Content or any violation of these Terms.
+---
 
-### Dispute Resolution
-YOU AND SAFETYAI, INC. AGREE TO THE FOLLOWING MANDATORY ARBITRATION AND CLASS ACTION WAIVER PROVISIONS:
+## 7. Confidentiality
 
-**MANDATORY ARBITRATION.** You and SafetyAI, Inc. agree to resolve any claims arising out of or relating to these Terms or our Services, regardless of when the claim arose, even if it was before these Terms existed (a "Dispute"), through final and binding arbitration.
+**Use and Nondisclosure** — "Confidential Information" means non-public business, technical, or financial information disclosed by one party ("Discloser") to the other ("Recipient"), which is identified as confidential or should reasonably be understood as confidential. Confidential Information includes Customer Content.
 
-**Informal Dispute Resolution.** We would like to understand and try to address your concerns prior to formal legal action. Before either of us files a claim against the other, we both agree to try to resolve the Dispute informally. If we are unable to resolve a Dispute within 60 days, either of us has the right to initiate arbitration.
+Recipient agrees to:
+(a) use Confidential Information only to fulfill its obligations or exercise its rights under these Terms;  
+(b) protect Confidential Information with reasonable measures; and  
+(c) not disclose Confidential Information to third parties except as permitted herein.
 
-**Governing Law.** Colorado law will govern these Terms except for its conflicts of laws principles. Except as provided in the dispute resolution section above, all claims arising out of or relating to these Terms will be brought exclusively in the federal or state courts of Boulder or Denver, Colorado.
+**Exceptions** — Obligations do not apply to information that:
+(a) is public through no fault of the Recipient;  
+(b) was known prior to disclosure;  
+(c) is received without restriction from a third party; or  
+(d) is independently developed without using the Discloser’s Confidential Information.
 
-### General Terms
-**Assignment.** You may not assign or transfer any rights or obligations under these Terms and any attempt to do so will be void. We may assign our rights or obligations under these Terms to any affiliate, subsidiary, or successor in interest of any business associated with our Services.
+Recipient may share Confidential Information with employees, contractors, and agents who need to know and are bound by obligations at least as restrictive as these Terms. Disclosure may occur if required by law, with reasonable advance notice to the Discloser.
 
-**Changes to These Terms or Our Services.** We are continuously working to develop and improve our Services. We may update these Terms or our Services accordingly from time to time. For example, we may make changes to these Terms or the Services due to:
+---
 
-- Changes to the law or regulatory requirements.
-- Security or safety reasons.
-- Circumstances beyond our reasonable control.
-- Changes we make in the usual course of developing our Services.
-- To adapt to new technologies.
-- All other changes will be effective as soon as we post them to our website. If you do not agree to the changes, you must stop using our Services.
+## 8. Privacy & Technical Specifications
 
-**Delay in Enforcing These Terms.** Our failure to enforce a provision is not a waiver of our right to do so later. Except as provided in the dispute resolution section above, if any portion of these Terms is determined to be invalid or unenforceable, that portion will be enforced to the maximum extent permissible and it will not affect the enforceability of any other terms.
+We respect your privacy. The following disclosures apply to all users of our Services:
 
-**Trade Controls.** You must comply with all applicable trade laws, including sanctions and export control laws. Our Services may not be used in or for the benefit of, or exported or re-exported to (a) any U.S. embargoed country or territory or (b) any individual or entity with whom dealings are prohibited or restricted under applicable trade laws. Our Services may not be used for any end use prohibited by applicable trade laws, and your Input may not include material or information that requires a government license for release or export. 
+- **Personal Information You Provide** — For example, email addresses for account creation, authentication, and communication.
+- **User Content** — For the SaaS version, stored in Dropbox; generated files (PPT, PDF) hosted in Google Drive; certain microservices hosted on Amazon EC2; deployed on Posit’s shinyapps.io (temporary session storage only). For the in-house Azure version, all storage and processing occur within Azure services.
+- **LLM APIs** — ChatSafetyAI may use multiple Large Language Models (LLMs) via commercial APIs (e.g., GPT, Claude, Gemini). Data sent to these APIs is not used to train their models and is retained by the provider only temporarily (up to 30 days, **subject to change by the provider**) for moderation, after which it is deleted.
+- **Location Data** — May be requested solely to improve prediction accuracy (e.g., weather-related safety predictions). Location is not stored beyond the session unless required for your specific use case.
+- **IP, Device, and Browser Data** — We do **not** collect IP addresses, device/browser fingerprints, logs, or other analytics.
+- **Cookies** — We do not set cookies. However, hosting platforms (e.g., shinyapps.io, Azure) may set cookies for the sole purpose of login persistence, MFA, or SSO.
+- **Content Disclosure** — We do **not** sell or share your content with third parties. Conversations may be reviewed internally to improve the Services unless you opt out by emailing `antoine.tixier@safetyai.io`.
 
-**Entire Agreement.** These Terms contain the entire agreement between you and SafetyAI, Inc. regarding the Services and, other than any Service-specific terms, supersedes any prior or contemporaneous agreements between you and SafetyAI, Inc. 
+---
 
-**Governing Law.** Colorado law will govern these Terms except for its conflicts of laws principles. Except as provided in the dispute resolution section above, all claims arising out of or relating to these Terms will be brought exclusively in the federal or state courts of Boulder or Denver, Colorado.
+## 9. Our Intellectual Property Rights
+
+We own all right, title, and interest in and to the Services, including all software, models, APIs, algorithms, content, features, and any modifications, improvements, or derivative works thereof. All rights not expressly granted to you in these Terms are reserved by us.
+
+You may not copy, modify, adapt, translate, create derivative works from, reverse engineer, decompile, disassemble, or otherwise attempt to discover the source code, object code, or underlying structure, ideas, know-how, or algorithms relevant to the Services. You must not remove, alter, or obscure any proprietary notices or labels on the Services or related documentation.
+
+You may only use our name, logos, and trademarks with our prior written consent.
+
+---
+
+## 10. Feedback
+
+You may provide feedback, suggestions, or ideas about the Services, including conversation ratings or other usage-related feedback (“Feedback”). You agree that we may use Feedback freely, without restriction or compensation to you, for any purpose, including to improve or develop the Services.
+
+---
+
+*Sections 11 and 12 apply only to subscribed company accounts (non-demo users), not to demo accounts.*
+
+## 11. SafetyAI Council & Logo Use
+
+We may by default display your company’s name and logo on [https://safetyai.io](https://safetyai.io) as part of the SafetyAI Council member list. You may opt out at any time by emailing `antoine.tixier@safetyai.io`.
+
+---
+
+## 12. Training & Support
+
+We may provide reasonable remote onboarding and technical support, including guidance on invitations, account setup, and using the Services. Where possible, training will be provided via **group sessions** to optimize resources.
+
+---
+
+## 13. Discontinuation of Services
+
+We may discontinue the Services in whole or in part, with advance notice. If discontinued, we will refund any prepaid, unused fees.
+
+---
+
+## 14. Disclaimer of Warranties
+
+OUR SERVICES ARE PROVIDED **"AS IS"**. TO THE MAXIMUM EXTENT PERMITTED BY LAW, WE DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, ACCURACY, OR UNINTERRUPTED OPERATION.
+
+We do not guarantee:
+- Continuous availability of the Services;
+- Accuracy or reliability of any Output; or
+- That Content will be secure or not lost or altered.
+
+---
+
+## 15. Limitation of Liability
+
+TO THE MAXIMUM EXTENT PERMITTED BY LAW:
+- WE WILL NOT BE LIABLE FOR INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR EXEMPLARY DAMAGES, EVEN IF ADVISED OF THE POSSIBILITY.  
+- OUR TOTAL LIABILITY WILL NOT EXCEED THE AMOUNT YOU PAID FOR THE SERVICES IN THE 12 MONTHS PRECEDING THE CLAIM.  
+- DATA LOSS, ALTERATION, UNAUTHORIZED ACCESS, OR SYSTEM DOWNTIME—INCLUDING ISSUES INVOLVING THIRD-PARTY HOSTS (Dropbox, Google Drive, Amazon EC2, shinyapps.io, Azure, LLM API providers)—ARE AT YOUR OWN RISK.
+- ACKNOWLEDGMENT OF RISK ALLOCATION — USER ACKNOWLEDGES THAT THE FEES APPLICABLE FOR THE SERVICES REFLECT THE ALLOCATION OF RISK SET FORTH IN THESE TERMS, AND THAT SAFETYAI WOULD NOT HAVE ENTERED INTO THIS AGREEMENT WITHOUT THE DISCLAIMERS OF WARRANTY AND LIMITATIONS OF LIABILITY AND DAMAGES CONTAINED HEREIN.
+
+---
+
+## 16. Indemnity
+
+YOU WILL INDEMNIFY AND HOLD HARMLESS SAFETYAI, ITS AFFILIATES, AND THEIR PERSONNEL FROM ANY THIRD-PARTY CLAIMS, DAMAGES, LIABILITIES, AND EXPENSES (INCLUDING REASONABLE ATTORNEYS’ FEES) ARISING FROM YOUR:
+
+(A) BREACH OF THESE TERMS;  
+(B) MISUSE OF THE SERVICES; OR  
+(C) VIOLATION OF LAW.
+
+---
+
+## 17. Dispute Resolution
+
+**Mandatory Arbitration** — You and SafetyAI agree to resolve disputes through final and binding arbitration, regardless of when the dispute arose.
+
+**Informal Resolution** — Before filing a claim, both parties will attempt informal resolution for 60 days.
+
+**Governing Law** — Colorado law governs these Terms, excluding conflicts of laws principles. Arbitration or court proceedings will occur in Boulder or Denver, Colorado.
+
+---
+
+## 18. General Terms
+
+- **Assignment** — You may not assign your rights or obligations under these Terms without our written consent. We may assign to affiliates or successors.  
+- **Changes** — We may update these Terms for legal, security, technical, or business reasons. Changes take effect when posted. If you disagree, stop using the Services.  
+- **Delay** — Our failure to enforce any provision is not a waiver.  
+- **Trade Controls** — You must comply with export control and sanctions laws.  
+- **Entire Agreement** — These Terms constitute the entire agreement between you and SafetyAI regarding the Services.
+
+---
