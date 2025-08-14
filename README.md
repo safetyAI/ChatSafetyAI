@@ -510,10 +510,21 @@ YOU WILL INDEMNIFY AND HOLD HARMLESS SAFETYAI, ITS AFFILIATES, AND THEIR PERSONN
 
 ## 18. General Terms
 
-- **Assignment** — You may not assign your rights or obligations under these Terms without our written consent. We may assign to affiliates or successors.  
-- **Changes** — We may update these Terms for legal, security, technical, or business reasons. Changes take effect when posted. If you disagree, stop using the Services.  
-- **Delay** — Our failure to enforce any provision is not a waiver.  
-- **Trade Controls** — You must comply with export control and sanctions laws.  
-- **Entire Agreement** — These Terms constitute the entire agreement between you and SafetyAI regarding the Services.
+**Assignment** — You may not assign or transfer your rights or obligations under these Terms without our prior written consent. Any attempt to do so will be void. We may assign or transfer our rights and obligations under these Terms to any affiliate, subsidiary, or successor in interest without restriction.
+
+**Changes to These Terms or Our Services** — We may update these Terms or the Services from time to time, including for:  
+- Changes to applicable laws or regulatory requirements;  
+- Security or safety reasons;  
+- Circumstances beyond our reasonable control;  
+- Changes made in the ordinary course of developing or improving the Services;  
+- Adaptation to new technologies.  
+
+Unless otherwise required by law, changes will take effect upon posting to this GitHub page. If you do not agree to the changes, you must stop using the Services.
+
+**Delay in Enforcing These Terms** — Our failure to enforce any provision is not a waiver of our right to do so later.
+
+**Severability** — Except as provided in the dispute resolution section, if any portion of these Terms is determined to be invalid or unenforceable, that portion will be enforced to the maximum extent permissible, and the remaining portions will remain in full force and effect.
+
+**Trade Controls** — You must comply with all applicable export control, sanctions, and trade laws. The Services may not be used in, for the benefit of, or exported or re-exported to (a) any U.S.-embargoed country or territory, or (b) any individual or entity subject to applicable trade restrictions. You may not use the Services for any end use prohibited by applicable trade laws.
 
 ---
