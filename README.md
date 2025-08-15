@@ -334,7 +334,7 @@ These Terms of Use ("Terms") govern your use of ChatSafetyAI, along with any ass
 
 ## 1. Who We Are
 
-ChatSafetyAI is developed by SafetyAI, Inc. Our mission is to conduct research and development to improve safety in the construction industry.
+ChatSafetyAI is developed by SafetyAI, Inc., a Colorado-based company. Our mission is to conduct research and development to improve safety in the construction industry.
 
 ---
 
