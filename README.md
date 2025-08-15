@@ -51,6 +51,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 ### 08-16-25
 - env variable to disable keepalive JS
 - link to terms of use in avatar popup
+- raised file size limit to 20 MB
 
 ### 08-08-25
 - files streamed from new utilities endpoint with managed identities in Azure
