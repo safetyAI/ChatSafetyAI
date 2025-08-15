@@ -26,7 +26,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
   <tr> <td align="right"> Engine </td> <td> GPT-4.1, GPT-4.1-mini </td> <td>  GPT-4.1, GPT-4.1-mini </td> </tr>
   <tr> <td align="right"> Conversation History </td> <td> 750k words, 11 turns </td> <td> 750k words, 19 turns </td> </tr>
   <tr> <td align="right"> Max Chats per Session </td> <td> 5 </td> <td> Unlimited </td> </tr>
-  <tr> <td align="right"> File Upload </td> <td> max ~110 pages, 10 MB per file </td> <td> max ~890 pages, 10 MB per file </td> </tr>
+  <tr> <td align="right"> File Upload </td> <td> max ~110 pages, 10 MB per file </td> <td> max ~890 pages, 20 MB per file </td> </tr>
   <tr> <td align="right"> Budget per Session </td> <td> 300k words </td> <td> Unlimited (within company budget) </td> </tr>
   <tr> <td align="right"> Budget per User </td> <td> 1.5M words </td> <td> Unlimited (within company budget) </td> </tr>
   <tr> <td align="right"> Custom Databases </td> <td> No </td> <td> Yes </td> </tr>
