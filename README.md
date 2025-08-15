@@ -21,21 +21,20 @@ There is a free [demo](https://safetyapp.shinyapps.io/chatsafetyai_demo_access_r
 Contact us for membership pricing (see contact info at the bottom of this page, or on our [website](https://www.safetyai.io)).<br>
 Note: we do not currently offer plans for individuals, SafetyAI membership is for companies only.
 
-<!-- html table generated in R 4.3.2 by xtable 1.8-4 package -->
-<!-- Tue Sep 10 11:07:27 2024 -->
 <table border=1>
 <tr> <th>  </th> <th> Demo </th> <th> SafetyAI Council </th>  </tr>
-  <tr> <td align="right"> Engine </td> <td> GPT-4o </td> <td> GPT-4o </td> </tr>
-  <tr> <td align="right"> Conversation History </td> <td> 20k words, 5 turns </td> <td> 100k words, 10 turns </td> </tr>
-  <tr> <td align="right"> Max Chats per Session </td> <td> 4 </td> <td> Unlimited </td> </tr>
-  <tr> <td align="right"> PDF/CSV/Photo Upload </td> <td> Max 4 pages, 3 MB per file </td> <td> Max 120 pages, 10 MB per file </td> </tr>
-  <tr> <td align="right"> Budget per Session </td> <td> 150k words </td> <td> Unlimited (within company budget) </td> </tr>
-  <tr> <td align="right"> Budget per User </td> <td> 0.8M words </td> <td> Unlimited (within company budget) </td> </tr>
+  <tr> <td align="right"> Engine </td> <td> GPT-4.1, GPT-4.1-mini </td> <td>  GPT-4.1, GPT-4.1-mini </td> </tr>
+  <tr> <td align="right"> Conversation History </td> <td> 750k words, 11 turns </td> <td> 750k words, 19 turns </td> </tr>
+  <tr> <td align="right"> Max Chats per Session </td> <td> 5 </td> <td> Unlimited </td> </tr>
+  <tr> <td align="right"> File Upload </td> <td> max ~110 pages, 10 MB per file </td> <td> max ~890 pages, 10 MB per file </td> </tr>
+  <tr> <td align="right"> Budget per Session </td> <td> 300k words </td> <td> Unlimited (within company budget) </td> </tr>
+  <tr> <td align="right"> Budget per User </td> <td> 1.5M words </td> <td> Unlimited (within company budget) </td> </tr>
   <tr> <td align="right"> Custom Databases </td> <td> No </td> <td> Yes </td> </tr>
   <tr> <td align="right"> Custom Predictive Models </td> <td> No </td> <td> Yes </td> </tr>
   <tr> <td align="right"> Custom Risk Analysis </td> <td> No </td> <td> Yes </td> </tr>
-  <tr> <td align="right"> Chat History </td> <td> Yes </td> <td> Yes </td> </tr>
+  <tr> <td align="right"> Chat History </td> <td> No </td> <td> Yes </td> </tr>
    </table>
+
 
 ## Version History
 
@@ -48,6 +47,9 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - voice input and output
 - generate PDF out of anything
 - image and table width on mobile
+
+### 08-16-25
+- env variable to disable keepalive JS
 
 ### 08-08-25
 - files streamed from new utilities endpoint with managed identities in Azure
