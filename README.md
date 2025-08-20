@@ -47,6 +47,9 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - voice input and output
 - generate PDF out of anything
 - image and table width on mobile
+- image generation
+- bounding boxes for hazards on photos
+- automatic indexing of custom databases for RAG
 
 ### 08-16-25
 - env variable to disable keepalive JS
