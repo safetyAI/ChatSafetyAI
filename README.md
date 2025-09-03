@@ -52,6 +52,10 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] bounding boxes for hazards on photos  
 - [ ] automatic indexing of custom databases for RAG  
 
+### 09-03-25
+- env variable to check user budgets (disabled if not defined)
+- env variable to record logs and save them to the database
+
 ### 08-16-25
 - env variable to disable keepalive JS
 - link to terms of use in avatar popup
