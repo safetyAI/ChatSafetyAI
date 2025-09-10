@@ -55,7 +55,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 
 ### 09-10-25
 - custom database functionality 75% done
-- - env variable to hide custom database tab and logic while it is still under development
+- env variable to hide custom database tab and logic while it is still under development
 
 ### 09-03-25
 - env variable to check user budgets (disabled if not defined)
