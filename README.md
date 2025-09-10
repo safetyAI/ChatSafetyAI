@@ -52,6 +52,11 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] bounding boxes for hazards on photos  
 - [ ] automatic indexing of custom databases for RAG  
 
+
+### 09-10-25
+- custom database functionality 75% done
+- - env variable to hide custom database tab and logic while it is still under development
+
 ### 09-03-25
 - env variable to check user budgets (disabled if not defined)
 - env variable to record logs and save them to the database
