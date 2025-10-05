@@ -39,8 +39,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 ## Version History
 
 ### Next steps / wish list (not in order, non-exhaustive)
-- [ ] use Azure Blob Storage and OpenAI Service for faster responses
-- [ ] incognito mode  
+- [ ] incognito mode
 - [ ] chat sharing as individual icons  
 - [ ] image passed to every call  
 - [ ] search engine for chats  
@@ -49,9 +48,14 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] generate PDF out of anything  
 - [ ] image and table width on mobile  
 - [ ] image generation  
-- [ ] bounding boxes for hazards on photos  
-- [ ] automatic indexing of custom databases for RAG  
+- [ ] bounding boxes for hazards on photos    
 
+### 10-06-25
+- first version of custom database functionality fully operational (improved security, faster responses)
+- SaaS database fully migrated to MS Azure Storage. Not relying on Dropbox, Google Slides, and Google Drive anymore  
+- priority OpenAI calls for faster responses
+- instructions now consume 50% less tokens
+- other small improvements
 
 ### 09-10-25
 - custom database functionality 75% done
