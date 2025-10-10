@@ -29,10 +29,9 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
   <tr> <td align="right"> File Upload </td> <td> max ~110 pages, 10 MB per file </td> <td> max ~890 pages, 20 MB per file </td> </tr>
   <tr> <td align="right"> Budget per Session </td> <td> 300k words </td> <td> Unlimited (within company budget) </td> </tr>
   <tr> <td align="right"> Budget per User </td> <td> 1.5M words </td> <td> Unlimited (within company budget) </td> </tr>
-  <tr> <td align="right"> Custom Databases </td> <td> No </td> <td> Yes </td> </tr>
+  <tr> <td align="right"> Custom Databases </td> <td> 3 of 10 files max </td> <td> 10 of 100 files max </td> </tr>
   <tr> <td align="right"> Custom Predictive Models </td> <td> No </td> <td> Yes </td> </tr>
   <tr> <td align="right"> Custom Risk Analysis </td> <td> No </td> <td> Yes </td> </tr>
-  <tr> <td align="right"> Chat History </td> <td> No </td> <td> Yes </td> </tr>
    </table>
 
 
