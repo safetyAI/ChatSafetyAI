@@ -51,7 +51,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 
 ### 10-06-25
 - first version of custom database functionality
-- SaaS database fully migrated to MS Azure Storage (improved security, faster responses)
+- SaaS database fully migrated to MS Azure Storage
 - priority OpenAI calls for faster responses
 - instructions now consume 50% less tokens
 - other small improvements
