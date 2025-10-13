@@ -351,7 +351,7 @@ These Terms of Use ("Terms") govern your use of ChatSafetyAI, along with any ass
 
 ## 1. Who We Are
 
-ChatSafetyAI is developed by SafetyAI, Inc., a Colorado-based company. Our mission is to conduct research and development to improve safety in the construction industry.
+ChatSafetyAI is developed by SafetyAI, Inc., a Colorado-based company. Our mission is to conduct research and development to improve occupational health, safety and environment (OHSE) in all industries that have job sites, such as construction, electric T&D, oil & gas, heavy civil, infrastructure, mining...
 
 ---
 
@@ -388,7 +388,7 @@ You may not:
 
 ## 5. Token Usage & Metering
 
-- **Company Accounts (Production).** Token allocations are set **at the company level** under the applicable subscription/plan. Only **Client-designated administrative “power users”** may access the usage dashboard and view company-level consumption.
+- **Company Accounts (Production).** Token allocations are set **at the company level** under the applicable subscription/plan. Only **Client-designated "admin users"** may access the usage dashboard and view company-level consumption.
 
 - **Demo Accounts (Non-production).** Individuals using the demo may view their **personal demo token balance** by clicking their avatar in the chatbot app. Demo usage is separate from any company allocation, is **not transferable**, and may be throttled or limited at any time.
 
@@ -443,7 +443,7 @@ Recipient may share Confidential Information with employees, contractors, and ag
 We respect your privacy. The following disclosures apply to all users of our Services:
 
 - **Personal Information You Provide** — For example, email addresses for account creation, authentication, and communication.
-- **User Content** — For the SaaS version, stored in Dropbox; generated files (PPT, PDF) hosted in Google Drive; certain microservices hosted on Amazon EC2; deployed on Posit’s shinyapps.io (temporary session storage only). For the in-house Azure version, all storage and processing occur within Azure services.
+- **User Content** — For the SaaS version, stored in Microsoft Azure. Certain microservices are hosted on Amazon EC2; the two user-facing applications are hosted on Posit’s shinyapps.io (temporary session storage only). For the in-house Azure version, all storage and processing occur within Azure services.
 - **LLM APIs** — ChatSafetyAI may use multiple Large Language Models (LLMs) via commercial APIs (e.g., GPT, Claude, Gemini). Data sent to these APIs is not used to train their models and is retained by the provider only temporarily (up to 30 days, **subject to change by the provider**) for moderation, after which it is deleted.
 - **Location Data** — May be requested solely to improve prediction accuracy (e.g., weather-related safety predictions). Location is not stored beyond the session unless required for your specific use case.
 - **IP, Device, and Browser Data** — We do **not** collect IP addresses, device/browser fingerprints, logs, or other analytics.
@@ -504,7 +504,7 @@ We do not guarantee:
 TO THE MAXIMUM EXTENT PERMITTED BY LAW:
 - WE WILL NOT BE LIABLE FOR INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR EXEMPLARY DAMAGES, EVEN IF ADVISED OF THE POSSIBILITY.  
 - OUR TOTAL LIABILITY WILL NOT EXCEED THE AMOUNT YOU PAID FOR THE SERVICES IN THE 12 MONTHS PRECEDING THE CLAIM.  
-- DATA LOSS, ALTERATION, UNAUTHORIZED ACCESS, OR SYSTEM DOWNTIME—INCLUDING ISSUES INVOLVING THIRD-PARTY HOSTS (Dropbox, Google Drive, Amazon EC2, shinyapps.io, Azure, LLM API providers)—ARE AT YOUR OWN RISK.
+- DATA LOSS, ALTERATION, UNAUTHORIZED ACCESS, OR SYSTEM DOWNTIME—INCLUDING ISSUES INVOLVING THIRD-PARTY HOSTS (Amazon EC2, Posit's shinyapps.io, Azure, LLM API providers)—ARE AT YOUR OWN RISK.
 - ACKNOWLEDGMENT OF RISK ALLOCATION — USER ACKNOWLEDGES THAT THE FEES APPLICABLE FOR THE SERVICES REFLECT THE ALLOCATION OF RISK SET FORTH IN THESE TERMS, AND THAT SAFETYAI WOULD NOT HAVE ENTERED INTO THIS AGREEMENT WITHOUT THE DISCLAIMERS OF WARRANTY AND LIMITATIONS OF LIABILITY AND DAMAGES CONTAINED HEREIN.
 
 ---
