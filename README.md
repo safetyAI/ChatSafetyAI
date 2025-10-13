@@ -39,6 +39,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 
 ### Next steps / wish list (not in order, non-exhaustive)
 - [ ] incognito mode
+- [ ] ability to search the web
 - [ ] chat sharing as individual icons  
 - [ ] image passed to every call  
 - [ ] search engine for chats  
