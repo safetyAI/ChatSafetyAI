@@ -50,6 +50,9 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] image generation  
 - [ ] bounding boxes for hazards on photos    
 
+### 10-16-25
+- multimodal moderation model and custom per-category thresholds to minimize false alarms
+
 ### 10-06-25
 - first version of custom database functionality
 - SaaS database fully migrated to MS Azure Storage
