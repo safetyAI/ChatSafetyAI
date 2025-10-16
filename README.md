@@ -52,6 +52,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 
 ### 10-16-25
 - for SaaS: multimodal moderation model and custom per-category thresholds to minimize false alarms
+- clear custom DB selection when starting new chat
 
 ### 10-06-25
 - first version of custom database functionality
