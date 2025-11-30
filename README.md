@@ -49,7 +49,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 ### 11-24-25
 - multiple file uploads
 - images passed to every call
-- new photo annotation mode (bounding boxes and segmentation masks) relying on GPT-5.1 with thinking and Gemini
+- new photo annotation mode (bounding boxes and segmentation masks) relying on GPT-5.1 and Gemini
 - new HECA mode with clarification questions
 - optimized Dockerfiles (newer Python, less dependencies, 50% size reduction)
 - precomputed greetings (faster to start conversation, less tokens used)
