@@ -51,13 +51,14 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - images passed to every call
 - new photo annotation mode (bounding boxes and segmentation masks) relying on GPT-5.1 and Gemini
 - new HECA mode with clarification questions
-- optimized Dockerfiles (newer Python, less dependencies, 50% size reduction)
+- optimized Docker images (newer Python, less dependencies, 50% size reduction, fixed some security vulnerabilities)
 - precomputed greetings (faster to start conversation, less tokens used)
 - tables and images overflow fixes
 - improved output prettification
 - improved general instructions (OHS...) and knowledge (direct controls, energy sources)...
 - removed safety climate survey analysis mode that was never used and confusing
 - major refactoring of mode handing function (fail fast approach with early returns), now much cleaner, more efficient
+- custom disclaimer for Atkins
 
 ### 10-16-25
 - for SaaS: multimodal moderation model and custom per-category thresholds to minimize false alarms
