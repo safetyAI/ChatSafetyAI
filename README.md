@@ -41,14 +41,19 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] incognito mode
 - [ ] ability to search the web
 - [ ] chat sharing as individual icons  
-- [ ] image passed to every call  
-- [ ] search engine for chats  
-- [ ] input multiple files at once  
+- [ ] search engine for chats
 - [ ] voice input and output  
 - [ ] generate PDF out of anything  
-- [ ] image and table width on mobile  
-- [ ] image generation  
-- [ ] bounding boxes for hazards on photos    
+- [ ] image generation   
+
+### 11-24-25
+- multiple file uploads
+- images passed to every call
+- new photo annotation mode (bounding boxes and segmentation masks) relying on GPT-5.1 with thinking and Gemini
+- new HECA mode with clarification questions
+- optimized Dockerfiles (newer Python, less dependencies, 50% size reduction)
+- precomputed greetings (faster to start conversation, less tokens used)
+- tables and images overflow fixes
 
 ### 10-16-25
 - for SaaS: multimodal moderation model and custom per-category thresholds to minimize false alarms
