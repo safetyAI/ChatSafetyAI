@@ -54,6 +54,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - optimized Dockerfiles (newer Python, less dependencies, 50% size reduction)
 - precomputed greetings (faster to start conversation, less tokens used)
 - tables and images overflow fixes
+- improved output prettification 
 
 ### 10-16-25
 - for SaaS: multimodal moderation model and custom per-category thresholds to minimize false alarms
