@@ -59,6 +59,9 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - removed safety climate survey analysis mode that was never used and confusing
 - major refactoring of mode handing function (fail fast approach with early returns), now much cleaner, more efficient
 - custom disclaimer for Atkins
+- fixed bug presentation generation (images not included)
+- PPTX files are now automatically named based on content, and timestamped
+- PDF generation capability
 
 ### 10-16-25
 - for SaaS: multimodal moderation model and custom per-category thresholds to minimize false alarms
