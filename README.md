@@ -50,7 +50,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - images passed to every call
 - new photo annotation mode (bounding boxes and segmentation masks) relying on GPT-5.1 and Gemini
 - new version of HECA mode, with clarification questions
-- optimized Docker images (newer Python, less dependencies, 50% size reduction, fixed some security vulnerabilities)
+- optimized Docker images (newer Python, less dependencies, 40-70% size reduction, fixed some security vulnerabilities)
 - precomputed greetings (faster to start conversation, less tokens used)
 - tables and images overflow fixes
 - improved output prettification
