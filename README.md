@@ -42,8 +42,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] ability to search the web
 - [ ] chat sharing as individual icons  
 - [ ] search engine for chats
-- [ ] voice input and output  
-- [ ] generate PDF out of anything  
+- [ ] voice input and output   
 - [ ] image generation   
 
 ### 11-24-25
