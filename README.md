@@ -54,7 +54,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - precomputed greetings (faster to start conversation, less tokens used)
 - tables and images overflow fixes
 - improved output prettification
-- improved general instructions (OHS...) and knowledge (direct controls, energy sources)...
+- optmized general instructions and knowledge (direct controls, energy sources)...
 - removed safety climate survey analysis mode that was never used and confusing
 - major refactoring of mode handing function (fail fast approach with early returns), now much cleaner, more efficient
 - custom disclaimer for Atkins
