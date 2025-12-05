@@ -63,6 +63,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - PDF generation capability
 - pretty drag-and-drop overlay
 - upload file chunking logic to stay under App Gateway threshold (128kB).
+- new chat now takes the user to the blank chat (if it exists), rather than showing a modal 
 
 ### 10-16-25
 - for SaaS: multimodal moderation model and custom per-category thresholds to minimize false alarms
