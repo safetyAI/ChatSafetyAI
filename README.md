@@ -61,6 +61,8 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - fixed bug presentation generation (images not included)
 - PPTX files are now automatically named based on content, and timestamped. Title moved up in section slides.
 - PDF generation capability
+- pretty drag-and-drop overlay
+- upload file chunking logic to stay under App Gateway threshold (128kB).
 
 ### 10-16-25
 - for SaaS: multimodal moderation model and custom per-category thresholds to minimize false alarms
