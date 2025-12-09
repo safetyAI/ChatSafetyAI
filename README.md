@@ -46,6 +46,8 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] image generation   
 
 ### 11-24-25
+- record audio directly from the app on main browsers, as long as device has a microphone
+- audio file uploads
 - multiple file uploads
 - images passed to every call
 - new photo annotation mode (bounding boxes and segmentation masks) relying on GPT-5.1 and Gemini
@@ -63,7 +65,8 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - PDF generation capability
 - pretty drag-and-drop overlay
 - upload file chunking logic to stay under App Gateway threshold (128kB).
-- new chat now takes the user to the blank chat (if it exists), rather than showing a modal 
+- new chat now takes the user to the blank chat (if it exists), rather than showing a modal
+- now fetching client's local date and time from browser
 
 ### 10-16-25
 - for SaaS: multimodal moderation model and custom per-category thresholds to minimize false alarms
