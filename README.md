@@ -39,11 +39,12 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 
 ### Next steps / wish list (not in order, non-exhaustive)
 - [ ] incognito mode
-- [ ] ability to search the web
+- [ ] web search capability
 - [ ] chat sharing as individual icons  
 - [ ] search engine for chats
-- [ ] voice input and output   
-- [ ] image generation   
+- [ ] advanced voice mode
+- [ ] image generation
+- [ ] custom DB for company-wide documents and regulations
 
 ### 11-24-25
 - record audio directly from the app on main browsers, as long as device has a microphone
