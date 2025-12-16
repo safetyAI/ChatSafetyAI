@@ -59,7 +59,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - improved output prettification
 - optmized general instructions and knowledge (direct controls, energy sources)...
 - removed safety climate survey analysis mode that was never used and confusing
-- major refactoring of mode handing function (fail fast approach with early returns), now much cleaner, more efficient
+- major refactoring of mode handling function (fail fast approach with early returns), now much cleaner, more efficient
 - custom disclaimer for Atkins
 - fixed bug presentation generation (images not included)
 - PPTX files are now automatically named based on content, and timestamped. Title moved up in section slides.
