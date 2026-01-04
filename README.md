@@ -1,14 +1,23 @@
 # ChatSafetyAI
 
-- Request your free demo [here](https://safetyapp.shinyapps.io/chatsafetyai_demo_access_request/) !
-- For our SafetyAI Council Members employees, request your access [here](https://safetyapp.shinyapps.io/chatsafetyai_access_request/) !
-- Help us improve ChatSafetyAI by taking this [quick survey](https://forms.gle/E6sK87u7DdoL4Kg86) !
+## Latest News 🚀🎉
+
+- **12/16/25** <a href="https://ldgth.r.ag.d.sendibm3.com/mk/mr/sh/1t6AVsd2XFnIGF8hGVP44iyKRvCbeT/sBJD6SNh5_A5" target="_blank" rel="noopener noreferrer">
+    Visual Annotations, Voice Input, PDF generation
+  </a>
+
+- **10/14/25** <a href="https://ldgth.r.ag.d.sendibm3.com/mk/mr/sh/SMJz09SDriOHVb6Cdbr9uUknXVar/gYeaBkuCWEzo" target="_blank" rel="noopener noreferrer">
+    Custom Databases, 1M-token Context, New Languages
+  </a>
 
 ## About
 - ChatSafetyAI is built with care by Antoine Tixier at [SafetyAI](https://www.safetyai.io) 🛠️❤️.
 - ChatSafetyAI relies on the [OpenAI API](https://platform.openai.com/docs/api-reference/introduction).
 - OpenAI [does not](https://platform.openai.com/docs/models/how-we-use-your-data) use the conversations for training their models, and does not store the conversations permanently.
 - Screencast demos (not necessarily up-to-date) can be found on our [website](https://www.safetyai.io).
+- Request your free demo [here](https://safetyapp.shinyapps.io/chatsafetyai_demo_access_request/) !
+- For our SafetyAI Council Members employees, request your access [here](https://safetyapp.shinyapps.io/chatsafetyai_access_request/) !
+- Help us improve ChatSafetyAI by taking this [quick survey](https://forms.gle/E6sK87u7DdoL4Kg86) !
 
 Table of Contents
 - [Usage Tiers](https://github.com/safetyAI/ChatSafetyAI/blob/main/README.md#usage-tiers)
@@ -46,7 +55,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] image generation
 - [ ] custom DB for company-wide documents and regulations
 
-### 11-24-25
+### <a href="https://ldgth.r.ag.d.sendibm3.com/mk/mr/sh/1t6AVsd2XFnIGF8hGVP44iyKRvCbeT/sBJD6SNh5_A5" target="_blank" rel="noopener noreferrer">11-24-25</a>
 - record audio directly from the app on main browsers, as long as device has a microphone
 - audio file uploads
 - multiple file uploads
@@ -73,7 +82,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - for SaaS: multimodal moderation model and custom per-category thresholds to minimize false alarms
 - clear custom DB selection when starting new chat
 
-### 10-06-25
+### <a href="https://ldgth.r.ag.d.sendibm3.com/mk/mr/sh/SMJz09SDriOHVb6Cdbr9uUknXVar/gYeaBkuCWEzo" target="_blank" rel="noopener noreferrer">10-06-25</a>
 - first version of custom database functionality
 - SaaS database fully migrated to MS Azure Storage
 - priority OpenAI calls for faster responses
