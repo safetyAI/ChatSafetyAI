@@ -2,11 +2,11 @@
 
 ## Latest News 🚀🎉
 
-- **12/16/25** <a href="https://ldgth.r.ag.d.sendibm3.com/mk/mr/sh/1f8JAEjGcfF85p8NQ86tpEyRUX/sBJD6SNh5_A5" target="_blank" rel="noopener noreferrer">
+- **12/16/25** <a href="https://sh1.sendinblue.com/aonj1bat8lpfe.html?t=1767548790467" target="_blank" rel="noopener noreferrer">
     Visual Annotations, Voice Input, PDF generation
   </a>
 
-- **10/14/25** <a href="https://ldgth.r.ag.d.sendibm3.com/mk/mr/sh/SMJz09SDriOHVb6Cdbr9uUknXVar/gYeaBkuCWEzo" target="_blank" rel="noopener noreferrer">
+- **10/14/25** <a href="https://sh1.sendinblue.com/aetjxbat8lpfe.html?t=1767548679304" target="_blank" rel="noopener noreferrer">
     Custom Databases, 1M-token Context, New Languages
   </a>
 
@@ -55,7 +55,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] image generation
 - [ ] custom DB for company-wide documents and regulations
 
-### <a href="https://ldgth.r.ag.d.sendibm3.com/mk/mr/sh/1f8JAEjGcfF85p8NQ86tpEyRUX/sBJD6SNh5_A5" target="_blank" rel="noopener noreferrer">11-24-25</a>
+### <a href="https://sh1.sendinblue.com/aonj1bat8lpfe.html?t=1767548790467" target="_blank" rel="noopener noreferrer">11-24-25</a>
 - record audio directly from the app on main browsers, as long as device has a microphone
 - audio file uploads
 - multiple file uploads
@@ -82,7 +82,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - for SaaS: multimodal moderation model and custom per-category thresholds to minimize false alarms
 - clear custom DB selection when starting new chat
 
-### <a href="https://ldgth.r.ag.d.sendibm3.com/mk/mr/sh/SMJz09SDriOHVb6Cdbr9uUknXVar/gYeaBkuCWEzo" target="_blank" rel="noopener noreferrer">10-06-25</a>
+### <a href="https://sh1.sendinblue.com/aetjxbat8lpfe.html?t=1767548679304" target="_blank" rel="noopener noreferrer">10-06-25</a>
 - first version of custom database functionality
 - SaaS database fully migrated to MS Azure Storage
 - priority OpenAI calls for faster responses
