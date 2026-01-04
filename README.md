@@ -2,7 +2,7 @@
 
 ## Latest News 🚀🎉
 
-- **12/16/25** <a href="https://ldgth.r.ag.d.sendibm3.com/mk/mr/sh/1t6AVsd2XFnIGF8hGVP44iyKRvCbeT/sBJD6SNh5_A5" target="_blank" rel="noopener noreferrer">
+- **12/16/25** <a href="https://ldgth.r.ag.d.sendibm3.com/mk/mr/sh/1f8JAEjGcfF85p8NQ86tpEyRUX/sBJD6SNh5_A5" target="_blank" rel="noopener noreferrer">
     Visual Annotations, Voice Input, PDF generation
   </a>
 
@@ -55,7 +55,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] image generation
 - [ ] custom DB for company-wide documents and regulations
 
-### <a href="https://ldgth.r.ag.d.sendibm3.com/mk/mr/sh/1t6AVsd2XFnIGF8hGVP44iyKRvCbeT/sBJD6SNh5_A5" target="_blank" rel="noopener noreferrer">11-24-25</a>
+### <a href="https://ldgth.r.ag.d.sendibm3.com/mk/mr/sh/1f8JAEjGcfF85p8NQ86tpEyRUX/sBJD6SNh5_A5" target="_blank" rel="noopener noreferrer">11-24-25</a>
 - record audio directly from the app on main browsers, as long as device has a microphone
 - audio file uploads
 - multiple file uploads
