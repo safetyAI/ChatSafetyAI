@@ -2,6 +2,10 @@
 
 ## Latest News 🚀🎉
 
+- **01/06/26** <a href="https://sh1.sendinblue.com/3g40f1bat8lpfe.html?t=1767661703520" target="_blank" rel="noopener noreferrer">
+    Live Web Search, Improved Regulations Mode, Current Time and Location
+  </a>
+
 - **12/16/25** <a href="https://sh1.sendinblue.com/aonj1bat8lpfe.html?t=1767548790467" target="_blank" rel="noopener noreferrer">
     Visual Annotations, Voice Input, PDF generation
   </a>
@@ -54,6 +58,11 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] advanced voice mode
 - [ ] image generation
 - [ ] custom DB for company-wide documents and regulations
+
+### <a href="https://sh1.sendinblue.com/3g40f1bat8lpfe.html?t=1767661703520" target="_blank" rel="noopener noreferrer">01-06-26</a>
+- Live Web Search
+- Improved Regulations Model (live web search on constrained domains)
+- Current Time and Location
 
 ### <a href="https://sh1.sendinblue.com/aonj1bat8lpfe.html?t=1767548790467" target="_blank" rel="noopener noreferrer">11-24-25</a>
 - record audio directly from the app on main browsers, as long as device has a microphone
