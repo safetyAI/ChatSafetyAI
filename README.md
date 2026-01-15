@@ -59,6 +59,10 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] image generation
 - [ ] custom DB for company-wide documents and regulations
 
+### 01-14-2026
+- URL checking and correction mechanism
+- improvement regulation and web search modes (domains, instructions, function descriptions)
+
 ### <a href="https://sh1.sendinblue.com/3g40f1bat8lpfe.html?t=1767661703520" target="_blank" rel="noopener noreferrer">01-06-26</a>
 - live web search capability
 - improved regulations mode (live web search on constrained domains)
