@@ -59,6 +59,15 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] image generation
 - [ ] custom DB for company-wide documents and regulations
 
+### 01-19-2026
+- bug fix: now impossible to upload files when no custom database is selected
+- bug fix: soft-deleted files are now removed from the index (blob versioning disabled)
+- smarter custom database search using full file list context for better precision
+- self-healing citations: automatic web search verification and replacement for broken URLs
+- enhanced Regulations mode (better multi-call handling, expanded Quebec domain allowlist)
+- systematic search triggering for every user prompt when in Custom Database mode
+- support for accented characters in custom database folder and file names
+
 ### 01-14-2026
 - URL checking and correction mechanism
 - improvement regulation and web search modes (domains, instructions, function descriptions)
