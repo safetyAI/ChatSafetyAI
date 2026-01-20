@@ -62,7 +62,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 ### 01-19-2026
 - bug fix: now impossible to upload files when no custom database is selected
 - bug fix: soft-deleted files are now removed from the index (blob versioning disabled)
-- custom database search improvements: full file list context, removed query expansionm and added BM25 to increase precision
+- custom database search improvements: full file list context, removed query expansion (was improving recall but hurting precision, and redudant with semantic search), and added BM25 to increase precision
 - enhanced Regulations mode (better multi-call handling, expanded Quebec domain allowlist)
 - systematic search triggering for every user prompt when in Custom Database mode
 - support for accented characters in custom database folder and file names
