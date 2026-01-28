@@ -59,6 +59,10 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] image generation
 - [ ] custom DB for company-wide documents and regulations
 
+### 01-29-2026
+- removed per-user budget limit for production app
+- improved ability to repeatedly trigger annotation mode in the same conversation
+
 ### 01-19-2026
 - bug fix: now impossible to upload files when no custom database is selected
 - bug fix: soft-deleted files are now removed from the index (blob versioning disabled)
