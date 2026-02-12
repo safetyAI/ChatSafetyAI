@@ -59,7 +59,9 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] image generation
 - [ ] custom DB for company-wide documents and regulations
 
-### 01-30-2026
+### 02-12-2026
+- saving logs in a dedicated subdir
+- truncating conv turns in console output for easier debugging
 - removed per-user budget limit for production app
 - improved ability to repeatedly trigger annotation mode in the same conversation
 
