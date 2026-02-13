@@ -94,7 +94,7 @@ In Azure Portal:
   - gpt-4.1-mini-2025-04-14
   - gpt-4o-transcribe
   - text-embedding-3-large
-  - NOTE: due to region availability, Azure may silently deploy a model in a different resource than `AISERVICES_NAME`. Save the name of the new resource created by Azure and pass it as `OUTSIDE_RESOURCE_NAME` at the beginning of Step 9.
+  - NOTE: due to region availability, Azure may silently deploy one or more models in a different resource than `AISERVICES_NAME`. Save the names of the new resources created by Azure and pass them as `OUTSIDE_RESOURCES` at the beginning of Step 9.
   - NOTE: gpt-5.1 may require filing an access request with Microsoft and waiting a few days until it gets approved 
   - NOTE: in "Customize", for all models:
     - Opt out of automatic model version upgrades !!!
