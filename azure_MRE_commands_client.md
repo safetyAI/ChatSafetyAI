@@ -70,7 +70,7 @@ az storage account create \
 In the "Properties" tab of the landing page of the service, leave everything default except:
 - Blob soft delete (enable it with the duration of your choice everywhere, e.g. 30 days), and make sure versioning and point in time restore are disabled.
 - Set minimum TLS version to 1.2
-- In "Containers", add a container named "database", and inside, add two directories, "ChatSafetyAI_user_data" and "custom_databases"
+- In "Containers", add a container named "database" (3 directories will automatically be created inside it by the chatbot: "ChatSafetyAI_user_data", "custom_databases", and "session_logs")
 
 
 #### 4) Create AI Foundry multi-service for OpenAI, Content Safety, Computer Vision, and Language
@@ -312,6 +312,7 @@ done
 ```
 
 #### 8) Create Search Service
+
 ```
 # 1. Make the script executable
 chmod +x configure_azure_search.sh
@@ -334,7 +335,7 @@ echo "✅ Detected Domain: $CLEAN_DOMAIN"
 AOAI_SUBDOMAIN="$CLEAN_DOMAIN"
 AISERVICES_SUBDOMAIN="$CLEAN_DOMAIN"
 
-# 3. Run the Configuration Script (requires two consecutive runs for everything to execute properly)
+# 3. Run the Configuration Script (requires a few consecutive runs, waiting a few mins between each run, for everything to execute properly)
 # Order: Tenant, Sub, RG, Loc, Storage, Container, AISvc, AOAI_Sub, AI_Sub, SearchName, FuncName, VirtDir, DS, Idx, Skill, Idxr, ContainerAppName, RbacMode
 ./configure_azure_search.sh \
   "$TENANT_ID" \
@@ -348,13 +349,59 @@ AISERVICES_SUBDOMAIN="$CLEAN_DOMAIN"
   "$AISERVICES_SUBDOMAIN" \
   "$SEARCH_SERVICE_NAME" \
   "func-placeholder" \
-  "ChatSafetyAI_user_data" \
+  "custom_databases" \
   "$SEARCH_DATASOURCE" \
   "$SEARCH_INDEX" \
   "$SEARCH_SKILLSET" \
   "$SEARCH_INDEXER" \
   "csai-mre-chatbot" \
   "false" # not possible to disable keys programmatically, do it manually in the Azure Portal if needed
+
+
+# ==================
+# CLEAN UP TMP FILES
+# ==================
+
+# Cleanup temporary JSON files
+rm index.json index.json.bak \
+   skillset.json skillset.json.bak \
+   indexer.json indexer.json.bak \
+   2>/dev/null
+
+
+# =====================
+# VERIFICATION COMMANDS
+# =====================
+
+echo "🔄 1. Resetting Indexer (Clearing history)..."
+az rest --method post \
+  --resource https://search.azure.com \
+  --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexers/${SEARCH_INDEXER}/reset?api-version=2024-07-01"
+
+echo "▶️ 2. Running Indexer..."
+az rest --method post \
+  --resource https://search.azure.com \
+  --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexers/${SEARCH_INDEXER}/run?api-version=2024-07-01"
+
+# wait a couple of minutes...
+
+echo "📊 3. Checking Execution Status..."
+STATUS=$(az rest --method get \
+  --resource https://search.azure.com \
+  --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexers/${SEARCH_INDEXER}/status?api-version=2024-07-01" \
+  --query "lastResult")
+
+echo "$STATUS"
+# Look for: "itemsProcessed" > 0 and "status": "success"
+
+echo "🔎 4. Final Proof: Inspecting 1 Document..."
+# This confirms your custom fields (user_id, user_folder) and vector embeddings exist.
+az rest --method post \
+   --resource https://search.azure.com \
+   --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexes/${SEARCH_INDEX}/docs/search?api-version=2024-07-01" \
+   --headers '{"Content-Type": "application/json"}' \
+   --body '{"search": "*", "top": 1, "select": "file_name, user_id, user_folder, chunk"}'
+
 ```
 
 #### 9) Set arguments and environment variables needed by each service
