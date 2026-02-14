@@ -59,7 +59,8 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] image generation
 - [ ] custom DB for company-wide documents and regulations
 
-### 02-12-2026
+### 02-14-2026
+- now using temporary blob leases to prevent parallel sessions instead of uploading/deleting lock files
 - saving logs in a dedicated subdir
 - truncating conv turns in console output for easier debugging
 - removed per-user budget limit for production app
