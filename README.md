@@ -52,7 +52,6 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 
 ### Next steps / wish list (not in order, non-exhaustive)
 - [ ] incognito mode
-- [ ] web search capability
 - [ ] chat sharing as individual icons  
 - [ ] search engine for chats
 - [ ] advanced voice mode
@@ -60,10 +59,10 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] custom DB for company-wide documents and regulations
 
 ### 02-14-2026
-- now using temporary blob leases to prevent parallel sessions instead of uploading/deleting lock files
+- blob leases to prevent parallel sessions instead of uploading/deleting lock files
 - saving logs in a dedicated subdir
 - truncating conv turns in console output for easier debugging
-- removed per-user budget limit for production app
+- removed per-user budget limit for prod app
 - improved ability to repeatedly trigger annotation mode in the same conversation
 
 ### 01-19-2026
