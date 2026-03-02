@@ -59,8 +59,9 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 
 ### 03-01-2026
 - Company-wide custom databases
+- Improved custom DB interface
 - Bug fix chat sharing (utilities API)
-- Bug fix indexer status custom database deletion
+- Bug fix indexer status custom DB deletion
 
 ### 02-17-2026
 - blob leases to prevent parallel sessions instead of uploading/deleting lock files
