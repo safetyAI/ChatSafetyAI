@@ -76,6 +76,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - removed per-user budget limit for prod app
 - improved ability to repeatedly trigger annotation mode in the same conversation
 - custom DB selectize tooltip
+- improved selectize interface
 
 ### 01-19-2026
 - bug fix: now impossible to upload files when no custom database is selected
