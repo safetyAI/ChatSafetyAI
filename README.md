@@ -1,18 +1,6 @@
 # ChatSafetyAI
 
-## Latest News 🚀🎉
-
-- **01/06/26** <a href="https://sh1.sendinblue.com/3g40f1bat8lpfe.html?t=1767661703520" target="_blank" rel="noopener noreferrer">
-    Live Web Search, Improved Regulations Mode, Asking for User Approximate Location
-  </a>
-
-- **12/16/25** <a href="https://sh1.sendinblue.com/aonj1bat8lpfe.html?t=1767548790467" target="_blank" rel="noopener noreferrer">
-    Visual Annotations, Voice Input, PDF generation
-  </a>
-
-- **10/14/25** <a href="https://sh1.sendinblue.com/aetjxbat8lpfe.html?t=1767548679304" target="_blank" rel="noopener noreferrer">
-    Custom Databases, 1M-token Context, New Languages
-  </a>
+## [Latest News](https://safetyai.io/updates/index.html) 🚀🎉
 
 ## About
 - ChatSafetyAI is built with care by Antoine Tixier at [SafetyAI](https://www.safetyai.io) 🛠️❤️.
