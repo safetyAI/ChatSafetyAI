@@ -58,6 +58,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - Allow multiple databases to be selected at once
 - Custom DB UI improvements
 - New jurisdictions: Peru, Brazil, Hong Kong
+- CSAI's knowledge about its own functionalities is now deployment-specific (e.g., it knows that image annotation is not available in Azure)
 
 ### 03-01-2026
 - Company-wide custom databases
