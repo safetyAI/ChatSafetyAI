@@ -45,11 +45,12 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] advanced voice mode
 - [ ] image generation
 
-### 04-6-2026
+### 04-9-2026
 - Image extraction and OCR for custom database files and on-the-fly files
 - Now relying on Azure Document Intelligence for superior structure-preserving text extraction, especially on tables, headers, captions, etc.
 - Ability to remove files that have been uploaded before submitting the query
 - Expanded EBS knowledge about alternative controls and other novel concepts
+- Bug fix token caching Azure managed identities
 
 ### 03-13-2026
 - Logging mechanism: Fixed session isolation, Python and R now in same file, better naming
