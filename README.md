@@ -45,12 +45,17 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] advanced voice mode
 - [ ] image generation
 
-### 04-9-2026
-- Image extraction and OCR for custom database files and on-the-fly files
-- Now relying on Azure Document Intelligence for superior structure-preserving text extraction, especially on tables, headers, captions, etc.
+### 04-14-2026
+- Image extraction and OCR for custom database and on-the-fly files
+- Now relying on Azure Document Intelligence for superior structure-preserving text extraction (tables, headers, captions...)
 - Bug fix token caching Azure managed identities
+- Utilities service: images now included in PPTX generated files, URL Sanitization & Hallucination Defense
+- Custom DB: auto-verify Blob Storage and Azure Search sync, and trigger indexer on missing/ghost files, pagination to bypass 500-file limits when listing files
+- Bug fix custom DB: Mixed-scope database bug applying the wrong `user_id` to multi-selections, Malformed OData query crashes via new empty-list defensive guards
+- Addressed all MS Defender vulnerabilities up to 04/10/2026
 - **TODO** Expanded EBS knowledge about alternative controls and other novel concepts
 - **TODO** Ability to remove files that have been uploaded before submitting the query
+- **TODO** Chat renaming
 
 ### 03-13-2026
 - Logging mechanism: Fixed session isolation, Python and R now in same file, better naming
