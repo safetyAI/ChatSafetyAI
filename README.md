@@ -52,6 +52,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - Utilities service: images now included in PPTX generated files, URL Sanitization & Hallucination Defense
 - Custom DB: auto-verify Blob Storage and Azure Search sync, and trigger indexer on missing/ghost files, pagination to bypass 500-file limits when listing files
 - Bug fix custom DB: Mixed-scope database bug applying the wrong `user_id` to multi-selections, Malformed OData query crashes via new empty-list defensive guards
+- Increased max response size (`my_max_tokens`, 4k -> 6k chars)
 - Addressed all MS Defender vulnerabilities up to 04/10/2026
 - **TODO** Expanded EBS knowledge about alternative controls and other novel concepts
 - **TODO** Ability to remove files that have been uploaded before submitting the query
