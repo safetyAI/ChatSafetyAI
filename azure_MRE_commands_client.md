@@ -2,8 +2,14 @@
 #### Edit these values for your environment    
 
 ```
-TENANT_ID="<your-tenant-id>"                     # Azure Tenant ID (Directory ID)
-SUBSCRIPTION_ID="<your-subscription-id>"         # Azure Subscription ID
+
+# Azure Portal locations:
+# - Subscription ID: Azure Portal -> Subscriptions -> <your subscription> -> Overview
+# - Tenant ID: Azure Portal -> Microsoft Entra ID -> Overview -> Tenant ID
+#   or: Subscriptions -> <your subscription> -> click Directory name -> copy Tenant ID
+
+TENANT_ID=""                                     # Azure Tenant ID (Directory ID)
+SUBSCRIPTION_ID=""                               # Azure Subscription ID
 LOCATION="eastus"                                # Azure region
 RESOURCE_GROUP="csai-mre"                        # Resource group name
 ACR_NAME="chatsafetyaimreacr"                    # Container Registry (lowercase, no dashes)
@@ -126,6 +132,13 @@ do
   sudo docker tag $image $ACR_NAME.azurecr.io/$image:latest
   sudo docker push $ACR_NAME.azurecr.io/$image:latest
 done
+```
+
+For reference: how to delete untagged manifests (old digests). 
+```
+echo "Cleaning up old manifests to prevent pipeline caching..."
+az acr run --registry $ACR_NAME \
+  --cmd "acr purge --filter '.*:.*' --ago 0d --keep 1 --untagged" /dev/null
 ```
 
 #### 6) Create Azure Container Apps environment
@@ -312,6 +325,7 @@ done
 ```
 
 #### 8) Create Search Service
+If a pipeline is used to create and assign roles to the Search Service, the script `configure_azure_search_enterprise.sh` should be used below (location argument not needed).
 
 ```
 # 1. Make the script executable
@@ -348,7 +362,6 @@ AISERVICES_SUBDOMAIN="$CLEAN_DOMAIN"
   "$AOAI_SUBDOMAIN" \
   "$AISERVICES_SUBDOMAIN" \
   "$SEARCH_SERVICE_NAME" \
-  "func-placeholder" \
   "custom_databases" \
   "$SEARCH_DATASOURCE" \
   "$SEARCH_INDEX" \
@@ -376,32 +389,60 @@ rm index.json index.json.bak \
 echo "🔄 1. Resetting Indexer (Clearing history)..."
 az rest --method post \
   --resource https://search.azure.com \
-  --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexers/${SEARCH_INDEXER}/reset?api-version=2024-07-01"
+  --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexers/${SEARCH_INDEXER}/reset?api-version=2024-11-01-preview"
 
 echo "▶️ 2. Running Indexer..."
 az rest --method post \
   --resource https://search.azure.com \
-  --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexers/${SEARCH_INDEXER}/run?api-version=2024-07-01"
+  --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexers/${SEARCH_INDEXER}/run?api-version=2024-11-01-preview"
 
 # wait a couple of minutes...
 
 echo "📊 3. Checking Execution Status..."
 STATUS=$(az rest --method get \
   --resource https://search.azure.com \
-  --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexers/${SEARCH_INDEXER}/status?api-version=2024-07-01" \
+  --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexers/${SEARCH_INDEXER}/status?api-version=2024-11-01-preview" \
   --query "lastResult")
 
 echo "$STATUS"
 # Look for: "itemsProcessed" > 0 and "status": "success"
 
-echo "🔎 4. Final Proof: Inspecting 1 Document..."
-# This confirms your custom fields (user_id, user_folder) and vector embeddings exist.
+echo "🔎 4. Final Proof: Inspecting Parent Document Metadata..."
+# =================================================================================
+# WHY WE TEST THIS: 
+# We need to verify that the custom metadata we attached to the PDF in Blob Storage 
+# (specifically the 'child_images' string containing our extracted image filenames) 
+# successfully passed through the indexer and was saved to the parent document row.
+# 
+# HOW IT WORKS:
+# We filter by 'doc_id ne null'. In our architecture, ONLY parent documents have a 
+# 'doc_id', whereas chunks have a 'chunk_id' and 'parent_id'. This isolates the 
+# parent rows. Note: We cannot filter by 'child_images ne null' because we explicitly 
+# set that field to be non-filterable to save Azure compute costs.
+# =================================================================================
 az rest --method post \
-   --resource https://search.azure.com \
-   --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexes/${SEARCH_INDEX}/docs/search?api-version=2024-07-01" \
-   --headers '{"Content-Type": "application/json"}' \
-   --body '{"search": "*", "top": 1, "select": "file_name, user_id, user_folder, chunk"}'
+    --resource https://search.azure.com \
+    --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexes/${SEARCH_INDEX}/docs/search?api-version=2024-11-01-preview" \
+    --headers '{"Content-Type": "application/json"}' \
+    --body '{"search": "*", "filter": "doc_id ne null", "top": 1, "select": "file_name, user_id, user_folder, child_images"}'
 
+
+echo "🧩 5. Verifying Document Chunking (The Parallel Track)..."
+# =================================================================================
+# WHY WE TEST THIS:
+# In multimodal hybrid RAG, Parent Documents handle image vectors and metadata, but 
+# Text Chunks handle the actual dense semantic text search. We must prove that the 
+# Azure Split Skill successfully cracked the text, chunked it, and linked it back.
+#
+# HOW IT WORKS:
+# We filter by 'parent_id ne null'. Only chunk rows possess a 'parent_id' (which 
+# points back to the main document). We select the chunk text to ensure it isn't empty.
+# =================================================================================
+az rest --method post \
+    --resource https://search.azure.com \
+    --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexes/${SEARCH_INDEX}/docs/search?api-version=2024-11-01-preview" \
+    --headers '{"Content-Type": "application/json"}' \
+    --body '{"search": "*", "filter": "parent_id ne null", "top": 1, "select": "chunk_id, parent_id, chunk"}'
 ```
 
 #### 9) Set arguments and environment variables needed by each service
