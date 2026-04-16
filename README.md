@@ -526,7 +526,6 @@ We respect your privacy. The following disclosures apply to all users of our Ser
 - **User Content** — For the SaaS version, stored in Microsoft Azure. Certain microservices are hosted on Amazon EC2; the two user-facing applications are hosted on Posit’s shinyapps.io (temporary session storage only). For the in-house Azure version, all storage and processing occur within Azure services.
 - **LLM APIs** — ChatSafetyAI may use multiple Large Language Models (LLMs) via commercial APIs (e.g., GPT, Claude, Gemini). Data sent to these APIs is not used to train their models and is retained by the provider only temporarily (up to 30 days, **subject to change by the provider**) for moderation, after which it is deleted.
 - **Location Data** — May be requested solely to improve prediction accuracy (e.g., weather-related safety predictions). Location is not stored beyond the session unless required for your specific use case.
-- **IP, Device, and Browser Data** — We do **not** collect IP addresses, device/browser fingerprints, logs, or other analytics.
 - **Cookies** — We do not set cookies. However, hosting platforms (e.g., shinyapps.io, Azure) may set cookies for the sole purpose of login persistence, MFA, or SSO.
 - **Content Disclosure** — We do **not** sell or share your content with third parties. Conversations may be reviewed internally to improve the Services unless you opt out by emailing `antoine.tixier@safetyai.io`.
 
