@@ -493,7 +493,7 @@ You may not:
 **Accuracy** — Large Language Models (LLMs) can produce incorrect or misleading Output. You agree:
 - Output may not be accurate and should not be your sole source of truth or professional advice.
 - You will verify Output for accuracy and appropriateness before use.
-- You will not use Output relating to a person in decisions with legal or material impacts (e.g., employment, housing, insurance, medical, or legal matters).
+- You will not use Output relating to a person in decisions with legal or material impacts (e.g., employment, housing, insurance, medical, or legal matters). You acknowledge that Output is intended to assist you with occupational safety tasks and topics, but does not constitute professional safety advice, engineering advice, or a guarantee of workplace safety. We do not warrant that the use of Output will prevent accidents, injuries, or fatalities. You acknowledge that the ﬁnal determination of safety risks and the implementation of safety controls remains your sole responsibility, and that Output may be inaccurate and in any case, always require human veriﬁcation before taking action in the real world.
 
 **No Endorsement or Representation** — Our Services may provide incomplete, incorrect, or offensive Output that does not represent SafetyAI's views. If Output references any third party products or services, it does not imply endorsement or affiliation.
 
