@@ -385,14 +385,26 @@ rm index.json index.json.bak \
 # VERIFICATION COMMANDS
 # =====================
 
-echo "📊 Checking Execution Status..."
-STATUS=$(az rest --method get \
+# 1. Check current progress (clean table format)
+az rest --method get \
   --resource https://search.azure.com \
   --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexers/${SEARCH_INDEXER}/status?api-version=2024-11-01-preview" \
-  --query "lastResult")
+  --query "lastResult.{Status:status, ItemsProcessed:itemsProcessed, ItemsFailed:itemsFailed, StartTime:startTime}" \
+  --output table
 
-echo "$STATUS"
-# Look for: "itemsProcessed" > 0 and "status": "success"
+# 2. View execution history (if you want to see past runs)
+az rest --method get \
+   --resource https://search.azure.com \
+   --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexers/${SEARCH_INDEXER}/status?api-version=2024-11-01-preview" \
+   --query "executionHistory[*].{Status:status, Items:itemsProcessed, Start:startTime, End:endTime}" \
+   --output table
+
+# 3. Print errors (if ItemsFailed > 0)
+az rest --method get \
+   --resource https://search.azure.com \
+   --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexers/${SEARCH_INDEXER}/status?api-version=2024-11-01-preview" \
+   --query "lastResult.errors" \
+   --output json
 
 echo "🔎 Inspecting Parent Document Metadata..."
 # =================================================================================
@@ -432,39 +444,12 @@ az rest --method post \
     --body '{"search": "*", "filter": "parent_id ne null", "top": 1, "select": "chunk_id, parent_id, chunk"}'
 ```
 
-Additional useful commands
+By default, the indexer only processes NEW or MODIFIED blobs. Forcing a full re-processing from scratch is needed if you:
+- Change AI logic/skillsets (e.g., re-enabling image vectors), 
+- Change chunking strategy (e.g., resizing text splits), 
+- Add new metadata fields to existing documents, or 
+- Need to recover from massive upstream API failures (e.g., OpenAI outages).
 ```bash
-# checking progress
-az rest --method get \
-  --resource https://search.azure.com \
-  --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexers/${SEARCH_INDEXER}/status?api-version=2024-11-01-preview" \
-  --query "lastResult.{Status:status, ItemsProcessed:itemsProcessed, ItemsFailed:itemsFailed, StartTime:startTime}" \
-  --output table
-
-# with execution history:
-az rest --method get \
-   --resource https://search.azure.com \
-   --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexers/${SEARCH_INDEXER}/status?api-version=2024-11-01-preview" \
-   --query "executionHistory[*].{Status:status, Items:itemsProcessed, Start:startTime, End:endTime}" \
-   --output table
-
-# if there are any errors:
-az rest --method get \
-   --resource https://search.azure.com \
-   --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexers/${SEARCH_INDEXER}/status?api-version=2024-11-01-preview" \
-   --query "lastResult.errors" \
-   --output json
-
-# =================================================================================
-# WHEN TO USE RESET + RUN:
-# By default, the indexer only processes NEW or MODIFIED blobs. 
-# You MUST run Reset + Run to force a full re-processing from scratch if you:
-# 1. Change AI logic/skillsets (e.g., re-enabling image vectors), 
-# 2. Change chunking strategy (e.g., resizing text splits), 
-# 3. Add new metadata fields to existing documents, or 
-# 4. Need to recover from massive upstream API failures (e.g., OpenAI outages).
-# =================================================================================
-
 echo "🔄 Resetting Indexer (Clearing history)..."
 az rest --method post \
   --resource https://search.azure.com \
