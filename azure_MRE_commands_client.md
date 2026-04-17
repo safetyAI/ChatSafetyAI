@@ -1,8 +1,7 @@
 ### USER VARIABLES
 #### Edit these values for your environment    
 
-```
-
+```bash
 # Azure Portal locations:
 # - Subscription ID: Azure Portal -> Subscriptions -> <your subscription> -> Overview
 # - Tenant ID: Azure Portal -> Microsoft Entra ID -> Overview -> Tenant ID
@@ -29,12 +28,12 @@ SEARCH_SKILLSET="rag-skillset"                   # ..
 ### Log into the Azure Command Line Interface (CLI)
 
 #### Note: tenant ID is also known as directory ID
-```
+```bash
 az login --tenant $TENANT_ID
 ```
 
 #### Note: run "az account list --output table" to list accessible subscriptions
-```
+```bash
 az account set --subscription $SUBSCRIPTION_ID
 ```
 
@@ -48,11 +47,11 @@ az group create --name $RESOURCE_GROUP --location $LOCATION
 #### 2) Create Azure Container Registry. Note: name cannot contain dashes
 
 ##### Register the resource provider for Container Registry
-```
+```bash
 az provider register --namespace Microsoft.ContainerRegistry --wait
 az provider register --namespace Microsoft.CognitiveServices --wait
 ```
-```
+```bash
 az acr create \
   --name $ACR_NAME \
   --resource-group $RESOURCE_GROUP \
@@ -62,7 +61,7 @@ az acr create \
 ```
 
 #### 3) Create Storage Account.
-```
+```bash
 az storage account create \
   --name $STORAGE_ACCOUNT \
   --resource-group $RESOURCE_GROUP \
@@ -80,7 +79,7 @@ In the "Properties" tab of the landing page of the service, leave everything def
 
 
 #### 4) Create AI Foundry multi-service for OpenAI, Content Safety, Computer Vision, and Language
-```
+```bash
 az cognitiveservices account create \
   --name $AISERVICES_NAME \
   --resource-group $RESOURCE_GROUP \
@@ -111,7 +110,7 @@ In Azure Portal:
 ## SafetyAI-Managed Services
 
 #### 5) Upload Docker images to container registry
-```
+```bash
 # Automatically retrieve ACR credentials and log in
 ACR_USERNAME=$(az acr credential show --name $ACR_NAME --query username --output tsv)
 ACR_PASSWORD=$(az acr credential show --name $ACR_NAME --query passwords[0].value --output tsv)
@@ -121,7 +120,7 @@ sudo docker login $ACR_NAME.azurecr.io --username $ACR_USERNAME --password $ACR_
 ```
 Enter credentials (found in the Azure Portal page of the container registry, under "Access keys").
 
-```
+```bash
 for image in \
   chatsafetyai \
   dashboard \
@@ -135,7 +134,7 @@ done
 ```
 
 For reference: how to delete untagged manifests (old digests). 
-```
+```bash
 echo "Cleaning up old manifests to prevent pipeline caching..."
 az acr run --registry $ACR_NAME \
   --cmd "acr purge --filter '.*:.*' --ago 0d --keep 1 --untagged" /dev/null
@@ -143,13 +142,13 @@ az acr run --registry $ACR_NAME \
 
 #### 6) Create Azure Container Apps environment
 
-```
+```bash
 az extension add --name containerapp
 az provider register -n Microsoft.OperationalInsights --wait
 ```
 
 ##### a. Create Log Analytics workspace
-```
+```bash
 az monitor log-analytics workspace create \
   --resource-group $RESOURCE_GROUP \
   --workspace-name $LOG_WORKSPACE \
@@ -157,7 +156,7 @@ az monitor log-analytics workspace create \
 ```
 
 ##### b. Get workspace ID and key
-```
+```bash
 WORKSPACE_ID=$(az monitor log-analytics workspace show \
   --resource-group $RESOURCE_GROUP \
   --workspace-name $LOG_WORKSPACE \
@@ -182,7 +181,7 @@ fi
 ```
 
 ##### c. Create Container Apps environment with system-assigned identity and logging
-```
+```bash
 az containerapp env create \
   --name $CONTAINERAPPS_ENV \
   --resource-group $RESOURCE_GROUP \
@@ -193,7 +192,7 @@ az containerapp env create \
 ```
 
 ##### d. Retrieve the new Environment Unique String
-```
+```bash
 ACA_SUFFIX=$(az containerapp env show \
   --name $CONTAINERAPPS_ENV \
   --resource-group $RESOURCE_GROUP \
@@ -206,7 +205,7 @@ echo "✅ Environment Domain: $ACA_SUFFIX"
 #### 7) Create services
 
 ##### Find a region that will allow an App Service Plan
-```
+```bash
 # ==============================================================================
 # SAFE REGION PROSPECTOR (Finds a region with B-series Quota)
 # ==============================================================================
@@ -260,7 +259,7 @@ fi
 ```
 
 ##### a. Create App Service Plan for APIs
-```
+```bash
 az appservice plan create \
   --name $APP_SERVICE_PLAN \
   --resource-group $RESOURCE_GROUP \
@@ -270,7 +269,7 @@ az appservice plan create \
 ```
 
 ##### b. Create API Web Apps
-```
+```bash
 # Format: "App-Name Image-Name Port"
 api_configs=(
   "csai-mre-prediction safetyai_prediction 4387"
@@ -303,7 +302,7 @@ done
 ```
 
 ##### c. Create Container Apps (Chatbot & Dashboard)
-```
+```bash
 for app in \
   "csai-mre-chatbot chatsafetyai 3838" \
   "csai-mre-dashboard dashboard 3838"
@@ -327,7 +326,7 @@ done
 #### 8) Create Search Service
 If a pipeline is used to create and assign roles to the Search Service, the script `configure_azure_search_enterprise.sh` should be used below (location argument not needed).
 
-```
+```bash
 # 1. Make the script executable
 chmod +x configure_azure_search.sh
 
@@ -350,7 +349,7 @@ AOAI_SUBDOMAIN="$CLEAN_DOMAIN"
 AISERVICES_SUBDOMAIN="$CLEAN_DOMAIN"
 
 # 3. Run the Configuration Script (requires a few consecutive runs, waiting a few mins between each run, for everything to execute properly)
-# Order: Tenant, Sub, RG, Loc, Storage, Container, AISvc, AOAI_Sub, AI_Sub, SearchName, FuncName, VirtDir, DS, Idx, Skill, Idxr, ContainerAppName, RbacMode
+# Argument order: Tenant, Sub, RG, Loc, Storage, Container, AISvc, AOAI_Sub, AI_Sub, SearchName, FuncName, VirtDir, DS, Idx, Skill, Idxr, ContainerAppName, RbacMode, EnableImageVectors
 ./configure_azure_search.sh \
   "$TENANT_ID" \
   "$SUBSCRIPTION_ID" \
@@ -368,8 +367,8 @@ AISERVICES_SUBDOMAIN="$CLEAN_DOMAIN"
   "$SEARCH_SKILLSET" \
   "$SEARCH_INDEXER" \
   "csai-mre-chatbot" \
-  "false" # not possible to disable keys programmatically, do it manually in the Azure Portal if needed
-
+  "false" \ # not possible to disable keys programmatically, do it manually in the Azure Portal if needed
+  "false"
 
 # ==================
 # CLEAN UP TMP FILES
@@ -445,9 +444,34 @@ az rest --method post \
     --body '{"search": "*", "filter": "parent_id ne null", "top": 1, "select": "chunk_id, parent_id, chunk"}'
 ```
 
-#### 9) Set arguments and environment variables needed by each service
+Additional useful commands
+```bash
+# checking progress
+az rest --method get \
+  --resource https://search.azure.com \
+  --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexers/${SEARCH_INDEXER}/status?api-version=2024-11-01-preview" \
+  --query "lastResult.{Status:status, ItemsProcessed:itemsProcessed, ItemsFailed:itemsFailed, StartTime:startTime}" \
+  --output table
+
+# with execution history:
+az rest --method get \
+   --resource https://search.azure.com \
+   --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexers/${SEARCH_INDEXER}/status?api-version=2024-11-01-preview" \
+   --query "executionHistory[*].{Status:status, Items:itemsProcessed, Start:startTime, End:endTime}" \
+   --output table
+
+# if there are any errors:
+az rest --method get \
+   --resource https://search.azure.com \
+   --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexers/${SEARCH_INDEXER}/status?api-version=2024-11-01-preview" \
+   --query "lastResult.errors" \
+   --output json
 
 ```
+
+#### 9) Set arguments and environment variables needed by each service
+
+```bash
 MAIN_ENDPOINT=$(az cognitiveservices account show \
   --name "$AISERVICES_NAME" \
   --resource-group "$RESOURCE_GROUP" \
@@ -476,7 +500,7 @@ done
 
 ##### a. Utilities API
 
-```
+```bash
 HOST_UTILITIES=$(az webapp show \
   --name csai-mre-utilities \
   --resource-group $RESOURCE_GROUP \
@@ -521,7 +545,7 @@ az webapp config appsettings set \
   - The default container allocation of 0.5 CPU and 1G of RAM (container = replica here) allows max 2 users per replica, since one ChatSafetyAI session consumes approx 400MB of RAM.
   - The default consumption-based workload profile has a hard limit of 4 CPUs and 8 GBs of RAM, so it allows 4/0.5 = 8 replicas to be started, CPU being the limiting factor here (hence the `--max-replicas 8` below). This setup supports up to 8 × 2 = 16 concurrent users. If more is needed, switch to a [general-purpose workload profile](https://learn.microsoft.com/en-us/azure/container-apps/workload-profiles-overview).
 
-```
+```bash
 # --- Dynamic URL Fetching for APIs (All are Web Apps) ---
 
 # 1. Fetch Web App Hostname (Utilities)
@@ -577,7 +601,7 @@ az containerapp update \
 
 ##### c. Dashboard
 
-```
+```bash
 az containerapp update \
   --name csai-mre-dashboard \
   --resource-group $RESOURCE_GROUP \
@@ -592,7 +616,7 @@ az containerapp update \
 
 #### 10) Assign managed identity roles 
 
-```
+```bash
 # Helper shell function
 assign_role_to_containerapp_identity() {
   local containerapp_name="$1"
@@ -741,7 +765,7 @@ Verify Configuration manually in the Azure AI Portal. On the Container:
 
 ##### a. Register apps in Entra ID, create service principals
 
-```
+```bash
 # Loop for both apps
 for app in csai-mre-chatbot csai-mre-dashboard; do
   echo "Configuring Entra ID for $app..."
