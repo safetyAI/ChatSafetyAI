@@ -385,19 +385,7 @@ rm index.json index.json.bak \
 # VERIFICATION COMMANDS
 # =====================
 
-echo "🔄 1. Resetting Indexer (Clearing history)..."
-az rest --method post \
-  --resource https://search.azure.com \
-  --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexers/${SEARCH_INDEXER}/reset?api-version=2024-11-01-preview"
-
-echo "▶️ 2. Running Indexer..."
-az rest --method post \
-  --resource https://search.azure.com \
-  --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexers/${SEARCH_INDEXER}/run?api-version=2024-11-01-preview"
-
-# wait a couple of minutes...
-
-echo "📊 3. Checking Execution Status..."
+echo "📊 Checking Execution Status..."
 STATUS=$(az rest --method get \
   --resource https://search.azure.com \
   --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexers/${SEARCH_INDEXER}/status?api-version=2024-11-01-preview" \
@@ -406,7 +394,7 @@ STATUS=$(az rest --method get \
 echo "$STATUS"
 # Look for: "itemsProcessed" > 0 and "status": "success"
 
-echo "🔎 4. Final Proof: Inspecting Parent Document Metadata..."
+echo "🔎 Inspecting Parent Document Metadata..."
 # =================================================================================
 # WHY WE TEST THIS: 
 # We need to verify that the custom metadata we attached to the PDF in Blob Storage 
@@ -426,7 +414,7 @@ az rest --method post \
     --body '{"search": "*", "filter": "doc_id ne null", "top": 1, "select": "file_name, user_id, user_folder, child_images"}'
 
 
-echo "🧩 5. Verifying Document Chunking (The Parallel Track)..."
+echo "🧩 Verifying Document Chunking (The Parallel Track)..."
 # =================================================================================
 # WHY WE TEST THIS:
 # In multimodal hybrid RAG, Parent Documents handle image vectors and metadata, but 
@@ -467,6 +455,25 @@ az rest --method get \
    --query "lastResult.errors" \
    --output json
 
+# =================================================================================
+# WHEN TO USE RESET + RUN:
+# By default, the indexer only processes NEW or MODIFIED blobs. 
+# You MUST run Reset + Run to force a full re-processing from scratch if you:
+# 1. Change AI logic/skillsets (e.g., re-enabling image vectors), 
+# 2. Change chunking strategy (e.g., resizing text splits), 
+# 3. Add new metadata fields to existing documents, or 
+# 4. Need to recover from massive upstream API failures (e.g., OpenAI outages).
+# =================================================================================
+
+echo "🔄 Resetting Indexer (Clearing history)..."
+az rest --method post \
+  --resource https://search.azure.com \
+  --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexers/${SEARCH_INDEXER}/reset?api-version=2024-11-01-preview"
+
+echo "▶️ Running Indexer..."
+az rest --method post \
+  --resource https://search.azure.com \
+  --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexers/${SEARCH_INDEXER}/run?api-version=2024-11-01-preview"
 ```
 
 #### 9) Set arguments and environment variables needed by each service
