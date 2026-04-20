@@ -380,7 +380,6 @@ rm index.json index.json.bak \
    indexer.json indexer.json.bak \
    2>/dev/null
 
-
 # =====================
 # VERIFICATION COMMANDS
 # =====================
@@ -413,18 +412,19 @@ az rest --method get \
    --query "lastResult.warnings" \
    --output json
 
-echo "🔎 Inspecting Parent Document Metadata..."
 # =================================================================================
-# WHY WE TEST THIS: 
-# We need to verify that the custom metadata we attached to the PDF in Blob Storage 
-# (specifically the 'child_images' string containing our extracted image filenames) 
-# successfully passed through the indexer and was saved to the parent document row.
+# Inspecting Parent Document Metadata
+# We need to verify that the Parent Document row was created correctly. In our 
+# hybrid architecture, the parent row serves TWO critical purposes:
+# 1. It acts as a fully searchable entity containing the 'full_text' and the dense 
+#    'full_doc_vector'.
+# 2. It holds the custom bidirectional metadata from Blob Storage (specifically 
+#    the 'child_images' string for multimodal UI injection).
 # 
-# HOW IT WORKS:
-# We filter by 'doc_id ne null'. In our architecture, ONLY parent documents have a 
-# 'doc_id', whereas chunks have a 'chunk_id' and 'parent_id'. This isolates the 
-# parent rows. Note: We cannot filter by 'child_images ne null' because we explicitly 
-# set that field to be non-filterable to save Azure compute costs.
+# We filter by 'doc_id ne null'. Because of our Index Projections, ONLY parent 
+# document rows are assigned a 'doc_id', whereas chunk rows are assigned a 'parent_id'. 
+# This completely isolates the parent row. (Note: We cannot filter by 'child_images 
+# ne null' because we explicitly set it to non-filterable to save Azure compute costs).
 # =================================================================================
 az rest --method post \
     --resource https://search.azure.com \
@@ -432,15 +432,12 @@ az rest --method post \
     --headers '{"Content-Type": "application/json"}' \
     --body '{"search": "*", "filter": "doc_id ne null", "top": 1, "select": "file_name, user_id, user_folder, child_images"}'
 
-
-echo "🧩 Verifying Document Chunking (The Parallel Track)..."
 # =================================================================================
-# WHY WE TEST THIS:
+# Verifying Document Chunking (The Parallel Track
 # In multimodal hybrid RAG, Parent Documents handle image vectors and metadata, but 
 # Text Chunks handle the actual dense semantic text search. We must prove that the 
 # Azure Split Skill successfully cracked the text, chunked it, and linked it back.
 #
-# HOW IT WORKS:
 # We filter by 'parent_id ne null'. Only chunk rows possess a 'parent_id' (which 
 # points back to the main document). We select the chunk text to ensure it isn't empty.
 # =================================================================================
