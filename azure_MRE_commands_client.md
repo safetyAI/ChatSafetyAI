@@ -406,6 +406,13 @@ az rest --method get \
    --query "lastResult.errors" \
    --output json
 
+# 3b. Print warnings (for diagnosing 'transient' failures or throttling)
+az rest --method get \
+   --resource https://search.azure.com \
+   --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexers/${SEARCH_INDEXER}/status?api-version=2024-11-01-preview" \
+   --query "lastResult.warnings" \
+   --output json
+
 echo "🔎 Inspecting Parent Document Metadata..."
 # =================================================================================
 # WHY WE TEST THIS: 
@@ -560,30 +567,31 @@ az containerapp update \
   --scale-rule-type http \
   --scale-rule-metadata concurrentRequests=1 \
   --set-env-vars \
+    IS_LOCAL=FALSE \
     IS_AZURE=TRUE \
+    IN_HOUSE_COMPANY_NAME="$COMPANY_NAME" \
+    USE_MANAGED_IDENTITY=TRUE \
+    CHECK_LOCK_FILE=TRUE \
+    MAX_INACTIVE_TIME=24 \
+    MAX_RECORDING_TIME_MINS=5 \
+    DISABLE_KEEPALIVE=FALSE \
+    RECORD_LOGS=TRUE \
+    CHECK_USER_BUDGETS=FALSE \
+    SHOW_CUSTOM_DB=TRUE \
     UTILITIES_ADDRESS="$UTILITIES_ADDRESS" \
     PREDICTIONS_ADDRESS="$PREDICTIONS_ADDRESS" \
     NLP_ADDRESS="$NLP_ADDRESS" \
     OPENAI_MODEL_NAME_GPT4=gpt-4.1-2025-04-14 \
     OPENAI_MODEL_NAME_GPT35=gpt-4.1-mini-2025-04-14 \
-    CHECK_LOCK_FILE=TRUE \
-    MAX_INACTIVE_TIME=24 \
-    DISABLE_KEEPALIVE=FALSE \
-    RECORD_LOGS=TRUE \
-    CHECK_USER_BUDGETS=FALSE \
-    SHOW_CUSTOM_DB=TRUE \
     SEARCH_ENDPOINT="https://$SEARCH_SERVICE_NAME.search.windows.net" \
     SEARCH_INDEXER="rag-indexer" \
     SEARCH_INDEX="rag-index" \
     AZURE_STORAGE_ACCOUNT_CONTAINER_NAME=database \
     AZURE_STORAGE_ACCOUNT=$STORAGE_ACCOUNT \
     OPENAI_MODEL_NAME_THINKING=gpt-5.1-2025-11-13 \
-    MAX_RECORDING_TIME_MINS=5 \
-    IS_LOCAL=FALSE \
     AZURE_MODERATION_ADDRESS="${MAIN_ENDPOINT}contentsafety/text:analyze?api-version=2024-09-01" \
     AZURE_VISION_ADDRESS="${MAIN_ENDPOINT}" \
     AZURE_LANGUAGE_ADDRESS="${MAIN_ENDPOINT}" \
-    USE_MANAGED_IDENTITY=TRUE \
     AZURE_OPENAI_RESPONSES_ADDRESS=https://csai-aiservices-mre.cognitiveservices.azure.com/openai/responses?api-version=2025-04-01-preview\
     AZURE_OPENAI_ADDRESS_THINKING=https://csai-aiservices-mre.cognitiveservices.azure.com/openai/responses?api-version=2025-04-01-preview \
     AZURE_OPENAI_ADDRESS_GPT4=https://csai-aiservices-mre.cognitiveservices.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2025-01-01-preview \
