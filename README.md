@@ -35,21 +35,23 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
   <tr> <td align="right"> Custom Risk Analysis </td> <td> No </td> <td> Yes </td> </tr>
    </table>
 
-
 ## Version History
 
 ### Next steps / wish list (not in order, non-exhaustive)
-- [ ] incognito mode
-- [ ] chat sharing as individual icons  
+- [ ] incognito mode 
 - [ ] search engine for chats
 - [ ] advanced voice mode
 - [ ] image generation
 
-### 04-15-2026
-- Search improvement: removing stopwords and random suffix from file names to improve title BM-25 ranking
+### 04-22-2026
+- Ability to rename chats
+- Kebab dropdown menu for chat sharing, renaming, deletion
+- Improved scroll handler during streaming output consumption and tab switching (Cancelable "Guided Tour" automatic scrolldown)
 - **TODO** Expanded EBS knowledge about alternative controls and other novel concepts
 - **TODO** Ability to remove files that have been uploaded before submitting the query
-- **TODO** Chat renaming
+
+### 04-15-2026
+- Search improvement: removing stopwords and random suffix from file names to improve title BM-25 ranking
 
 ### 04-14-2026
 - Image extraction and OCR for custom database and on-the-fly files
