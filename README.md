@@ -46,7 +46,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 ### 04-22-2026
 - Ability to rename chats
 - Relocated Chat Sharing button from navbar to individual kebabs (see below) to make room for the upcoming chat search engine functionality
-- Kebab dropdown menu for chat sharing, renaming, deletion
+- Kebab dropdown menus for chat sharing, renaming, deletion
 - Improved scroll handler during streaming output consumption and tab switching (Cancelable "Guided Tour" automatic scrolldown)
 - **TODO** Expanded EBS knowledge about alternative controls and other novel concepts
 - **TODO** Ability to remove files that have been uploaded before submitting the query
