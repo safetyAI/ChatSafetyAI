@@ -45,7 +45,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 
 ### 04-23-2026
 - Bug fix chat sharing for very long/complex conversations: increased timeout from 60 to 180 secs
-- Bubble when text redaction is firing up
+- Bubble (and toast on mobile) when text redaction is firing up; just once per session
 - **TODO** Expanded EBS knowledge about alternative controls and other novel concepts
 - **TODO** Ability to remove files that have been uploaded before submitting the query
 
