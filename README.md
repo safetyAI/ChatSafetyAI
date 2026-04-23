@@ -43,13 +43,16 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] advanced voice mode
 - [ ] image generation
 
+### 04-23-2026
+- Bug fix chat sharing for very long/complex conversations: increased timeout from 60 to 180 secs
+- **TODO** Expanded EBS knowledge about alternative controls and other novel concepts
+- **TODO** Ability to remove files that have been uploaded before submitting the query
+
 ### 04-22-2026
 - Ability to rename chats
 - Relocated Chat Sharing button from navbar to individual kebabs (see below) to make room for the upcoming chat search engine functionality
 - Kebab dropdown menus for chat sharing, renaming, deletion
 - Improved scroll handler during streaming output consumption and tab switching (Cancelable "Guided Tour" automatic scrolldown)
-- **TODO** Expanded EBS knowledge about alternative controls and other novel concepts
-- **TODO** Ability to remove files that have been uploaded before submitting the query
 
 ### 04-15-2026
 - Search improvement: removing stopwords and random suffix from file names to improve title BM-25 ranking
