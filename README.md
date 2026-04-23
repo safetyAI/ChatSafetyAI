@@ -39,7 +39,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 
 ### Next steps / wish list (not in order, non-exhaustive)
 - [ ] incognito mode 
-- [ ] search engine for chats
+- [ ] chat search engine
 - [ ] advanced voice mode
 - [ ] image generation
 
