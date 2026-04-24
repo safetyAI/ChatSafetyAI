@@ -43,6 +43,9 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] advanced voice mode
 - [ ] image generation
 
+### 04-25-2026
+- Bug fix Responses API model name parsing
+
 ### 04-24-2026
 - Expanded EBS knowledge about alternative controls and other novel concepts
 - bug fix text redaction info bubble always shown
