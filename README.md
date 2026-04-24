@@ -43,12 +43,15 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] advanced voice mode
 - [ ] image generation
 
+### 04-24-2026
+- Expanded EBS knowledge about alternative controls and other novel concepts
+- bug fix text redaction info bubble always shown
+  **TODO** Ability to remove files that have been uploaded before submitting the query
+
 ### 04-23-2026
 - Bug fix chat sharing for very long/complex conversations: increased timeout from 60 to 180 secs
 - Bubble (and toast on mobile) when text redaction is firing up; just once per session
 - Showing loader during chat renaming
-- **TODO** Expanded EBS knowledge about alternative controls and other novel concepts
-- **TODO** Ability to remove files that have been uploaded before submitting the query
 
 ### 04-22-2026
 - Ability to rename chats
