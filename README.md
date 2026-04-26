@@ -78,7 +78,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 ### 03-13-2026
 - Logging mechanism: Fixed session isolation, Python and R now in same file, better naming
 - Custom DB choice now automatically resets to allow mode triggering in follow-up queries
-- Turned .doc files into PDF to be captured by index (company-wide, forms, GC)
+- Turned .doc files into PDF to be captured by index (company-wide & forms for GC)
 - Allow multiple custom databases to be selected at once
 - Custom DB UI improvements
 - New jurisdictions: Peru, Brazil, Hong Kong
