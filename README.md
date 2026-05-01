@@ -43,6 +43,11 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] advanced voice mode
 - [ ] image generation
 
+### 05-01-2026
+- Bug fix: multiple images can now be annotated at the same time
+- Faster annotations via Python `ThreadPool` (parallel API calls)
+- Faster segmentation masks via polygon coordinates (previously full PNG)
+
 ### 04-25-2026
 - Bug fix Responses API model name parsing
 
