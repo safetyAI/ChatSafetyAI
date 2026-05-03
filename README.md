@@ -43,6 +43,15 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] advanced voice mode
 - [ ] image generation
 
+### 05-03-2026
+- Ability to remove files that have been uploaded before submitting the query
+- New jurisdiction for mining in the USA (MSHA)
+- Updated jurisdiction base URLs (prior knowledge for web search) for Saskatchewan, Alberta, New Brunswick
+- UX improvements: disable keyboard when opening dropdowns on mobile, consistent tooltip aesthetics, improved tooltip tapping behavior
+- Bug fix infinite spinner upon renaming
+- Bug fix jump to top of page after first turn
+- Bug fix hash-naming inheritance and double-hashing in secondary file names
+
 ### 05-01-2026
 - Bug fix: multiple images can now be annotated at the same time
 - Faster annotations via Python `ThreadPool` (parallel API calls)
@@ -54,7 +63,6 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 ### 04-24-2026
 - Expanded EBS knowledge about alternative controls and other novel concepts
 - bug fix text redaction info bubble always shown
-  **TODO** Ability to remove files that have been uploaded before submitting the query
 
 ### 04-23-2026
 - Bug fix chat sharing for very long/complex conversations: increased timeout from 60 to 180 secs
