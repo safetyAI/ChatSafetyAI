@@ -43,6 +43,9 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] advanced voice mode
 - [ ] image generation
 
+### 05-05-2026
+- UX improvement: separated links and row selection in custom DB files table
+
 ### 05-03-2026
 - Ability to remove files that have been uploaded before submitting the query
 - New jurisdiction for mining in the USA (MSHA)
