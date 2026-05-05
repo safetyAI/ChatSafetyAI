@@ -54,6 +54,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - Bug fix infinite spinner upon renaming
 - Bug fix jump to top of page after first turn
 - Bug fix hash-naming inheritance and double-hashing in secondary file names
+- MS Defender vulnerability fix
 
 ### 05-01-2026
 - Bug fix: multiple images can now be annotated at the same time
