@@ -43,6 +43,9 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] advanced voice mode
 - [ ] image generation
 
+### 05-06-2026
+- Improved annotation process and switched to Gemini 3
+
 ### 05-05-2026
 - UX improvement: separated links and row selection in custom DB files table
 
