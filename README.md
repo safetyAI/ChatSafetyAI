@@ -43,6 +43,9 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] advanced voice mode
 - [ ] image generation
 
+### 05-14-2026
+- All regulation jurisdictions are now accepted and handled via default web search. For jurisdictions that have an entry in the curated list, the web search is optimized (steered, domain-constrained)
+
 ### 05-06-2026
 - Improved annotation process and switched to Gemini 3
 
