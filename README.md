@@ -44,7 +44,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] image generation
 
 ### 05-14-2026
-- All regulation jurisdictions are now accepted and handled via a free web search by default. For jurisdictions that have an entry in the curated list, the web search is optimized (steered with suggestions, restricted to pre-approved domains). If user doesn't specify a jurisdiction, it's inferred based on location. If location not available, defaults to OSHA.
+- All regulation jurisdictions are now accepted and handled via a free web search by default. For jurisdictions that have an entry in the curated list, the web search is restricted to pre-approved domains. If the user doesn't specify a jurisdiction, it's inferred based on location. If the location is not available, the jurisdiction defaults to OSHA.
 
 ### 05-06-2026
 - Improved annotation process and switched to Gemini 3
