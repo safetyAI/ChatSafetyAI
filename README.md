@@ -43,6 +43,9 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] advanced voice mode
 - [ ] image generation
 
+### 05-20-2026
+- Ajax Datatables warning fix (switched to full browser processing)
+  
 ### 05-14-2026
 - All regulation jurisdictions are now accepted and handled via a free web search by default. For jurisdictions that have an entry in the curated list, the web search is restricted to pre-approved domains. If the user doesn't specify a jurisdiction, it's inferred based on location. If the location is not available, the jurisdiction defaults to OSHA.
 
