@@ -45,6 +45,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 
 ### 05-21-2026
 - Increased Google moderation thresholds to reduce false alarms
+- Hide model internal thinking before showing annotated photos
 - Optimized priority model, thinking levels, and timeouts, for Gemini Pro and Flash
 
 ### 05-20-2026
