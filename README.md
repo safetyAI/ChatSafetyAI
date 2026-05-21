@@ -43,6 +43,10 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] advanced voice mode
 - [ ] image generation
 
+### 05-21-2026
+- Increased Google moderation thresholds to reduce false alarms
+- Optimized priority model, thinking levels, and timeouts, for Gemini Pro and Flash
+
 ### 05-20-2026
 - Ajax Datatables warning fix (switched to full browser processing)
   
