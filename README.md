@@ -7,8 +7,8 @@
 - ChatSafetyAI relies on the [OpenAI API](https://platform.openai.com/docs/api-reference/introduction).
 - OpenAI [does not](https://platform.openai.com/docs/models/how-we-use-your-data) use the conversations for training their models, and does not store the conversations permanently.
 - Screencast demos (not necessarily up-to-date) can be found on our [website](https://www.safetyai.io).
-- Request your free demo [here](https://safetyapp.shinyapps.io/chatsafetyai_demo_access_request/) !
-- For our SafetyAI Council Members employees, request your access [here](https://safetyapp.shinyapps.io/chatsafetyai_access_request/) !
+- Request your free demo [here](https://safetyai.io/#demo-request)
+- For our SafetyAI Council Members employees, request your access by emailing `info at safetyai dot io`
 - Help us improve ChatSafetyAI by taking this [quick survey](https://forms.gle/E6sK87u7DdoL4Kg86) !
 
 Table of Contents
