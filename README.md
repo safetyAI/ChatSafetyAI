@@ -43,6 +43,10 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] advanced voice mode
 - [ ] image generation
 
+### 05-30-2026
+- UI glitch fix: custom DB UI generation logic was reacting before username was available, listing other same-level directories as database names
+- 
+
 ### 05-21-2026
 - Increased Google moderation thresholds to reduce false alarms
 - Hide model internal thinking before showing annotated photos
