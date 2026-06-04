@@ -75,7 +75,8 @@ az storage account create \
 In the "Properties" tab of the landing page of the service, leave everything default except:
 - Blob soft delete (enable it with the duration of your choice everywhere, e.g. 30 days), and make sure versioning and point in time restore are disabled.
 - Set minimum TLS version to 1.2
-- In "Containers", add a container named "database" (3 directories will automatically be created inside it by the chatbot: "ChatSafetyAI_user_data", "custom_databases", and "session_logs")
+- In "Containers", add a container named "database"
+- Create the blob `database/ChatSafetyAI_user_data/chatsafetyai_admin_users_list.txt` containing one email address per line (small group of admin users who will manage company-wide custom databases, typically those who will be given access to the dashboard). Note that 3 other directories will automatically be created by the chatbot: "custom_databases", "custom_db_extracted_imgs", and "session_logs".
 
 
 #### 4) Create AI Foundry multi-service for OpenAI, Content Safety, Computer Vision, and Language
