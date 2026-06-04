@@ -536,7 +536,7 @@ az webapp config appsettings set \
   - **Note:** `YOUR_ENDPOINT` can vary between the endpoint of the main resource or that of one or more new resources silently created by Azure in case of region unavailability; you should manually fetch all addresses from AI Foundry and paste them below.
 - **AI Services Endpoints**:
   - `AZURE_MODERATION_ADDRESS`, `AZURE_VISION_ADDRESS`, and `AZURE_LANGUAGE_ADDRESS` can be found in the "Keys and Endpoint" tab of the Azure AI Foundry service, under the "AI Services" subtab at the bottom of the page.
-  - They are the same endpoint (`MAIN_ENDPOINT` as defined above), except that `/contentsafety/text:analyze?api-version=2024-09-01` should be appended to `AZURE_MODERATION_ADDRESS`.
+  - They are the same endpoint (`MAIN_ENDPOINT` as defined above), except that `contentsafety/text:analyze?api-version=2024-09-01` should be appended to `AZURE_MODERATION_ADDRESS`.
 
 - **Resource Limits**:
   - The default container allocation of 0.5 CPU and 1G of RAM (container = replica here) allows max 2 users per replica, since one ChatSafetyAI session consumes approx 400MB of RAM.
