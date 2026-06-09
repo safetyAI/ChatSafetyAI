@@ -43,6 +43,9 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] advanced voice mode
 - [ ] image generation
 
+### 06-10-26
+- custom DB improvement: timestamps for when individual files were last uploaded and indexing was last run
+
 ### 06-07-2026
 - UI improvement: Conversation dropdown menu now showing when the number of conversations is small
 - Avatar button now showing properly on mobile devices
