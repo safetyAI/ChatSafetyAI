@@ -43,6 +43,14 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] advanced voice mode
 - [ ] image generation
 
+### 06-22-26
+- TODO Chinese and Tagalog support
+- Improved SCL mode instructions to enforce strict categories 
+- Full support for the new Responses API (thinking models)
+- GPT-5.5 as the main engine (faster, more intelligent)
+- Optimized conversation structure to benefit as much as possible from token caching (speed and cost gains)
+- Improved logs to include caching and reasoning tokens
+
 ### 06-10-26
 - custom DB improvement: timestamps for when individual files were last uploaded and indexing was last run
 
