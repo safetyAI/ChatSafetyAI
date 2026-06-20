@@ -45,6 +45,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 
 ### 06-23-26
 - TODO Chinese and Tagalog support
+- TODO improve text redaction accuracy
 - Improved SCL mode instructions to enforce strict categories 
 - Full support for the new Responses API (thinking models)
 - GPT-5.5 as the main engine (faster, more intelligent)
