@@ -43,13 +43,18 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] advanced voice mode
 - [ ] image generation
 
-### 06-22-26
+### 06-23-26
 - TODO Chinese and Tagalog support
 - Improved SCL mode instructions to enforce strict categories 
 - Full support for the new Responses API (thinking models)
 - GPT-5.5 as the main engine (faster, more intelligent)
 - Optimized conversation structure to benefit as much as possible from token caching (speed and cost gains)
 - Improved logs to include caching and reasoning tokens
+
+- Detailed logs for content safety
+- Microservice domains whitelisted for URL validation mechanism (private IP issues)
+- Increased the polling ceiling in call_azure_document_intelligence from 30 secs to 30 mins to prevent timeouts when processing long PDFs with figure extraction
+
 
 ### 06-10-26
 - custom DB improvement: timestamps for when individual files were last uploaded and indexing was last run
