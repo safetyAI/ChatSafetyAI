@@ -46,7 +46,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 ### 06-23-26
 - TODO still to fix - Detailed logs for content safety
 - TODO Chinese support
-- TODO Optimized HECA mode to favor user engagement (response first, clarification questions last)
+- TODO Optimized HECA and prediction modes to favor user engagement (fast initial response -> clarification questions -> follow-up if needed)
 - Text redaction now returns explicit placeholders and targets PI information only. Organization names are not anonymized anymore to reduce false alarms (e.g., OSHA).
 - Improved SCL mode instructions to enforce strict categories 
 - Full support for the new Responses API (thinking models)
