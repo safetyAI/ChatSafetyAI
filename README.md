@@ -43,7 +43,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] advanced voice mode
 - [ ] image generation
 
-### 06-23-26
+### 06-24-26
 - TODO still to fix - Detailed logs for content safety
 - TODO Chinese support
 - TODO Optimized HECA and prediction modes to favor user engagement (fast initial response -> clarification questions -> follow-up if needed)
