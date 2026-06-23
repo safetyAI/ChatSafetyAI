@@ -50,7 +50,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 
 ### 06-24-26
 - GPT-5.5 as the main engine (faster, more intelligent)
-- Full support for the new Responses API (thinking models)
+- Full support for the new Responses API (reasoning models)
 - Optimized conversation structure to benefit as much as possible from token caching (speed and cost gains)
 - Improved logs to include caching and reasoning tokens
 - Optimized HECA mode to favor user engagement (fast initial response -> clarification questions -> follow-up if needed)
