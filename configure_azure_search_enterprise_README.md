@@ -1,8 +1,8 @@
 # Azure AI Search Configuration Script
 
-## 📁 File: `configure_azure_search_service_enterprise.sh`
+## File: `configure_azure_search_service_enterprise.sh`
 
-### 🏗️ Responsibility Boundary: "Plumbing vs. Wiring"
+### Responsibility Boundary
 To maintain a clean separation of concerns, the deployment is split as follows:
 
 1. **Infrastructure:** Creates the Search Service, Storage, and AI Services. Handles "outbound" Managed Identity roles.
@@ -10,7 +10,7 @@ To maintain a clean separation of concerns, the deployment is split as follows:
 
 ---
 
-### 📋 Prerequisites
+### Prerequisites
 For this script to succeed, the infrastructure must ensure:
 
 | Feature | Requirement |
@@ -21,7 +21,7 @@ For this script to succeed, the infrastructure must ensure:
 
 ---
 
-### ✅ Pre-Flight Environment Verification Checklist
+### Pre-Flight Environment Verification Checklist
 Before running the configuration script in a new environment (especially PROD), verify the following Identity and Networking configurations directly in the Azure Portal.
 
 #### 1. IAM & Role Assignments (The "Lock & Key" Check)
@@ -48,7 +48,7 @@ Before running the configuration script in a new environment (especially PROD), 
 
 ---
 
-### 🔒 Secure Environments (Shared Private Links)
+### Secure Environments (Shared Private Links)
 If the target environment has **Public Network Access disabled** on the Storage or AI resources, you must provision **Shared Private Link Resources** originating from the Search Service so it can securely access the data.
 
 **Required Shared Private Links (`groupId`):**
@@ -148,7 +148,7 @@ To force the indexer to tunnel through your VNet and use the Shared Private Link
 
 ---
 
-### 🪲 Windows Agent Compatibility (ADO & GitHub Actions)
+### Windows Agent Compatibility (ADO & GitHub Actions)
 If this script is executed on a Windows-based runner (e.g., Azure DevOps Agent or GitHub Actions `windows-latest`), two common pipeline failures occur:
 
 1. **Git Bash Path Mangling (`MissingSubscription` Error):** Git Bash converts Linux-style paths to Windows paths, corrupting Azure Resource IDs (e.g., `/subscriptions/...` becomes `C:/Program Files/Git/subscriptions/...`). 
@@ -158,7 +158,7 @@ If this script is executed on a Windows-based runner (e.g., Azure DevOps Agent o
 
 ---
 
-### 🚀 Pipeline Execution Note (YAML Setup)
+### Pipeline Execution Note (YAML Setup)
 This script idempotently installs the Azure CLI `eventgrid` extension. Because CI/CD runners isolate the CLI environment, you must correctly configure your CLI task depending on your platform.
 
 **Example 1: Azure DevOps Pipeline YAML:**
@@ -196,7 +196,7 @@ This script idempotently installs the Azure CLI `eventgrid` extension. Because C
 
 ---
 
-### 💻 Example Call
+### Example Call
 The script uses `az rest` with Entra ID tokens. No API keys are required as arguments.
 
 ```bash
@@ -220,7 +220,7 @@ The script uses `az rest` with Entra ID tokens. No API keys are required as argu
   <enable-image-vectors>
 ```
 
-### 🩺 Verification & Debugging Commands
+### Verification & Debugging Commands
 If the indexer fails or you need to verify the Dual-Track architecture and data completeness, run the following `az rest` commands from an authenticated terminal:
 
 **1. Check Status & Throttling Warnings:**
