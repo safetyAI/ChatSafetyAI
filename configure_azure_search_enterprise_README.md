@@ -220,10 +220,8 @@ The script uses `az rest` with Entra ID tokens. No API keys are required as argu
   <enable-image-vectors>
 ```
 
----
-
 ### 🩺 Verification & Debugging Commands
-If the indexer fails or you need to verify the Dual-Track architecture, run the following `az rest` commands from an authenticated terminal:
+If the indexer fails or you need to verify the Dual-Track architecture and data completeness, run the following `az rest` commands from an authenticated terminal:
 
 **1. Check Status & Throttling Warnings:**
 ```bash
@@ -234,12 +232,54 @@ az rest --method get --url "https://$SEARCH_SERVICE_NAME.search.windows.net/inde
 az rest --method get --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexers/${SEARCH_INDEXER}/status?api-version=2024-11-01-preview" --query "lastResult.warnings" --output json
 ```
 
-**2. Verify Parent Metadata (Image tags passed successfully):**
+**2. Verify Soft Delete Configuration:**
+Ensure the datasource is actively listening for soft-deleted blobs so ghost data doesn't persist in the search index.
 ```bash
-az rest --method post --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexes/${SEARCH_INDEX}/docs/search?api-version=2024-11-01-preview" --headers '{"Content-Type": "application/json"}' --body '{"search": "*", "filter": "doc_id ne null", "top": 1, "select": "doc_id, child_images, user_folder"}'
+az rest --method get --url "https://$SEARCH_SERVICE_NAME.search.windows.net/datasources/${SEARCH_DATASOURCE}?api-version=2024-11-01-preview" --query "dataDeletionDetectionPolicy"
 ```
 
-**3. Nuclear Reset (Clear transient failure history):**
+**3. Verify Data Completeness (Chunk Counts):**
+Proves how many chunks were generated per file. If a 100-page PDF only yields 5 chunks, the indexer hit an OCR or truncation cap and silently dropped content.
+```bash
+# Get a list of unique filenames and their chunk counts
+az rest --method post --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexes/${SEARCH_INDEX}/docs/search?api-version=2024-11-01-preview" \
+  --headers '{"Content-Type": "application/json"}' \
+  --body '{
+    "search": "*",
+    "facets": ["file_name,count:5000"],
+    "top": 0
+  }' | jq '.["@search.facets"].file_name'
+
+# Optional: Filter the chunk count by a specific user
+TARGET_USER="GLOBAL"
+az rest --method post --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexes/${SEARCH_INDEX}/docs/search?api-version=2024-11-01-preview" \
+  --headers '{"Content-Type": "application/json"}' \
+  --body "{
+    \"search\": \"*\",
+    \"filter\": \"user_id eq '${TARGET_USER}'\",
+    \"facets\": [\"file_name,count:500\"],
+    \"top\": 0
+  }" | jq '.["@search.facets"].file_name'
+```
+
+**4. Verify Parent Metadata (Relational Logic):**
+Proves that the parent document row was created correctly and the image metadata passed successfully.
+```bash
+az rest --method post --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexes/${SEARCH_INDEX}/docs/search?api-version=2024-11-01-preview" \
+  --headers '{"Content-Type": "application/json"}' \
+  --body '{"search": "*", "filter": "doc_id ne null", "top": 1, "select": "doc_id, child_images, user_folder"}'
+```
+
+**5. Verify Document Chunking (Parallel Track):**
+Proves the text was successfully split into smaller text vectors and linked back to the parent document.
+```bash
+az rest --method post --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexes/${SEARCH_INDEX}/docs/search?api-version=2024-11-01-preview" \
+  --headers '{"Content-Type": "application/json"}' \
+  --body '{"search": "*", "filter": "parent_id ne null", "top": 1, "select": "chunk_id, parent_id, chunk"}'
+```
+
+**6. Nuclear Reset (Clear transient failure history):**
+Force a full re-processing if you change AI logic, chunking strategy, or need to recover from an upstream API failure.
 ```bash
 az rest --method post --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexers/${SEARCH_INDEXER}/reset?api-version=2024-11-01-preview"
 az rest --method post --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexers/${SEARCH_INDEXER}/run?api-version=2024-11-01-preview"
