@@ -1,7 +1,5 @@
 # Azure AI Search Configuration Script
 
-This folder contains the orchestration script for the Search Service indexing pipeline.
-
 ## 📁 File: `configure_azure_search_service_enterprise.sh`
 
 ### 🏗️ Responsibility Boundary: "Plumbing vs. Wiring"
