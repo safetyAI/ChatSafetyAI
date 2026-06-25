@@ -158,6 +158,7 @@ To force the indexer to tunnel through your VNet and use the Shared Private Link
 `"executionEnvironment": "private"` inside the `"configuration"` block.
 
 *(Note: This configuration is already baked into `configure_azure_search_service_enterprise.sh`, but it causes a 2-5 minute "Cold Start" delay on the first run as Azure provisions the dedicated private node).*
+
 ---
 
 ### Windows Agent Compatibility (ADO & GitHub Actions)
