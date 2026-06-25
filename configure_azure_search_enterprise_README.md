@@ -25,7 +25,7 @@ For this script to succeed, the infrastructure must ensure:
 Before running the configuration script in a new environment (especially PROD), verify the following Identity and Networking configurations directly in the Azure Portal.
 
 #### 1. IAM & Role Assignments (The "Lock & Key" Check)
-* **STEP 0: Search Service Identity Check:**
+* **Search Service Identity Check:**
   * Navigate to **Azure AI Search Service** -> **Identity** (under Settings).
   * **Requirement:** Under the **System assigned** tab, the Status toggle MUST be **"On"**, and an Object (principal) ID must be visible. (If it is off, turn it on and save).
 * **Pipeline Execution Identity (The Key Fetcher):**
