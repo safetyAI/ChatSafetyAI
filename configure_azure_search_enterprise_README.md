@@ -47,26 +47,31 @@ Before running the configuration script in a new environment (especially PROD), 
 * **Requirement:** Their status must explicitly say **"Approved"** (not "Pending"). If pending, navigate to the target Storage/AI resources and approve them immediately.
 
 ---
-
-### Secure Environments (Shared Private Links)
+### 🔒 Secure Environments (Shared Private Links)
 If the target environment has **Public Network Access disabled** on the Storage or AI resources, you must provision **Shared Private Link Resources** originating from the Search Service so it can securely access the data.
 
+**Architectural Note (Unified vs. Split AI):**
+* **Unified:** If you use a single Azure AI Multi-Service account for *both* embeddings and vision, you only need 2 Private Links (Storage + AI Account).
+* **Split:** If you use a dedicated Azure OpenAI account for embeddings and a separate Multi-Service account for Vision/OCR, you need 3 Private Links.
+
 **Required Shared Private Links (`groupId`):**
-1. Blob Storage (`blob`)
-2. AI Services / Vision (`cognitiveservices`)
-3. AI Services / OpenAI (`openai` or `openai_account`)
+1. Blob Storage (`blob`) -> Target: Storage Account
+2. AI Services / Vision (`cognitiveservices`) -> Target: Multi-Service AI Account (or the Unified Account)
+3. AI Services / OpenAI (`openai` or `openai_account`) -> Target: Azure OpenAI Account (or the Unified Account)
 
 #### Option A: Manual Workflow via Azure Portal (Current)
 Deploying a Shared Private Link puts the connection into a `Pending` state. **These endpoints must be manually approved in the Azure Portal before this configuration script runs;** otherwise, skillset validation will fail with a `403 Forbidden`.
 
-1. **Request Links:** In the Azure Portal, go to your Search Service -> **Networking** -> **Shared private access** and add the 3 links above.
+1. **Request Links:** In the Azure Portal, go to your Search Service -> **Networking** -> **Shared private access** and add the 2 or 3 links required for your architecture above.
 2. **Approve Storage:** Go to your Storage Account -> **Networking** -> **Private endpoint connections** -> Check the pending request and click **Approve**.
-3. **Approve AI Services:** Go to your AI Multi-Service Account -> **Networking** -> **Private endpoint connections** -> Check the pending requests and click **Approve**.
+3. **Approve AI Services:** Go to your AI Multi-Service Account (and Azure OpenAI account, if split) -> **Networking** -> **Private endpoint connections** -> Check the pending requests and click **Approve**.
 
 Once all show as **Approved** in the Search Service, you may run this script.
 
 #### Option B: Automated Workflow via Bicep & Pipeline (Future Reference)
 To fully automate this in the future, add the links to the Bicep template and add an approval task to the CI/CD pipeline immediately *after* the Bicep deployment and *before* the script execution.
+
+*(Note: If using a Unified architecture, simply pass the same Resource ID for both the OpenAI and Vision target properties; Bicep and the CLI loops will safely handle it).*
 
 **1. Bicep Creation (Infrastructure):**
 ```bicep
@@ -76,7 +81,7 @@ resource splBlob 'Microsoft.Search/searchServices/sharedPrivateLinkResources@202
   name: 'spl-blob'
   properties: {
     groupId: 'blob'
-    privateLinkResourceId: storageAccount.id
+    privateLinkResourceId: storageAccountId
     requestMessage: 'Auto-requested via Bicep'
   }
 }
@@ -87,7 +92,7 @@ resource splVision 'Microsoft.Search/searchServices/sharedPrivateLinkResources@2
   name: 'spl-vision'
   properties: {
     groupId: 'cognitiveservices'
-    privateLinkResourceId: aiServicesAccount.id
+    privateLinkResourceId: aiVisionAccountId // Same as azureOpenAiAccountId if unified
     requestMessage: 'Auto-requested via Bicep'
   }
 }
@@ -98,7 +103,7 @@ resource splOpenAI 'Microsoft.Search/searchServices/sharedPrivateLinkResources@2
   name: 'spl-openai'
   properties: {
     groupId: 'openai'
-    privateLinkResourceId: aiServicesAccount.id
+    privateLinkResourceId: azureOpenAiAccountId // Same as aiVisionAccountId if unified
     requestMessage: 'Auto-requested via Bicep'
   }
 }
@@ -117,8 +122,12 @@ resource splOpenAI 'Microsoft.Search/searchServices/sharedPrivateLinkResources@2
       STG_PENDING=$(az network private-endpoint-connection list --id $(StorageAccountId) --query "[?properties.privateLinkServiceConnectionState.status=='Pending'].id" -o tsv | tr -d '\r')
       for id in $STG_PENDING; do [ -n "$id" ] && az network private-endpoint-connection approve --id "$id" --description "Auto-approved"; done
       
-      echo "Approving pending connections on AI Services Account..."
-      AISVC_PENDING=$(az network private-endpoint-connection list --id $(AiServicesAccountId) --query "[?properties.privateLinkServiceConnectionState.status=='Pending'].id" -o tsv | tr -d '\r')
+      echo "Approving pending connections on Azure OpenAI Account..."
+      AOAI_PENDING=$(az network private-endpoint-connection list --id $(AzureOpenAiAccountId) --query "[?properties.privateLinkServiceConnectionState.status=='Pending'].id" -o tsv | tr -d '\r')
+      for id in $AOAI_PENDING; do [ -n "$id" ] && az network private-endpoint-connection approve --id "$id" --description "Auto-approved"; done
+
+      echo "Approving pending connections on AI Services (Vision) Account..."
+      AISVC_PENDING=$(az network private-endpoint-connection list --id $(AiVisionAccountId) --query "[?properties.privateLinkServiceConnectionState.status=='Pending'].id" -o tsv | tr -d '\r')
       for id in $AISVC_PENDING; do [ -n "$id" ] && az network private-endpoint-connection approve --id "$id" --description "Auto-approved"; done
 ```
 
@@ -133,8 +142,12 @@ resource splOpenAI 'Microsoft.Search/searchServices/sharedPrivateLinkResources@2
       STG_PENDING=$(az network private-endpoint-connection list --id ${{ env.STORAGE_ACCOUNT_ID }} --query "[?properties.privateLinkServiceConnectionState.status=='Pending'].id" -o tsv | tr -d '\r')
       for id in $STG_PENDING; do [ -n "$id" ] && az network private-endpoint-connection approve --id "$id" --description "Auto-approved"; done
       
-      echo "Approving pending connections on AI Services Account..."
-      AISVC_PENDING=$(az network private-endpoint-connection list --id ${{ env.AI_SERVICES_ACCOUNT_ID }} --query "[?properties.privateLinkServiceConnectionState.status=='Pending'].id" -o tsv | tr -d '\r')
+      echo "Approving pending connections on Azure OpenAI Account..."
+      AOAI_PENDING=$(az network private-endpoint-connection list --id ${{ env.AZURE_OPENAI_ACCOUNT_ID }} --query "[?properties.privateLinkServiceConnectionState.status=='Pending'].id" -o tsv | tr -d '\r')
+      for id in $AOAI_PENDING; do [ -n "$id" ] && az network private-endpoint-connection approve --id "$id" --description "Auto-approved"; done
+
+      echo "Approving pending connections on AI Services (Vision) Account..."
+      AISVC_PENDING=$(az network private-endpoint-connection list --id ${{ env.AI_VISION_ACCOUNT_ID }} --query "[?properties.privateLinkServiceConnectionState.status=='Pending'].id" -o tsv | tr -d '\r')
       for id in $AISVC_PENDING; do [ -n "$id" ] && az network private-endpoint-connection approve --id "$id" --description "Auto-approved"; done
 ```
 
@@ -145,7 +158,6 @@ To force the indexer to tunnel through your VNet and use the Shared Private Link
 `"executionEnvironment": "private"` inside the `"configuration"` block.
 
 *(Note: This configuration is already baked into `configure_azure_search_service_enterprise.sh`, but it causes a 2-5 minute "Cold Start" delay on the first run as Azure provisions the dedicated private node).*
-
 ---
 
 ### Windows Agent Compatibility (ADO & GitHub Actions)
