@@ -106,7 +106,7 @@ In Azure Portal:
     - Opt out of automatic model version upgrades !!!
     - Check quotas! If less than 1k requests per minute (RPM) and 1M tokens per minute (TPM), request increase here: https://aka.ms/oai/quotaincrease
 
-- c) For each resource associated with model deployments: In "Guardrails + controls", create a new content filter with all thresholds set to minimum, and jailbreak and indirect attacks set to "annotate only". Do that for input and output, and apply filter to all deployments.
+- c) For each resource associated with model deployments: In "Guardrails + controls", create a new content filter with all thresholds set to minimum; jailbreak and indirect attacks set to "annotate only"; and "protected material for text" and "protected material for code" also set to "annotate only". Groundedness (Preview) should be left turned off (default). Do that for input and output, and apply filter to all deployments.
 
 ## SafetyAI-Managed Services
 
@@ -325,7 +325,7 @@ done
 ```
 
 #### 8) Create Search Service
-If a pipeline is used to create and assign roles to the Search Service, the script `configure_azure_search_enterprise.sh` should be used below (location argument not needed).
+If a pipeline is used to create and assign roles to the Search Service, the script `configure_azure_search_enterprise.sh` should be used below (location argument not needed), and that README should be followed for detailed instructions: https://github.com/safetyAI/ChatSafetyAI/blob/main/configure_azure_search_enterprise_README.md
 
 ```bash
 # 1. Make the script executable
