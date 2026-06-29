@@ -43,10 +43,13 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] advanced voice mode
 - [ ] image generation
 
-### Next version
+### Next
 - TODO still to fix - Detailed logs for content safety
-- TODO optimize prediction mode
 - TODO Chinese support
+
+### 06-29-26
+- Optimized prediction mode to favor user engagement (fast initial response -> clarification questions -> follow-up if needed)
+- TODO recap all the rest
 
 ### 06-24-26
 - GPT-5.5 as the main engine (faster, more intelligent)
