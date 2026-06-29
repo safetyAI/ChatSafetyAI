@@ -49,6 +49,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 
 ### 06-29-26
 - Optimized prediction mode to favor user engagement (fast initial response -> clarification questions -> follow-up if needed)
+- Max upload file size now 30MB
 - TODO recap all the rest
 
 ### 06-24-26
