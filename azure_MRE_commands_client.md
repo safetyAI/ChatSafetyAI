@@ -95,13 +95,12 @@ In Azure Portal:
 - a) Click "Generate Custom Domain name" to be able to use managed identities. Use the resource name (here, `$AISERVICES_NAME`), as the custom domain name.
 
 - b) Click "go to Azure AI Foundry portal", and on the "Models + endpoints" tab, deploy the following base models:
-  - gpt-5.1-2025-11-13
-  - gpt-4.1-2025-04-14
+  - gpt-5.5-2026-04-23
   - gpt-4.1-mini-2025-04-14
   - gpt-4o-transcribe
   - text-embedding-3-large
+  - NOTE: Custom deployment names must not end with a raw timestamp. For example, gpt-5.5-2026-04-23-project is fine, but gpt-5.5-project-2026-04-23 is not. You can simply remove the timestamp is you want to use custom names, like: gpt-5.5-project.
   - NOTE: due to region availability, Azure may silently deploy one or more models in a different resource than `AISERVICES_NAME`. Save the names of the new resources created by Azure and pass them as `OUTSIDE_RESOURCES` at the beginning of Step 9.
-  - NOTE: gpt-5.1 may require filing an access request with Microsoft and waiting a few days until it gets approved 
   - NOTE: in "Customize", for all models:
     - Opt out of automatic model version upgrades !!!
     - Check quotas! If less than 1k requests per minute (RPM) and 1M tokens per minute (TPM), request increase here: https://aka.ms/oai/quotaincrease
@@ -526,14 +525,11 @@ az webapp config appsettings set \
   - The commands below automatically fetch these addresses using `az webapp show` (since they are all Web Apps), no action needed.
 
 - **Azure OpenAI Endpoints**:
-  - `AZURE_OPENAI_ADDRESS_GPT4`, `AZURE_OPENAI_ADDRESS_GPT35` (actually just a smaller version of GPT-4.1), `AZURE_OPENAI_RESPONSES_ADDRESS`, `AZURE_OPENAI_ADDRESS_THINKING`, and `AZURE_OPENAI_ADDRESS_AUDIO` can be found in the "Endpoint" area in the Azure AI Foundry page of the corresponding deployment.
-  - They are of the form:
-    - `AZURE_OPENAI_ADDRESS_GPT4`: `{YOUR_ENDPOINT}openai/deployments/gpt-4.1/chat/completions?api-version=2025-01-01-preview`
-    - `AZURE_OPENAI_ADDRESS_GPT35`: `{YOUR_ENDPOINT}openai/deployments/gpt-4.1-mini/chat/completions?api-version=2025-01-01-preview`
-    - `AZURE_OPENAI_RESPONSES_ADDRESS`: `{YOUR_ENDPOINT}openai/responses?api-version=2025-04-01-preview`
-    - `AZURE_OPENAI_ADDRESS_THINKING`: should be the same as `AZURE_OPENAI_RESPONSES_ADDRESS` as Azure exposes GPT-5.1 by default through the new Responses API
-    - `AZURE_OPENAI_ADDRESS_AUDIO`: `{YOUR_ENDPOINT}/openai/deployments/gpt-4o-transcribe/audio/transcriptions?api-version=2025-03-01-preview`
-  - **Note:** `YOUR_ENDPOINT` can vary between the endpoint of the main resource or that of one or more new resources silently created by Azure in case of region unavailability; you should manually fetch all addresses from AI Foundry and paste them below.
+  - `AZURE_OPENAI_RESPONSES_ADDRESS`: Resource-level static URL of the form: `{YOUR_ENDPOINT}openai/responses?api-version=2025-04-01-preview`
+  - `AZURE_OPENAI_ADDRESS_AUDIO`: It requires an explicit deployment path of the form: `{YOUR_ENDPOINT}openai/deployments/gpt-4o-transcribe/audio/transcriptions?api-version=2025-03-01-preview`
+  - **Note:** You do not need separate address variables for individual models (like `gpt-5.5` or `gpt-4.1-mini`). The container routes all text and reasoning traffic through the single `AZURE_OPENAI_RESPONSES_ADDRESS` gateway. The Azure orchestrator reads the custom deployment name you specify in the model variables and matches it against your active project deployments internally.
+  - **Note:** `YOUR_ENDPOINT` can vary depending on whether the resource was deployed in your primary region or an outside resource silently selected due to regional availability. Always double-check your target endpoints directly in Azure AI Foundry.
+
 - **AI Services Endpoints**:
   - `AZURE_MODERATION_ADDRESS`, `AZURE_VISION_ADDRESS`, and `AZURE_LANGUAGE_ADDRESS` can be found in the "Keys and Endpoint" tab of the Azure AI Foundry service, under the "AI Services" subtab at the bottom of the page.
   - They are the same endpoint (`MAIN_ENDPOINT` as defined above), except that `contentsafety/text:analyze?api-version=2024-09-01` should be appended to `AZURE_MODERATION_ADDRESS`.
@@ -579,21 +575,17 @@ az containerapp update \
     UTILITIES_ADDRESS="$UTILITIES_ADDRESS" \
     PREDICTIONS_ADDRESS="$PREDICTIONS_ADDRESS" \
     NLP_ADDRESS="$NLP_ADDRESS" \
-    OPENAI_MODEL_NAME_GPT4=gpt-4.1-2025-04-14 \
-    OPENAI_MODEL_NAME_GPT35=gpt-4.1-mini-2025-04-14 \
+    OPENAI_MODEL_NAME_GPT4=[Your deployment name for GPT-5.5] \
+    OPENAI_MODEL_NAME_GPT35=[Your deployment name for GPT-4.1-Mini] \
     SEARCH_ENDPOINT="https://$SEARCH_SERVICE_NAME.search.windows.net" \
     SEARCH_INDEXER="rag-indexer" \
     SEARCH_INDEX="rag-index" \
     AZURE_STORAGE_ACCOUNT_CONTAINER_NAME=database \
     AZURE_STORAGE_ACCOUNT=$STORAGE_ACCOUNT \
-    OPENAI_MODEL_NAME_THINKING=gpt-5.1-2025-11-13 \
     AZURE_MODERATION_ADDRESS="${MAIN_ENDPOINT}contentsafety/text:analyze?api-version=2024-09-01" \
     AZURE_VISION_ADDRESS="${MAIN_ENDPOINT}" \
     AZURE_LANGUAGE_ADDRESS="${MAIN_ENDPOINT}" \
     AZURE_OPENAI_RESPONSES_ADDRESS=https://csai-aiservices-mre.cognitiveservices.azure.com/openai/responses?api-version=2025-04-01-preview\
-    AZURE_OPENAI_ADDRESS_THINKING=https://csai-aiservices-mre.cognitiveservices.azure.com/openai/responses?api-version=2025-04-01-preview \
-    AZURE_OPENAI_ADDRESS_GPT4=https://csai-aiservices-mre.cognitiveservices.azure.com/openai/deployments/gpt-4.1/chat/completions?api-version=2025-01-01-preview \
-    AZURE_OPENAI_ADDRESS_GPT35=https://csai-aiservices-mre.cognitiveservices.azure.com/openai/deployments/gpt-4.1-mini/chat/completions?api-version=2025-01-01-preview \
     AZURE_OPENAI_ADDRESS_AUDIO=https://tixie-ml1ae2pw-eastus2.cognitiveservices.azure.com/openai/deployments/gpt-4o-transcribe/audio/transcriptions?api-version=2025-03-01-preview
 ```
 
