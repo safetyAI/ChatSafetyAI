@@ -18,7 +18,7 @@ For this script to succeed, the infrastructure must ensure:
 | **Identity** | Search Service must have a `SystemAssigned` Managed Identity. |
 | **Auth Mode** | The script supports both Hybrid (`aadOrApiKey`) and strict RBAC (`disableLocalAuth: true`). |
 | **Outbound RBAC** | Search MI needs `Storage Blob Data Reader`, `Cognitive Services User`, and `Cognitive Services OpenAI User` on target resources. |
-
+| **Model Sync** | `deploymentId` inside Skillset & Index JSONs must EXACTLY match the custom deployment name in Azure Foundry. `modelName` must remain the immutable base framework name (`text-embedding-3-large`). |
 ---
 
 ### Pre-Flight Environment Verification Checklist
@@ -45,6 +45,17 @@ Before running the configuration script in a new environment (especially PROD), 
 * Navigate to **Azure AI Search** -> **Networking** -> **Shared private access**.
 * Verify the three required links (`blob`, `cognitiveservices`, `openai`) exist.
 * **Requirement:** Their status must explicitly say **"Approved"** (not "Pending"). If pending, navigate to the target Storage/AI resources and approve them immediately.
+
+#### 3. AI Studio Deployment Synchronization (The Model Naming Check)
+Before triggering the schema deployment, verify that your Azure OpenAI Studio deployment matches the definitions compiled by this script.
+* **The Embedding Skill Alignment:**
+  * Navigate to **Azure OpenAI Studio** -> **Deployments**.
+  * Find the deployment running the `text-embedding-3-large` model.
+  * **Requirement:** The exact string in the **Deployment name** column must match the `deploymentId` configuration property passed inside your Skillset and Index JSON profiles. 
+  * **Critical Constraint:** Leave the `modelName` parameter inside your configuration schemas untouched as `text-embedding-3-large` (Azure Search relies on this static base model name to initialize tokenizer arrays, but relies on `deploymentId` for API routing).
+* **The Backend App Suffix Warning:**
+  * If this environment is also provisioning text/reasoning deployments (e.g., GPT-5.5) for the main application container:
+  * **Requirement:** Ensure custom deployment names **do not end in a raw date string/timestamp** (e.g., `gpt-5.5-custom-name-2026-06-30` will trigger regex truncation failures in the app container; append a tracking label like `-v1` or `-prod` if a suffix is mandatory).
 
 ---
 ### 🔒 Secure Environments (Shared Private Links)
