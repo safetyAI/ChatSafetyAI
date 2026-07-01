@@ -50,7 +50,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 ### 06-29-26
 - Optimized prediction mode to favor user engagement (fast initial response -> clarification questions -> follow-up if needed)
 - Max upload file size now 30MB
-- Capped at 50 images per conversation
+- Capped at 50 images per conversation, min, 15kB, 6 max aspect ratio 
 - empty documents containing only images are now accepted
 - TODO recap all the rest
 
