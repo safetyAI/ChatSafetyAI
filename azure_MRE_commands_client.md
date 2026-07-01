@@ -535,8 +535,8 @@ az webapp config appsettings set \
   - They are the same endpoint (`MAIN_ENDPOINT` as defined above), except that `contentsafety/text:analyze?api-version=2024-09-01` should be appended to `AZURE_MODERATION_ADDRESS`.
 
 - **Resource Limits**:
-  - The default container allocation of 0.5 CPU and 1G of RAM (container = replica here) allows max 2 users per replica, since one ChatSafetyAI session consumes approx 400MB of RAM.
-  - The default consumption-based workload profile has a hard limit of 4 CPUs and 8 GBs of RAM, so it allows 4/0.5 = 8 replicas to be started, CPU being the limiting factor here (hence the `--max-replicas 8` below). This setup supports up to 8 × 2 = 16 concurrent users. If more is needed, switch to a [general-purpose workload profile](https://learn.microsoft.com/en-us/azure/container-apps/workload-profiles-overview).
+  - Containers with 0.75 CPU and 1.5G of RAM (container = replica here) can accomodate one user session, since a ChatSafetyAI session consumes from 400MB to 1.2GB of RAM (upper bound reached when user uploads a very large document with many figures)
+  - The default consumption-based workload profile has a hard limit of 4 CPUs and 8 GBs of RAM, so it allows 8/1.5 = 4/0.75 = 5.33 replicas to be started (CPU and RAM are both the limiting factors here), hence the `--max-replicas 5` below. This default setup supports 5 concurrent users. If more is needed, switch to a [general-purpose workload profile](https://learn.microsoft.com/en-us/azure/container-apps/workload-profiles-overview).
 
 ```bash
 # --- Dynamic URL Fetching for APIs (All are Web Apps) ---
@@ -556,7 +556,7 @@ NLP_ADDRESS="https://$HOST_NLP/"
 az containerapp update \
   --name csai-mre-chatbot \
   --resource-group $RESOURCE_GROUP \
-  --max-replicas 8 \
+  --max-replicas 5 \
   --scale-rule-name http-scaler \
   --scale-rule-type http \
   --scale-rule-metadata concurrentRequests=1 \
