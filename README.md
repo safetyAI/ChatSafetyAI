@@ -46,8 +46,9 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 ### Next
 - TODO Chinese support
 
-### 07-01-26
+### 07-05-26
 - TODO recap
+- Disable SSL validation in URL checker to bypass corporate firewall interception
 
 ### 06-29-26
 - Optimized prediction mode to favor user engagement (fast initial response -> clarification questions -> follow-up if needed)
