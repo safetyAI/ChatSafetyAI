@@ -46,8 +46,9 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 ### Next
 - TODO Chinese support
 
-### 07-05-26
-- TODO recap
+### 07-07-26
+- TODO recap everything
+- CSV spreadsheet and XLSX workbook generation
 - Disable SSL validation in URL checker to bypass corporate firewall interception
 
 ### 06-29-26
