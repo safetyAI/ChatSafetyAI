@@ -43,8 +43,10 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] advanced voice mode
 - [ ] image generation
 
-### Next
-- TODO Chinese support
+### 07-14-26
+- GPT-5.6-sol as the main engine
+- Chinese support
+- Faster image annotations, image annotations in Azure
 
 ### 07-07-26
 - TODO recap everything
