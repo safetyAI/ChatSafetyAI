@@ -43,13 +43,13 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] advanced voice mode
 - [ ] image generation
 
-### 07-14-26
+### 07-15-26
 - GPT-5.6-sol as the main engine
-- Chinese support
+- Supporting all languages supported by GPT
+- Utilities service update to support Chinese/Korean/Japanese/etc. characters
 - Faster image annotations, image annotations in Azure
 
 ### 07-07-26
-- TODO recap everything
 - CSV spreadsheet and XLSX workbook generation
 - Disable SSL validation in URL checker to bypass corporate firewall interception
 
