@@ -43,11 +43,11 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] advanced voice mode
 - [ ] image generation
 
-### 07-15-26
+### 07-16-26
 - GPT-5.6-sol as the main engine
 - Supporting all languages supported by GPT
-- Utilities service update to support Chinese/Korean/Japanese/etc. characters
-- Faster image annotations, image annotations in Azure
+- Utilities service updated to support Chinese/Korean/Japanese/etc. characters
+- Image annotations powered by GPT in Azure
 
 ### 07-07-26
 - CSV spreadsheet and XLSX workbook generation
