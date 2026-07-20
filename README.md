@@ -43,6 +43,10 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] advanced voice mode
 - [ ] image generation
 
+### 07-20-26
+- upgraded to `gemini-3.5-flash` as the primary model for the SaaS image annotations (see: https://blog.roboflow.com/openai-gpt-5-6/)
+- added the "annotating images" message for the SaaS two-step image annotation route
+
 ### 07-16-26
 - GPT-5.6-sol as the main engine
 - Supporting all languages supported by GPT
