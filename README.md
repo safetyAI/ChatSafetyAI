@@ -50,6 +50,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - decorative child image filtering directly on the Azure Doc Intel side (before downloading)
 - decreased child image size threshold from 15kB to 12kB
 - more informative file upload summary messages
+- ability to disable the browser asking for location and the QR code rendering
 
 ### 07-16-26
 - GPT-5.6-sol as the main engine
