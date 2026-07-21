@@ -43,7 +43,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] advanced voice mode
 - [ ] image generation
 
-### 07-20-26
+### 07-21-26
 - upgraded to `gemini-3.5-flash` as the primary model for the SaaS image annotations (see: https://blog.roboflow.com/openai-gpt-5-6/)
 - optimized annotation format for GPT, Gemini, Claude (`xyxy` vs `yxyx`, absolute vs normalized `0-1000` vs normalized `0-1`)
 - added the "annotating images" message for the SaaS two-step image annotation route
