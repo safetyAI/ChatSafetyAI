@@ -38,6 +38,8 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 ## Version History
 
 ### Next steps / wish list (not in order, non-exhaustive)
+- [ ] structured indexing / querying of spreadsheets
+- [ ] project-wide custom databases
 - [ ] incognito mode 
 - [ ] chat search engine
 - [ ] advanced voice mode
