@@ -3,7 +3,7 @@
 ## [Latest News](https://safetyai.io/updates/index.html) 🚀🎉
 
 ## About
-- ChatSafetyAI is built with care by Antoine Tixier at [SafetyAI](https://www.safetyai.io) 🛠️❤️.
+- ChatSafetyAI is built with ❤️ by Antoine Tixier at [SafetyAI](https://www.safetyai.io) 🛠️.
 - ChatSafetyAI relies on the [OpenAI API](https://platform.openai.com/docs/api-reference/introduction).
 - OpenAI [does not](https://platform.openai.com/docs/models/how-we-use-your-data) use the conversations for training their models, and does not store the conversations permanently.
 - Screencast demos (not necessarily up-to-date) can be found on our [website](https://www.safetyai.io).
