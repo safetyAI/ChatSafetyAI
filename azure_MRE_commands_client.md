@@ -511,7 +511,15 @@ az webapp config appsettings set \
     AZURE_STORAGE_ACCOUNT_CONTAINER_NAME=database \
     USE_MANAGED_IDENTITY=TRUE \
     IS_AZURE=TRUE \
-    UTILITIES_ADDRESS="https://$HOST_UTILITIES/"
+    MAX_UPLOAD_MB=40 \
+    UTILITIES_ADDRESS="https://$HOST_UTILITIES/" \
+    OPENAI_MODEL_NAME_GPT35="gpt-4.1-mini-2025-04-14" \
+    AZURE_DOC_INTEL_ADDRESS="${MAIN_ENDPOINT}" \
+    AZURE_MODERATION_ADDRESS="${MAIN_ENDPOINT}contentsafety/text:analyze?api-version=2024-09-01" \
+    AZURE_VISION_ADDRESS="${MAIN_ENDPOINT}" \
+    AZURE_LANGUAGE_ADDRESS="${MAIN_ENDPOINT}" \
+    AZURE_OPENAI_RESPONSES_ADDRESS="https://csai-aiservices-mre.cognitiveservices.azure.com/openai/responses?api-version=2025-04-01-preview" \
+    AZURE_OPENAI_ADDRESS_AUDIO="https://tixie-ml1ae2pw-eastus2.cognitiveservices.azure.com/openai/deployments/gpt-4o-transcribe/audio/transcriptions?api-version=2025-03-01-preview"
 ```
 
 ##### b. ChatSafetyAI
@@ -575,7 +583,7 @@ az containerapp update \
     UTILITIES_ADDRESS="$UTILITIES_ADDRESS" \
     PREDICTIONS_ADDRESS="$PREDICTIONS_ADDRESS" \
     NLP_ADDRESS="$NLP_ADDRESS" \
-    OPENAI_MODEL_NAME_GPT4=[Your deployment name for GPT-5.5] \
+    OPENAI_MODEL_NAME_GPT4=[Your deployment name for GPT-5.5 or 5.6] \
     OPENAI_MODEL_NAME_GPT35=[Your deployment name for GPT-4.1-Mini] \
     SEARCH_ENDPOINT="https://$SEARCH_SERVICE_NAME.search.windows.net" \
     SEARCH_INDEXER="rag-indexer" \
@@ -706,6 +714,7 @@ assignments=(
   # Utilities
   "csai-mre-utilities $RESOURCE_GROUP $STORAGE_ACCOUNT storage 'Storage Blob Data Contributor'"
   "csai-mre-utilities $RESOURCE_GROUP $AISERVICES_NAME cognitiveservices 'Cognitive Services OpenAI User'"
+  "csai-mre-utilities $RESOURCE_GROUP $AISERVICES_NAME cognitiveservices 'Cognitive Services User'"
 )
 
 # --- Apply Standard Assignments ---
