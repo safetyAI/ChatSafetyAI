@@ -396,6 +396,7 @@ For each of the four queries:
    - `CSAI - Scaling and resource metrics`
 
 Saved queries can then be reopened from the **Queries** interface.
+Make sure that default query pack is loaded (can be enabled in the Queries hub window)
 
 Users need **Log Analytics Contributor** to save / edit queries and **Log Analytics Reader** to view and run saved queries.
 
