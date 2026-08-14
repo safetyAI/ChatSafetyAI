@@ -204,6 +204,8 @@ For an incident, record the exact time in **UTC** and use a **Custom** range cov
 
 Do not merge these four signals into one large query. HTTP, platform, application, and metrics data answer different questions and are easier to interpret separately.
 
+Replace "csai-mre-chatbot" with your deployment-specific name in what follows (we cannot use variables as KQL queries are meant to the copied and pasted in the Azure Portal interface directly). 
+
 ---
 
 ### Query 1: HTTP / WebSocket / Envoy diagnostics
@@ -494,7 +496,175 @@ can all break the Shiny WebSocket and therefore produce the same disconnected / 
 
 ---
 
-## 6) Relevant Microsoft documentation
+## 6) Diagnose excessive replica scale-out
+
+When a single CSAI session unexpectedly causes many replicas to start.
+The goal is to determine whether the browser-side keep-alive requests, combined with the HTTP scaler setting `concurrentRequests=1`, are generating enough HTTP activity to trigger unnecessary KEDA scale-out.
+
+Start from the minimum replica count and open **exactly one chatbot session**.
+
+Run two tests:
+
+- **Test A:** keep-alive JavaScript enabled.
+- **Test B:** keep-alive JavaScript temporarily disabled.
+
+For each test, leave the session open for approximately 2–3 minutes and use the same Log Analytics time window.
+
+### Measure HTTP traffic in 15-second windows
+
+Run in:
+
+**Log Analytics workspace -> Logs -> KQL mode**
+
+```kusto
+ContainerAppHTTPLogs
+| where ContainerAppName == "csai-mre-chatbot"
+| summarize
+    TotalRequests = count(),
+    KeepaliveGETs = countif(Method == "GET" and Path == "/"),
+    AvgDurationMs = avg(RequestDuration),
+    MaxDurationMs = max(RequestDuration),
+    ReplicasServingTraffic = dcount(ReplicaName)
+    by bin(TimeGenerated, 15s)
+| extend RequestsPerSecond = round(TotalRequests / 15.0, 2)
+| order by TimeGenerated asc
+```
+
+This shows how much HTTP traffic one session generates and how much of it comes from the `GET /` keep-alive.
+
+With a 1-second keep-alive interval, approximately 15 `GET /` requests per 15-second window are expected while the application is responsive.
+
+### Identify which HTTP endpoints generate the traffic
+
+```kusto
+ContainerAppHTTPLogs
+| where ContainerAppName == "csai-mre-chatbot"
+| summarize
+    Requests = count(),
+    AvgDurationMs = avg(RequestDuration),
+    MaxDurationMs = max(RequestDuration)
+    by bin(TimeGenerated, 15s), Method, Path
+| order by TimeGenerated asc, Requests desc
+```
+
+Use this to determine whether the traffic is primarily the keep-alive `GET /` requests or whether Shiny, authentication, static resources, or another endpoint is generating additional HTTP requests.
+
+### Inspect KEDA scaling activity
+
+```kusto
+ContainerAppSystemLogs
+| where ContainerAppName == "csai-mre-chatbot"
+| where EventSource == "KEDA"
+| project
+    TimeGenerated,
+    Type,
+    Reason,
+    RevisionName,
+    Log
+| order by TimeGenerated asc
+```
+
+Use this to correlate HTTP activity with KEDA scale-out / scale-in activity.
+
+### Inspect replica count
+
+If `AzureMetrics` is available:
+
+```kusto
+AzureMetrics
+| where tolower(_ResourceId) endswith "/containerapps/csai-mre-chatbot"
+| where MetricName in ("Replicas", "Requests")
+| project
+    TimeGenerated,
+    MetricName,
+    Average,
+    Minimum,
+    Maximum,
+    Total
+| order by TimeGenerated asc
+```
+
+Alternatively, use:
+
+**Container App → Monitoring → Metrics**
+
+and display:
+
+- `Replicas`
+- `Requests`
+
+at one-minute granularity.
+
+### Interpretation
+
+Compare Test A and Test B.
+
+If:
+
+- one session with keep-alive enabled causes heavy scale-out;
+- the HTTP logs show that most traffic consists of `GET /` keep-alives;
+- KEDA scale-out occurs at the same time;
+- and disabling the keep-alive prevents or greatly reduces the scale-out;
+
+then there is strong evidence that the keep-alive traffic combined with `concurrentRequests=1` is driving excessive scaling.
+
+If both tests produce similar scale-out, inspect the endpoint breakdown to identify the other HTTP traffic responsible.
+
+> The HTTP-log queries show request volume, but do not perfectly reconstruct KEDA's internal concurrency metric. The controlled A/B test is therefore the most useful evidence for determining whether the keep-alive mechanism is causing the scale-out.
+
+## 7) Azure Container Apps built-in diagnostics
+
+In addition to Log Analytics, Azure Container Apps provides built-in diagnostic reports that can correlate platform events such as health-probe failures and container restarts.
+
+Open: **Azure Portal -> Container App -> Diagnose and solve problems -> Availability and Performance**
+
+****
+
+### Health Probe Failures
+
+Open: **Availability and Performance -> Health Probe Failures**
+
+Use this when investigating random greyouts, container restarts, or health-probe warnings.
+
+Select the revision involved in the incident and review:
+
+- whether Azure reports that probe failures caused container restarts;
+- Startup, Readiness, and Liveness probe failures;
+- probe configuration for the revision;
+- failure timestamps;
+- container restart / lifecycle correlation.
+
+Important interpretation:
+
+- **Startup** failures often occur while a newly started/restarted container is coming online.
+- **Readiness** failures can temporarily remove a replica from traffic.
+- **Liveness** failures can cause the platform to restart the container.
+- If Azure explicitly reports that probe failures restarted containers and impacted availability, treat this as platform evidence rather than harmless probe noise.
+
+### Container Exit Events
+
+Open: **Availability and Performance -> Container Exit Events**
+
+Use this when a container appears to have restarted or disappeared.
+
+Select the affected revision and inspect:
+
+- container exit timestamps;
+- exit codes;
+- reported termination reasons;
+- repeated exits/restarts.
+
+Correlate these timestamps with:
+
+- `ContainerAppSystemLogs`;
+- `ContainerAppHTTPLogs`;
+- `ContainerAppConsoleLogs`;
+- browser keep-alive / WebSocket errors;
+- replica/restart metrics.
+
+> The built-in diagnostic reports are especially useful when Log Analytics shows that a container restarted but does not expose the event that originally triggered the restart.
+
+## 8) Relevant Microsoft documentation
 
 - Azure Container Apps log storage and monitoring options:  
   https://learn.microsoft.com/azure/container-apps/log-options
