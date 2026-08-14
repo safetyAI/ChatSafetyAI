@@ -84,13 +84,13 @@ az monitor diagnostic-settings list \
   --output table
 ```
 
+### c) Switch the Container Apps environment logging destination to Azure Monitor
+
 Register the Azure Monitor provider:
 
 ```bash
 az provider register --namespace Microsoft.Insights --wait
 ```
-
-### c) Switch the Container Apps environment logging destination to Azure Monitor
 
 `ContainerAppHTTPLogs` are exposed through Azure Monitor diagnostic settings at the **Container Apps environment** level.
 
