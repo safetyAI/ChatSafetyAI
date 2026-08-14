@@ -18,21 +18,15 @@ From the main deployment guide [azure_MRE_commands_client.md](https://github.com
 - the Log Analytics workspace
 - the chatbot Container App
 
-**Replace the values below with your deployment-specific names**:
 ```bash
+# Replace the values below with your deployment-specific names
 RESOURCE_GROUP=csai-mre
 ENV_NAME=csai-acaenv-mre
 WORKSPACE_NAME=csai-mre-logs
 CHATBOT_APP=csai-mre-chatbot
 
-ENV_DIAGNOSTIC_SETTING_NAME=chatbot-diagnostics
-APP_DIAGNOSTIC_SETTING_NAME=chatbot-metrics
-```
-
-Register the Azure Monitor provider:
-
-```bash
-az provider register --namespace Microsoft.Insights --wait
+ENV_DIAGNOSTIC_SETTING_NAME="${ENV_NAME}-diagnostics"
+APP_DIAGNOSTIC_SETTING_NAME="${CHATBOT_APP}-metrics"
 ```
 
 ### a) Resolve the existing Azure resource IDs
@@ -63,7 +57,40 @@ CHATBOT_APP_ID=$(az containerapp show \
   --output tsv)
 ```
 
-### b) Switch the Container Apps environment logging destination to Azure Monitor
+### b) Inspect the current logging / diagnostic configuration before making any change, to avoid redundant diagnostic settings.
+
+```bash
+# the commands below are read-only
+echo "=== Current Container Apps environment logging destination ==="
+
+az containerapp env show \
+  --name "$ENV_NAME" \
+  --resource-group "$RESOURCE_GROUP" \
+  --query properties.appLogsConfiguration.destination \
+  --output tsv
+
+echo "=== Existing environment diagnostic settings ==="
+
+az monitor diagnostic-settings list \
+  --resource "$ENV_ID" \
+  --query "[].{Name:name,Workspace:workspaceId}" \
+  --output table
+
+echo "=== Existing chatbot diagnostic settings ==="
+
+az monitor diagnostic-settings list \
+  --resource "$CHATBOT_APP_ID" \
+  --query "[].{Name:name,Workspace:workspaceId}" \
+  --output table
+```
+
+Register the Azure Monitor provider:
+
+```bash
+az provider register --namespace Microsoft.Insights --wait
+```
+
+### c) Switch the Container Apps environment logging destination to Azure Monitor
 
 `ContainerAppHTTPLogs` are exposed through Azure Monitor diagnostic settings at the **Container Apps environment** level.
 
@@ -80,7 +107,7 @@ Portal equivalent:
 
 After changing the destination in the portal, refresh the environment page if **Diagnostic settings** does not immediately appear.
 
-### c) Enable environment-level logs
+### d) Enable environment-level logs
 
 This diagnostic setting sends the Container Apps environment logs to the existing Log Analytics workspace.
 
@@ -109,7 +136,7 @@ az monitor diagnostic-settings show \
   --output jsonc
 ```
 
-### c) Export chatbot-level metrics
+### e) Export chatbot-level metrics
 
 Metrics such as replica count, restart count, requests, CPU, and memory belong to the individual Container App resource.
 
