@@ -386,9 +386,10 @@ For each of the four queries:
 
 1. Run the query in **Log Analytics → Logs → KQL mode**.
 2. Select **Save → Save as query**.
-3. Keep **Save to the default query pack** selected unless the client already maintains a dedicated query pack.
-4. Use category: `CSAI Diagnostics`.
-5. Save the queries with these names:
+3. Keep **Save to the default query pack** unless there's already a dedicated query pack.
+4. Use category: `Containers`.
+5. Create/selecct label `CSAI Diagnostics`
+6. Save the queries with these names:
    - `CSAI - HTTP and WebSocket diagnostics`
    - `CSAI - Platform and replica diagnostics`
    - `CSAI - R Shiny console diagnostics`
