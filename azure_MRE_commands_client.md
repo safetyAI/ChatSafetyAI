@@ -822,3 +822,6 @@ Perform this step manually for **both** `csai-mre-chatbot` and `csai-mre-dashboa
 9.  Click **Add**.
 
 *Repeat Phase 1 & 2 for `csai-mre-dashboard`.*
+
+#### 12) For debugging the chatbot container app, configure logging as shown in:
+[csai_azure_container_apps_diagnostics.md](https://github.com/safetyAI/ChatSafetyAI/blob/main/csai_azure_container_apps_diagnostics.md)
