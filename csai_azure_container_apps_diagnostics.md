@@ -101,6 +101,13 @@ az containerapp env update \
   --logs-destination azure-monitor
 ```
 
+> **Note:** Azure CLI may print a message saying that "Azure Monitor must be
+> set up manually." This is expected. Setting `--logs-destination azure-monitor`
+> only enables Azure Monitor as the environment logging mode; the Diagnostic
+> Settings created in the following steps define the actual Log Analytics
+> destination.
+
+
 Portal equivalent:
 
 **Container Apps Environment → Monitoring → Logging options → Logs destination = Azure Monitor**
