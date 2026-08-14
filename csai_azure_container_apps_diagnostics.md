@@ -512,9 +512,7 @@ For each test, leave the session open for approximately 2–3 minutes and use th
 
 ### Measure HTTP traffic in 15-second windows
 
-Run in:
-
-**Log Analytics workspace -> Logs -> KQL mode**
+Run in **Log Analytics workspace -> Logs -> KQL mode**
 
 ```kusto
 ContainerAppHTTPLogs
