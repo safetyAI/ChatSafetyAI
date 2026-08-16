@@ -525,19 +525,19 @@ az webapp config appsettings set \
 For the optional SharePoint integration, add these variables:
 
 ```bash
-    MIRROR_SHAREPOINT_INTERVAL=5 \
-    SEARCH_ENDPOINT="https://<your-search-service-name>.search.azure.net" \
-    SEARCH_INDEXER="sharepoint-blob-indexer" \
-    SEARCH_INDEX="sharepoint-index" \
-    COMPANY_NAME= \
-    SHAREPOINT_HOSTNAME= \
-    SHAREPOINT_SITE_NAME= \
-    SHAREPOINT_AZURE_TENANT_ID= \
-    SHAREPOINT_AZURE_CLIENT_ID= \
-    SHAREPOINT_AZURE_CLIENT_SECRET= \
-    # === OPTIONAL SHAREPOINT ENGINE CONTROLS ===
-    # SHAREPOINT_DRIVE_ID="" # Optional: Target specific document library drive ID (defaults to root drive) \
-    # TEST_MAX_FILES_PER_FOLDER=5 # Optional: Set file limit per folder for testing (Remove for production)
+MIRROR_SHAREPOINT_INTERVAL=5 \
+SEARCH_ENDPOINT="https://${SEARCH_SERVICE_NAME}.search.windows.net" \
+SEARCH_INDEXER="$SEARCH_INDEXER" \
+SEARCH_INDEX="$SEARCH_INDEX" \
+COMPANY_NAME="YourCompany" \
+SHAREPOINT_HOSTNAME="yourcompany.sharepoint.com" \
+SHAREPOINT_SITE_NAME="TargetSiteName" \
+SHAREPOINT_AZURE_TENANT_ID="$TENANT_ID" \
+SHAREPOINT_AZURE_CLIENT_ID="<your-app-client-id>" \
+SHAREPOINT_AZURE_CLIENT_SECRET="<your-app-client-secret>" \
+# === OPTIONAL SHAREPOINT ENGINE CONTROLS ===
+# SHAREPOINT_DRIVE_ID="" # Optional: Target specific document library drive ID (defaults to root drive) \
+# TEST_MAX_FILES_PER_FOLDER=5 # Optional: Set file limit per folder for testing (Remove for production)
 ```
 
 And place this at `_sync_state/config.json` for customization over the cloning process:
