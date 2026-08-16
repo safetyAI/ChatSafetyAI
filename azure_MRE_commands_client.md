@@ -538,8 +538,29 @@ For the optional SharePoint integration, add these variables:
     # === OPTIONAL SHAREPOINT ENGINE CONTROLS ===
     # SHAREPOINT_DRIVE_ID="" # Optional: Target specific document library drive ID (defaults to root drive) \
     # TEST_MAX_FILES_PER_FOLDER=5 # Optional: Set file limit per folder for testing (Remove for production)
-
 ```
+
+And place this at `_sync_state/config.json` for customization over the cloning process:
+
+```json
+{
+  "exclusion_rules": {
+    "excluded_folders": ["Archive", "Drafts", "Temp", "Personal", "Private"],
+    "excluded_extensions": ["tmp", "bak", "ds_store", "log"],
+    "excluded_filenames": ["Thumbs.db", "desktop.ini"],
+    "excluded_regions": ["APAC", "LATAM"]
+  }
+}
+```
+
+Filters are applied dynamically and case-insensitively across every directory level.
+
+The mirror strategy is **whitelist-first**.
+
+* **`excluded_folders`**: Defines folder names to skip. The crawler uses branch pruning—encountering a matching folder name immediately halts recursion, skipping that folder and all nested subfolders/files regardless of depth. If a previously mirrored folder name is added to this list later, its corresponding files are automatically purged from Azure Storage on the next sync pass.
+* **`excluded_extensions`**: Defines specific file extensions to ignore (without leading dots) *within* the set of supported file types, `ALLOWED_DB_EXTENSIONS` (e.g., `.pdf`, `.docx`, `.xlsx`). Files outside this list are ignored automatically. The `excluded_extensions` parameter is evaluated *only* on supported file types.
+* **`excluded_filenames`**: Defines exact file names to bypass (including extensions). Filters out system-generated artifacts or temporary clutter across all directories regardless of location.
+* **`excluded_regions`**: Defines regional folder names to skip. The engine infers regions **strictly from folder naming conventions along the directory path** (e.g., `/Policies/APAC/`), without querying custom SharePoint metadata columns. If any folder in the hierarchy matches an entry in this list, branch pruning halts recursion and skips that entire subtree. Files and folders not explicitly nested under an excluded region name default to **Global / Unrestricted** and are ingested normally.
 
 ##### b. ChatSafetyAI
 
