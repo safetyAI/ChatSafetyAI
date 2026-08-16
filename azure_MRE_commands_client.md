@@ -542,10 +542,32 @@ SHAREPOINT_AZURE_CLIENT_SECRET="<your-app-client-secret>" \
 
 And place this at `_sync_state/config.json` for customization over the cloning process:
 
+When SharePoint provisions a site, it automatically creates infrastructure Document Libraries (Pages, Site Assets, Style Library, Form Templates, WebPartPages, Site Collection Images, Apps for SharePoint).
+We don't want to mirror these (hence the excluded_drives below).
+We don't make them part of excluded_folders to avoid ignoring a legitimate folder inside a legitimate drive, e.g., `Legal/Contracts/Form Templates`, those SharePoint-reserved names are only at the drive level.
+
 ```json
 {
   "exclusion_rules": {
-    "excluded_folders": ["Archive", "Drafts", "Temp", "Personal", "Private"],
+    "excluded_drives": [
+      "Pages",
+      "Site Collection Images",
+      "All Site Images",
+      "WebPartPages",
+      "Site Assets",
+      "Style Library",
+      "Apps for SharePoint",
+      "Translation Packages",
+      "Form Templates",
+      "Header"
+    ],
+    "excluded_folders": [
+      "Archive",
+      "Drafts",
+      "Temp",
+      "Personal",
+      "Private"
+    ],
     "excluded_extensions": ["tmp", "bak", "ds_store", "log"],
     "excluded_filenames": ["Thumbs.db", "desktop.ini"],
     "excluded_regions": ["APAC", "LATAM"]
