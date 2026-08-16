@@ -522,6 +522,25 @@ az webapp config appsettings set \
     AZURE_OPENAI_ADDRESS_AUDIO="https://tixie-ml1ae2pw-eastus2.cognitiveservices.azure.com/openai/deployments/gpt-4o-transcribe/audio/transcriptions?api-version=2025-03-01-preview"
 ```
 
+For the optional SharePoint integration, add these variables:
+
+```bash
+    MIRROR_SHAREPOINT_INTERVAL=5 \
+    SEARCH_ENDPOINT="https://<your-search-service-name>.search.azure.net" \
+    SEARCH_INDEXER="sharepoint-blob-indexer" \
+    SEARCH_INDEX="sharepoint-index" \
+    COMPANY_NAME= \
+    SHAREPOINT_HOSTNAME= \
+    SHAREPOINT_SITE_NAME= \
+    SHAREPOINT_AZURE_TENANT_ID= \
+    SHAREPOINT_AZURE_CLIENT_ID= \
+    SHAREPOINT_AZURE_CLIENT_SECRET= \
+    # === OPTIONAL SHAREPOINT ENGINE CONTROLS ===
+    # SHAREPOINT_DRIVE_ID="" # Optional: Target specific document library drive ID (defaults to root drive) \
+    # TEST_MAX_FILES_PER_FOLDER=5 # Optional: Set file limit per folder for testing (Remove for production)
+
+```
+
 ##### b. ChatSafetyAI
 
 ###### NOTES:
@@ -715,6 +734,10 @@ assignments=(
   "csai-mre-utilities $RESOURCE_GROUP $STORAGE_ACCOUNT storage 'Storage Blob Data Contributor'"
   "csai-mre-utilities $RESOURCE_GROUP $AISERVICES_NAME cognitiveservices 'Cognitive Services OpenAI User'"
   "csai-mre-utilities $RESOURCE_GROUP $AISERVICES_NAME cognitiveservices 'Cognitive Services User'"
+
+  # === FOR OPTIONAL SHAREPOINT INTEGRATION ===
+  # Required to trigger (POST /indexers/run) and inspect (GET /indexers/status) the Azure Search Indexer
+  "csai-mre-utilities $RESOURCE_GROUP $SEARCH_SERVICE_NAME search 'Search Service Contributor'"
 )
 
 # --- Apply Standard Assignments ---
