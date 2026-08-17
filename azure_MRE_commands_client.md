@@ -510,6 +510,7 @@ az webapp config appsettings set \
 For the optional SharePoint integration, add these variables:
 
 ```bash
+CUSTOM_DB_EXTRACTED_IMGS_DIR="custom_db_extracted_imgs" \
 MIRROR_SHAREPOINT_INTERVAL=5 \
 SEARCH_ENDPOINT="https://${SEARCH_SERVICE_NAME}.search.windows.net" \
 SEARCH_INDEXER="$SEARCH_INDEXER" \
@@ -525,7 +526,7 @@ SHAREPOINT_AZURE_CLIENT_SECRET="<your-app-client-secret>" \
 # TEST_MAX_FILES_PER_FOLDER=5 # Optional: Set file limit per folder for testing (Remove for production)
 ```
 
-And place this at `_sync_state/config.json` for customization over the cloning process **non-optional, at least excluded drives are needed!**:
+And place the json file below in `_sync_state/config.json`:
 
 When SharePoint provisions a site, it automatically creates infrastructure Document Libraries (Pages, Site Assets, Style Library, Form Templates, WebPartPages, Site Collection Images, Apps for SharePoint).
 We don't want to mirror these (hence the excluded_drives below).
