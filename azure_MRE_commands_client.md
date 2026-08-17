@@ -540,7 +540,7 @@ SHAREPOINT_AZURE_CLIENT_SECRET="<your-app-client-secret>" \
 # TEST_MAX_FILES_PER_FOLDER=5 # Optional: Set file limit per folder for testing (Remove for production)
 ```
 
-And place this at `_sync_state/config.json` for customization over the cloning process:
+And place this at `_sync_state/config.json` for customization over the cloning process **non-optional, at least excluded drives are needed!**:
 
 When SharePoint provisions a site, it automatically creates infrastructure Document Libraries (Pages, Site Assets, Style Library, Form Templates, WebPartPages, Site Collection Images, Apps for SharePoint).
 We don't want to mirror these (hence the excluded_drives below).
@@ -561,16 +561,10 @@ We don't make them part of excluded_folders to avoid ignoring a legitimate folde
       "Form Templates",
       "Header"
     ],
-    "excluded_folders": [
-      "Archive",
-      "Drafts",
-      "Temp",
-      "Personal",
-      "Private"
-    ],
-    "excluded_extensions": ["tmp", "bak", "ds_store", "log"],
-    "excluded_filenames": ["Thumbs.db", "desktop.ini"],
-    "excluded_regions": ["APAC", "LATAM"]
+    "excluded_folders": [],
+    "excluded_extensions": [],
+    "excluded_filenames": [],
+    "excluded_regions": []
   }
 }
 ```
