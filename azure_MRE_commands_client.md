@@ -571,7 +571,7 @@ Needed when updating folder naming conventions, or performing structural changes
 - Delete the Azure Storage Account target folders (all the folders that start with, e.g., `SPAuto`)
 - Delete `_sync_state/sharepoint_delta_state.json`
 - Rerun the Search Service configuration script
-- Start the Utilities App Service and check the logs
+- Start the Utilities App Service, check the logs, visit `https://<your-app-service>.azurewebsites.net/debug/sharepoint_sync`
 ---
 
 
