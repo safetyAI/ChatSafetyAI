@@ -563,6 +563,18 @@ The mirror strategy is **whitelist-first**.
 * **`excluded_filenames`**: Defines exact file names to bypass (including extensions). Filters out system-generated artifacts or temporary clutter across all directories regardless of location.
 * **`excluded_regions`**: Defines regional folder names to skip. The engine infers regions **strictly from folder naming conventions along the directory path** (e.g., `/Policies/APAC/`), without querying custom SharePoint metadata columns. If any folder in the hierarchy matches an entry in this list, branch pruning halts recursion and skips that entire subtree. Files and folders not explicitly nested under an excluded region name default to **Global / Unrestricted** and are ingested normally.
 
+**Full Reset Procedure**
+Needed when updating folder naming conventions, or performing structural changes requiring a fresh sync across Azure Blob Storage and Azure AI Search.
+
+- Stop the Utilities App Service
+- Update environment variables (if needed)
+- Delete the Azure Storage Account target folders (all the folders that start with, e.g., `SPAuto`)
+- Delete `_sync_state/sharepoint_delta_state.json`
+- Rerun the Search Service configuration script
+- Start the Utilities App Service and check the logs
+---
+
+
 ##### b. ChatSafetyAI
 
 ###### NOTES:
