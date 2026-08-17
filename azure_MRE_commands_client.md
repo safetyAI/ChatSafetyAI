@@ -568,6 +568,7 @@ The mirror strategy is **whitelist-first**.
 Needed when updating folder naming conventions, or performing structural changes requiring a fresh sync across Azure Blob Storage and Azure AI Search.
 
 - Update environment variables (if needed)
+- Push the updated Docker image (if needed)
 - Stop the Utilities App Service
 - Delete the Azure Storage Account target folders (all the folders that start with, e.g., `SPAuto`)
 - Delete `_sync_state/sharepoint_delta_state.json`
