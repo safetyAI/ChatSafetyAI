@@ -448,20 +448,59 @@ az rest --method post \
     --body '{"search": "*", "filter": "parent_id ne null", "top": 1, "select": "chunk_id, parent_id, chunk"}'
 ```
 
-By default, the indexer only processes NEW or MODIFIED blobs. Forcing a full re-processing from scratch is needed if you:
-- Change AI logic/skillsets (e.g., re-enabling image vectors), 
-- Change chunking strategy (e.g., resizing text splits), 
-- Add new metadata fields to existing documents, or 
-- Need to recover from massive upstream API failures (e.g., OpenAI outages).
+By default, the indexer only processes **NEW** or **MODIFIED** blobs based on its high-water mark timestamp. Depending on the nature of your changes, choose one of the two re-indexing strategies below.
+
+### Option 1: Indexer Reset + Run (In-Place Re-Processing)
+
+Use this method when your source files remain in their **exact same Blob Storage paths**, but you need to update how Azure AI Search processes their content.
+
+* **When to use:**
+  * Changing AI logic or skillset enrichments (e.g., updating vector embeddings or image extraction).
+  * Adjusting text split size or chunking strategy.
+  * Adding new calculated metadata fields to existing documents.
+  * Recovering from temporary upstream API failures (e.g., OpenAI or Cognitive Services outages).
+* **Key Behavior:** Clears internal change-tracking state and forces the indexer to re-read and overwrite existing storage blobs. **Does NOT delete search documents whose underlying source blobs were deleted or moved.**
+
 ```bash
-echo "🔄 Resetting Indexer (Clearing history)..."
+echo "🔄 Resetting Indexer Watermark (Clearing state)..."
 az rest --method post \
-  --resource https://search.azure.com \
+  --resource [https://search.azure.com](https://search.azure.com) \
+  --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexers/${SEARCH_INDEXER}/reset?api-version=2024-11-01-preview"
+
+echo "▶️ Triggering Indexer Ingestion..."
+az rest --method post \
+  --resource [https://search.azure.com](https://search.azure.com) \
+  --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexers/${SEARCH_INDEXER}/run?api-version=2024-11-01-preview"
+```
+
+---
+
+### Option 2: Index Deletion & Recreation (Hard Reset / Structural Changes)
+
+Use this method when source file paths have changed or when old records must be completely purged from the search engine.
+
+* **When to use:**
+  * Changing `COMPANY_NAME` or renaming storage paths (prevents dead/orphaned search results from the old directory).
+  * Modifying index schema fields (e.g., changing field types, making non-retrievable fields searchable).
+  * Performing complete environment teardowns or database resets.
+* **Key Behavior:** Permanently deletes the search index and all indexed records. Requires recreating the index schema before running the indexer again.
+
+```bash
+echo "🗑️ Deleting Search Index (Purging all search documents)..."
+az rest --method delete \
+  --resource [https://search.azure.com](https://search.azure.com) \
+  --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexes/${SEARCH_INDEX}?api-version=2024-11-01-preview"
+
+# Note: Execute your infrastructure deployment script here to recreate the empty $SEARCH_INDEX schema
+
+echo "🔄 Resetting Indexer..."
+az rest --method post \
+  --resource [https://search.azure.com](https://search.azure.com) \
   --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexers/${SEARCH_INDEXER}/reset?api-version=2024-11-01-preview"
 
 echo "▶️ Running Indexer..."
 az rest --method post \
-  --resource https://search.azure.com \
+  --resource [https://search.azure.com](https://search.azure.com) \
   --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexers/${SEARCH_INDEXER}/run?api-version=2024-11-01-preview"
 ```
 
