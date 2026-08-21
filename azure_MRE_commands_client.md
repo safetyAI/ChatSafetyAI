@@ -573,7 +573,15 @@ Needed when updating folder naming conventions, or performing structural changes
 - Delete the Azure Storage Account target folders (all the folders that start with, e.g., `SPAuto`)
 - Delete `_sync_state/sharepoint_delta_state.json`
 - Rerun the Search Service configuration script
-- Start the Utilities App Service, check the logs, visit `https://<your-app-service>.azurewebsites.net/debug/sharepoint_sync`
+- Start the Utilities App Service, check the logs, visit `<utilities-service-address>/debug/sharepoint_sync`
+
+
+**Debugging Endpoints**
+Query the endpoints below to see:
+- The progress of the SharePoint cloning process: `<utilities-service-address>/debug/sharepoint_sync`
+- Which sessions are served by which replica, with RAM metrics: `<utilities-service-address>/replica_session_stats?lookback_minutes=5&include_sessions=1`
+- How the asynchronous file ingestion process goes: `<utilities-service-address>/debug/tasks`
+
 ---
 
 
