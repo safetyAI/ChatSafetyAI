@@ -45,6 +45,14 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] advanced voice mode
 - [ ] image generation
 
+### 08-24-26
+- asynchronous, parallel file ingestion
+- user-facing filenames
+- multimodal examples
+- max 50 images per document / conversation
+- tab switch bug fixes
+- optional SharePoint integration
+
 ### 07-21-26
 - upgraded to `gemini-3.5-flash` as the primary model for the SaaS image annotations (see: https://blog.roboflow.com/openai-gpt-5-6/)
 - optimized annotation format for GPT, Gemini, Claude (`xyxy` vs `yxyx`, absolute vs normalized `0-1000` vs normalized `0-1`)
