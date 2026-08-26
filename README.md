@@ -45,6 +45,10 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] advanced voice mode
 - [ ] image generation
 
+### 08-26-26
+- bug fix examples
+- more efficient similarity function
+  
 ### 08-24-26
 - asynchronous, parallel file ingestion
 - user-facing filenames
