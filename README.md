@@ -45,9 +45,11 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] advanced voice mode
 - [ ] image generation
 
-### 08-25-26
+### 08-26-26
 - bug fix examples
 - more efficient similarity function
+- wrapped up HEIC support in delegated file ingestion
+- handle token expiry during SharePoint cloning
   
 ### 08-24-26
 - asynchronous, parallel file ingestion
@@ -56,6 +58,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - max 50 images per document / conversation
 - tab switch bug fixes
 - optional SharePoint integration
+- the utilities API now exposes detailed replica, RAM and CPU usage stats
 
 ### 07-21-26
 - upgraded to `gemini-3.5-flash` as the primary model for the SaaS image annotations (see: https://blog.roboflow.com/openai-gpt-5-6/)
