@@ -45,6 +45,10 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] advanced voice mode
 - [ ] image generation
 
+### 08-30-26
+- parallel text redaction (multiple requests, and within each request) for a 10x speedup
+- CSV files are now opened even if their encoding is not perfect UTF-8, with bad char replacement
+
 ### 08-28-26
 - more robust chat deletion code
 - started making data saving more efficient
