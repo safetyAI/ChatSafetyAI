@@ -575,12 +575,14 @@ Needed when updating folder naming conventions, or performing structural changes
 - Rerun the Search Service configuration script
 - Start the Utilities App Service, check the logs, visit `<utilities-service-address>/debug/sharepoint_sync`
 
+To enable the chat search engine and memory recording, add the variable `MIRROR_CHAT_HISTORY_INTERVAL` and set it to `5` for instance.
 
 **Debugging Endpoints**
 Query the endpoints below to see:
 - The progress of the SharePoint cloning process: `<utilities-service-address>/debug/sharepoint_sync`
 - Which sessions are served by which replica, with RAM metrics: `<utilities-service-address>/replica_session_stats?lookback_minutes=5&include_sessions=1`
 - How the asynchronous file ingestion process goes: `<utilities-service-address>/debug/tasks`
+- How the chat scraping and memory collection goes: `<utilities-service-address>/debug/chat_sync`
 
 ---
 
