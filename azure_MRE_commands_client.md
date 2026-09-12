@@ -660,7 +660,8 @@ az containerapp update \
     AZURE_LANGUAGE_ADDRESS="${MAIN_ENDPOINT}" \
     AZURE_OPENAI_RESPONSES_ADDRESS=https://csai-aiservices-mre.cognitiveservices.azure.com/openai/responses?api-version=2025-04-01-preview\
     AZURE_OPENAI_ADDRESS_AUDIO=https://tixie-ml1ae2pw-eastus2.cognitiveservices.azure.com/openai/deployments/gpt-4o-transcribe/audio/transcriptions?api-version=2025-03-01-preview\
-    SHOW_MEMORIES=TRUE
+    SHOW_MEMORIES=TRUE \
+    SHOW_CHAT_SEARCH=TRUE
 ```
 
 ##### c. Dashboard
