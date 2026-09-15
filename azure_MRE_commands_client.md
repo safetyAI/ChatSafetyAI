@@ -23,6 +23,7 @@ SEARCH_INDEX="rag-index"                         # ..
 SEARCH_INDEXER="rag-indexer"                     # ..
 SEARCH_DATASOURCE="blob-datasource"              # ..
 SEARCH_SKILLSET="rag-skillset"                   # ..
+CHATBOT_WORKLOAD_PROFILE="chatbot-d4-mre"
 ```
 
 ### Log into the Azure Command Line Interface (CLI)
@@ -188,8 +189,25 @@ az containerapp env create \
   --location $LOCATION \
   --mi-system-assigned \
   --logs-workspace-id $WORKSPACE_ID \
-  --logs-workspace-key $WORKSPACE_KEY
+  --logs-workspace-key $WORKSPACE_KEY \
+  --enable-workload-profiles
+
+# Verify D4 is available in the selected region
+az containerapp env workload-profile list-supported \
+  --location "$LOCATION" \
+  --output table
+
+# Add one fixed D4 instance to the ACA environment
+az containerapp env workload-profile add \
+  --resource-group "$RESOURCE_GROUP" \
+  --name "$CONTAINERAPPS_ENV" \
+  --workload-profile-name "$CHATBOT_WORKLOAD_PROFILE" \
+  --workload-profile-type D4 \
+  --min-nodes 1 \
+  --max-nodes 1
 ```
+
+
 
 ##### d. Retrieve the new Environment Unique String
 ```bash
@@ -303,24 +321,41 @@ done
 
 ##### c. Create Container Apps (Chatbot & Dashboard)
 ```bash
-for app in \
-  "csai-mre-chatbot chatsafetyai 3838" \
-  "csai-mre-dashboard dashboard 3838"
-do
-  read -r app_name image_name port <<< "$app"
-  
-  az containerapp create \
-    --name $app_name \
-    --resource-group $RESOURCE_GROUP \
-    --environment $CONTAINERAPPS_ENV \
-    --image "$ACR_NAME.azurecr.io/$image_name:latest" \
-    --target-port $port \
-    --ingress external \
-    --registry-server "$ACR_NAME.azurecr.io" \
-    --registry-identity system \
-    --min-replicas 1 \
-    --system-assigned
-done
+# Chatbot -> Dedicated D4 workload profile
+az containerapp create \
+  --name csai-mre-chatbot \
+  --resource-group "$RESOURCE_GROUP" \
+  --environment "$CONTAINERAPPS_ENV" \
+  --workload-profile-name "$CHATBOT_WORKLOAD_PROFILE" \
+  --image "$ACR_NAME.azurecr.io/chatsafetyai:latest" \
+  --target-port 3838 \
+  --ingress external \
+  --registry-server "$ACR_NAME.azurecr.io" \
+  --registry-identity system \
+  --system-assigned
+
+az containerapp ingress sticky-sessions set \
+  --name csai-mre-chatbot \
+  --resource-group "$RESOURCE_GROUP" \
+  --affinity sticky
+
+# Dashboard -> Default Consumption workload profile
+az containerapp create \
+  --name csai-mre-dashboard \
+  --resource-group "$RESOURCE_GROUP" \
+  --environment "$CONTAINERAPPS_ENV" \
+  --workload-profile-name "Consumption" \
+  --image "$ACR_NAME.azurecr.io/dashboard:latest" \
+  --target-port 3838 \
+  --ingress external \
+  --registry-server "$ACR_NAME.azurecr.io" \
+  --registry-identity system \
+  --system-assigned
+
+az containerapp ingress sticky-sessions set \
+  --name csai-mre-dashboard \
+  --resource-group "$RESOURCE_GROUP" \
+  --affinity sticky
 ```
 
 #### 8) Create Search Service
@@ -350,6 +385,7 @@ AISERVICES_SUBDOMAIN="$CLEAN_DOMAIN"
 
 # 3. Run the Configuration Script (requires a few consecutive runs, waiting a few mins between each run, for everything to execute properly)
 # Argument order: Tenant, Sub, RG, Loc, Storage, Container, AISvc, AOAI_Sub, AI_Sub, SearchName, FuncName, VirtDir, DS, Idx, Skill, Idxr, ContainerAppName, RbacMode, EnableImageVectors
+# RbacMode is false because it's not possible to disable keys programmatically, do it manually in the Azure Portal if needed
 ./configure_azure_search.sh \
   "$TENANT_ID" \
   "$SUBSCRIPTION_ID" \
@@ -367,7 +403,7 @@ AISERVICES_SUBDOMAIN="$CLEAN_DOMAIN"
   "$SEARCH_SKILLSET" \
   "$SEARCH_INDEXER" \
   "csai-mre-chatbot" \
-  "false" \ # not possible to disable keys programmatically, do it manually in the Azure Portal if needed
+  "false" \
   "false"
 
 # ==================
@@ -608,8 +644,31 @@ Query the endpoints below to see:
   - They are the same endpoint (`MAIN_ENDPOINT` as defined above), except that `contentsafety/text:analyze?api-version=2024-09-01` should be appended to `AZURE_MODERATION_ADDRESS`.
 
 - **Resource Limits**:
-  - Containers with 0.75 CPU and 1.5G of RAM (container = replica here) can accomodate one user session, since a ChatSafetyAI session consumes from 400MB to 1.2GB of RAM (upper bound reached when user uploads a very large document with many figures)
-  - The default consumption-based workload profile has a hard limit of 4 CPUs and 8 GBs of RAM, so it allows 8/1.5 = 4/0.75 = 5.33 replicas to be started (CPU and RAM are both the limiting factors here), hence the `--max-replicas 5` below. This default setup supports 5 concurrent users. If more is needed, switch to a [general-purpose workload profile](https://learn.microsoft.com/en-us/azure/container-apps/workload-profiles-overview).
+  - RAM usage within a replica is a baseline of roughly 350/400 MB (shared by all sessions hosted by that replica), plus approximately 110 MB per session
+  - It's therefore recommended to use 0.5 vCPU and 2 GB RAM per replica. Each replica can thus serve 3 concurrent sessions before seeing performance degradation (CPU being the bottleneck here). There's a small risk of stalling due to all sessions within the same replica sharing the same R process, but all long-running, blocking operations are being externalized to an asynchronous endpoint in the utilities API (work in progress), so that risk should be eliminated soon.
+  - A D4 [dedicated workload profile]([https://learn.microsoft.com/en-us/azure/container-apps/workload-profiles-overview](https://learn.microsoft.com/en-us/azure/container-apps/workload-profiles-overview#dedicated-profile-details)) has 4 vCPU and 16 GB RAM, allowing 7 replicas to start and thus `7 x 3 = 21` concurrent users before seeing performance degradation.
+  - The Azure scaling mechanism doesn't know which replicas are hosting active sessions or not, it only starts and stops replicas based on global metrics and thresholds (e.g., CPU load, HTTP requests). This can cause app greyouts (sudden crash) when Azure reclaims a replica that has an active session in it (the container stops and the websocket connection is terminated). The only way to prevent that is to forbid Azure to scale-in, by setting `min nb of replicas = max nb of replicas`. This doesn't increase cost, as the cost of a dedicated workload profile instance is based on the number of instances reserved rather than on replica runtime.
+  - With this strategy, make sure to stop the application before triggering a new revision: in single-revision mode, Azure's zero-downtime keeps the old revision running while bringing the new revision up to the same replica count, temporarily requiring capacity for twice the replicas. The following Azure CLI commands can be used at the beginning / the end of the pipeline:
+
+```bash
+APP_NAME="csai-mre-chatbot"
+# Stop the Container App
+az rest --method POST \
+  --url "/subscriptions/$SUBSCRIPTION_ID/resourceGroups/$RESOURCE_GROUP/providers/Microsoft.App/containerApps/$APP_NAME/stop?api-version=2026-01-01"
+
+# Wait until it is fully stopped
+while [ "$(az containerapp show -g "$RESOURCE_GROUP" -n "$APP_NAME" --query properties.runningStatus -o tsv)" != "Stopped" ]; do
+  echo "Waiting for Container App to stop..."
+  sleep 5
+done
+```
+
+```bash
+az rest --method POST \
+  --url "/subscriptions/$SUBSCRIPTION_ID/resourceGroups/$RESOURCE_GROUP/providers/Microsoft.App/containerApps/$APP_NAME/start?api-version=2026-01-01"
+```
+
+  - Finally, there should be no HTTP probes configured (e.g., liveness / health), as they can cause replica restarts which can also cause greyouts. Only Azure's default TCP probes should be enabled.
 
 ```bash
 # --- Dynamic URL Fetching for APIs (All are Web Apps) ---
@@ -629,10 +688,10 @@ NLP_ADDRESS="https://$HOST_NLP/"
 az containerapp update \
   --name csai-mre-chatbot \
   --resource-group $RESOURCE_GROUP \
-  --max-replicas 5 \
-  --scale-rule-name http-scaler \
-  --scale-rule-type http \
-  --scale-rule-metadata concurrentRequests=1 \
+  --cpu 0.5 \
+  --memory 2.0Gi \
+  --min-replicas 7 \
+  --max-replicas 7 \
   --set-env-vars \
     IS_LOCAL=FALSE \
     IS_AZURE=TRUE \
@@ -641,7 +700,7 @@ az containerapp update \
     CHECK_LOCK_FILE=TRUE \
     MAX_INACTIVE_TIME=24 \
     MAX_RECORDING_TIME_MINS=5 \
-    DISABLE_KEEPALIVE=FALSE \
+    DISABLE_KEEPALIVE=TRUE \
     RECORD_LOGS=TRUE \
     CHECK_USER_BUDGETS=FALSE \
     SHOW_CUSTOM_DB=TRUE \
@@ -661,7 +720,8 @@ az containerapp update \
     AZURE_OPENAI_RESPONSES_ADDRESS=https://csai-aiservices-mre.cognitiveservices.azure.com/openai/responses?api-version=2025-04-01-preview\
     AZURE_OPENAI_ADDRESS_AUDIO=https://tixie-ml1ae2pw-eastus2.cognitiveservices.azure.com/openai/deployments/gpt-4o-transcribe/audio/transcriptions?api-version=2025-03-01-preview\
     SHOW_MEMORIES=TRUE \
-    SHOW_CHAT_SEARCH=TRUE
+    SHOW_CHAT_SEARCH=TRUE \
+    USE_FILE_API=TRUE
 ```
 
 ##### c. Dashboard
