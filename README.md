@@ -41,9 +41,11 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] structured indexing / querying of spreadsheets
 - [ ] project-wide custom databases
 - [ ] incognito mode 
-- [ ] chat search engine
 - [ ] advanced voice mode
 - [ ] image generation
+
+### 09-17-26
+- chat search engine, memories, various small improvements and bug fixes
 
 ### 08-30-26
 - parallel text redaction (multiple requests, and within each request) for a 10x speedup
