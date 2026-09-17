@@ -543,6 +543,8 @@ az webapp config appsettings set \
     AZURE_OPENAI_ADDRESS_AUDIO="https://tixie-ml1ae2pw-eastus2.cognitiveservices.azure.com/openai/deployments/gpt-4o-transcribe/audio/transcriptions?api-version=2025-03-01-preview"
 ```
 
+To enable **chat search engine and memory recording**, add `MIRROR_CHAT_HISTORY_INTERVAL=5`.
+
 For the optional SharePoint integration, add these variables:
 
 ```bash
@@ -610,8 +612,6 @@ Needed when updating folder naming conventions, or performing structural changes
 - Delete `_sync_state/sharepoint_delta_state.json`
 - Rerun the Search Service configuration script (you may use [these commands](https://github.com/safetyAI/ChatSafetyAI/blob/main/configure_azure_search_enterprise_README.md#verification--debugging-commands) to check everything went fine)
 - Start the Utilities App Service, check the logs, visit `<utilities-service-address>/debug/sharepoint_sync`
-
-To enable the chat search engine and memory recording, add the variable `MIRROR_CHAT_HISTORY_INTERVAL` and set it to `5` for instance.
 
 **Debugging Endpoints**
 Query the endpoints below to see:
