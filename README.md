@@ -44,6 +44,10 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] advanced voice mode
 - [ ] image generation
 
+### 09-19-26
+- custom DB and memories tabs now pinned
+- memory usage status now clearly indicated
+
 ### 09-17-26
 - chat search engine, memories, various small improvements and bug fixes
 
