@@ -45,7 +45,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] image generation
 
 ### 09-21-26
-- Responsiveness improvements (tooltip JS code was causing signficant delays)
+- Responsiveness improvements (tooltip JS, chat deletion buttons, sidebar generation after chat rename)
 - Bug fix chat deletion
 
 ### 09-19-26
