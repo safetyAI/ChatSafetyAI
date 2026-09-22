@@ -564,11 +564,11 @@ SHAREPOINT_AZURE_CLIENT_SECRET="<your-app-client-secret>" \
 # TEST_MAX_FILES_PER_FOLDER=5 # Optional: Set file limit per folder for testing (Remove for production)
 ```
 
-And place the json file below in `_sync_state/config.json`:
+And place the JSON file below in `_sync_state/config.json`:
 
-When SharePoint provisions a site, it automatically creates infrastructure Document Libraries (Pages, Site Assets, Style Library, Form Templates, WebPartPages, Site Collection Images, Apps for SharePoint).
-We don't want to mirror these (hence the excluded_drives below).
-We don't make them part of excluded_folders to avoid ignoring a legitimate folder inside a legitimate drive, e.g., `Legal/Contracts/Form Templates`, those SharePoint-reserved names are only at the drive level.
+SharePoint may provision or expose infrastructure Document Libraries depending on the site template and enabled features (Pages, Site Assets, Style Library, Form Templates, WebPartPages, Site Collection Images, Apps for SharePoint, etc.).
+We don't want to mirror these (hence the `excluded_drives` below).
+We deliberately don't make them part of `excluded_folders` to avoid ignoring a legitimate folder inside a legitimate drive, e.g., `Legal/Contracts/Form Templates`.
 
 ```json
 {
@@ -593,14 +593,15 @@ We don't make them part of excluded_folders to avoid ignoring a legitimate folde
 }
 ```
 
-Filters are applied dynamically and case-insensitively across every directory level.
+Exclusions are applied dynamically and case-insensitively. `excluded_drives` is evaluated at the Document Library / drive level. Folder and region exclusions are evaluated recursively at every folder depth; filename and extension exclusions are evaluated for every discovered file.
 
 The mirror strategy is **whitelist-first**.
 
+* **`excluded_drives`**: Defines SharePoint Document Libraries to skip entirely. This is the appropriate place for built-in/infrastructure libraries because excluding the same names as folders could unintentionally prune legitimate business folders inside another library. If a previously mirrored drive is added to this list later, its corresponding mirrored files are automatically purged from Azure Storage on the next sync pass.
 * **`excluded_folders`**: Defines folder names to skip. The crawler uses branch pruning—encountering a matching folder name immediately halts recursion, skipping that folder and all nested subfolders/files regardless of depth. If a previously mirrored folder name is added to this list later, its corresponding files are automatically purged from Azure Storage on the next sync pass.
-* **`excluded_extensions`**: Defines specific file extensions to ignore (without leading dots) *within* the set of supported file types, `ALLOWED_DB_EXTENSIONS` (e.g., `.pdf`, `.docx`, `.xlsx`). Files outside this list are ignored automatically. The `excluded_extensions` parameter is evaluated *only* on supported file types.
+* **`excluded_extensions`**: Defines specific file extensions to ignore (normally without leading dots) *within* the set of supported file types, `ALLOWED_DB_EXTENSIONS` (e.g., `pdf`, `docx`, `xlsx`). A leading dot is also tolerated by the implementation. Files whose extensions are not in `ALLOWED_DB_EXTENSIONS` are ignored automatically. The `excluded_extensions` parameter is therefore evaluated only for otherwise-supported file types.
 * **`excluded_filenames`**: Defines exact file names to bypass (including extensions). Filters out system-generated artifacts or temporary clutter across all directories regardless of location.
-* **`excluded_regions`**: Defines regional folder names to skip. The engine infers regions **strictly from folder naming conventions along the directory path** (e.g., `/Policies/APAC/`), without querying custom SharePoint metadata columns. If any folder in the hierarchy matches an entry in this list, branch pruning halts recursion and skips that entire subtree. Files and folders not explicitly nested under an excluded region name default to **Global / Unrestricted** and are ingested normally.
+* **`excluded_regions`**: Defines regional folder names to skip. The engine infers regions **strictly from folder naming conventions along the directory path** (e.g., `/Policies/APAC/`), without querying custom SharePoint metadata columns. If any folder in the hierarchy matches an entry in this list, branch pruning halts recursion and skips that entire subtree. Files and folders not explicitly nested under an excluded region name remain eligible for ingestion.
 
 **Full Reset Procedure**
 Needed when updating folder naming conventions, or performing structural changes requiring a fresh sync across Azure Blob Storage and Azure AI Search.
