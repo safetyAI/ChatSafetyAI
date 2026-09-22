@@ -245,66 +245,158 @@ The script uses `az rest` with Entra ID tokens. No API keys are required as argu
 ```
 
 ### Verification & Debugging Commands
-If the indexer fails or you need to verify the Dual-Track architecture and data completeness, run the following `az rest` commands from an authenticated terminal:
+If the indexer fails or you need to verify the Dual-Track architecture and data completeness, run the following `az rest` commands from an authenticated terminal.
+
+The commands explicitly use `--resource https://search.azure.com` so Azure CLI requests the correct Azure AI Search access token for the custom Search service endpoint.
 
 **1. Check Status & Throttling Warnings:**
 ```bash
-# Check Status
-az rest --method get --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexers/${SEARCH_INDEXER}/status?api-version=2024-11-01-preview" --query "lastResult.{Status:status, ItemsProcessed:itemsProcessed, ItemsFailed:itemsFailed}" --output table
+# Check the latest indexer execution status and progress
+az rest --method get \
+  --resource https://search.azure.com \
+  --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexers/${SEARCH_INDEXER}/status?api-version=2024-11-01-preview" \
+  --query "lastResult.{Status:status,Start:startTime,End:endTime,ItemsProcessed:itemsProcessed,ItemsFailed:itemsFailed}" \
+  --output table
 
-# Check for hidden API throttling or truncated PDFs
-az rest --method get --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexers/${SEARCH_INDEXER}/status?api-version=2024-11-01-preview" --query "lastResult.warnings" --output json
+# Check detailed warnings and errors.
+# This can surface oversized/truncated documents, enrichment/projection issues,
+# throttling, unsupported content, and other per-document/indexer problems.
+az rest --method get \
+  --resource https://search.azure.com \
+  --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexers/${SEARCH_INDEXER}/status?api-version=2024-11-01-preview" \
+  --query "lastResult.{Errors:errors,Warnings:warnings}" \
+  --output json
 ```
 
 **2. Verify Soft Delete Configuration:**
 Ensure the datasource is actively listening for soft-deleted blobs so ghost data doesn't persist in the search index.
 ```bash
-az rest --method get --url "https://$SEARCH_SERVICE_NAME.search.windows.net/datasources/${SEARCH_DATASOURCE}?api-version=2024-11-01-preview" --query "dataDeletionDetectionPolicy"
+az rest --method get \
+  --resource https://search.azure.com \
+  --url "https://$SEARCH_SERVICE_NAME.search.windows.net/datasources/${SEARCH_DATASOURCE}?api-version=2024-11-01-preview" \
+  --query "dataDeletionDetectionPolicy" \
+  --output json
 ```
 
 **3. Verify Data Completeness (Chunk Counts):**
-Proves how many chunks were generated per file. If a 100-page PDF only yields 5 chunks, the indexer hit an OCR or truncation cap and silently dropped content.
+Shows how many projected text chunks were generated per filename.
+
+Only chunk rows are counted (`parent_id ne null`), so parent-document rows do not inflate the counts. If a large document yields unexpectedly few chunks, inspect the indexer warnings and source document; this may indicate extraction, truncation, or enrichment problems.
+
+Note: if different databases contain files with the exact same `file_name`, the first filename-only query aggregates those files together. Use the user-specific query or the SharePoint folder verification command below when investigating a specific scope.
+
 ```bash
 # Get a list of unique filenames and their chunk counts
-az rest --method post --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexes/${SEARCH_INDEX}/docs/search?api-version=2024-11-01-preview" \
+az rest --method post \
+  --resource https://search.azure.com \
+  --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexes/${SEARCH_INDEX}/docs/search?api-version=2024-11-01-preview" \
   --headers '{"Content-Type": "application/json"}' \
   --body '{
     "search": "*",
+    "filter": "parent_id ne null",
     "facets": ["file_name,count:5000"],
     "top": 0
   }' | jq '.["@search.facets"].file_name'
 
-# Optional: Filter the chunk count by a specific user
+# Optional: Filter the chunk count by a specific user / organization.
+# Examples:
+#   TARGET_USER="GLOBAL"
+#   TARGET_USER="ORG_<company>"
+#   TARGET_USER="<personal_user_id>"
 TARGET_USER="GLOBAL"
-az rest --method post --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexes/${SEARCH_INDEX}/docs/search?api-version=2024-11-01-preview" \
+
+az rest --method post \
+  --resource https://search.azure.com \
+  --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexes/${SEARCH_INDEX}/docs/search?api-version=2024-11-01-preview" \
   --headers '{"Content-Type": "application/json"}' \
   --body "{
     \"search\": \"*\",
-    \"filter\": \"user_id eq '${TARGET_USER}'\",
+    \"filter\": \"user_id eq '${TARGET_USER}' and parent_id ne null\",
     \"facets\": [\"file_name,count:500\"],
     \"top\": 0
   }" | jq '.["@search.facets"].file_name'
 ```
 
 **4. Verify Parent Metadata (Relational Logic):**
-Proves that the parent document row was created correctly and the image metadata passed successfully.
+Confirms that parent document rows were created correctly.
+
+`child_images` may legitimately be empty for documents that have no retained extracted images, so an empty `child_images` value by itself is not an indexing failure.
 ```bash
-az rest --method post --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexes/${SEARCH_INDEX}/docs/search?api-version=2024-11-01-preview" \
+az rest --method post \
+  --resource https://search.azure.com \
+  --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexes/${SEARCH_INDEX}/docs/search?api-version=2024-11-01-preview" \
   --headers '{"Content-Type": "application/json"}' \
-  --body '{"search": "*", "filter": "doc_id ne null", "top": 1, "select": "doc_id, child_images, user_folder"}'
+  --body '{
+    "search": "*",
+    "filter": "doc_id ne null",
+    "top": 5,
+    "select": "doc_id,file_name,child_images,user_folder"
+  }'
 ```
 
 **5. Verify Document Chunking (Parallel Track):**
-Proves the text was successfully split into smaller text vectors and linked back to the parent document.
+Proves the text was successfully split into smaller text chunks and linked back to the parent document.
 ```bash
-az rest --method post --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexes/${SEARCH_INDEX}/docs/search?api-version=2024-11-01-preview" \
+az rest --method post \
+  --resource https://search.azure.com \
+  --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexes/${SEARCH_INDEX}/docs/search?api-version=2024-11-01-preview" \
   --headers '{"Content-Type": "application/json"}' \
-  --body '{"search": "*", "filter": "parent_id ne null", "top": 1, "select": "chunk_id, parent_id, chunk"}'
+  --body '{
+    "search": "*",
+    "filter": "parent_id ne null",
+    "top": 1,
+    "select": "chunk_id,parent_id,chunk"
+  }'
 ```
 
-**6. Nuclear Reset (Clear transient failure history):**
-Force a full re-processing if you change AI logic, chunking strategy, or need to recover from an upstream API failure.
+**6. Verify SharePoint-Mirrored Database Completeness (SPAuto):**
+For deployments with SharePoint mirroring enabled, verifies how many SharePoint-mirrored parent documents and distinct `SPAuto_*` database folders are currently represented in Azure AI Search.
+
+Run this after the SharePoint mirror has finished and the triggered Search indexer run has completed.
+
+Compare the resulting folder/document counts with `_sync_state/sharepoint_delta_state.json` and the corresponding `custom_databases/ORG_<company>/SPAuto_*` folders in Blob Storage.
+
+The `SPAuto_` prefix check is intentionally performed locally with `jq`. Do not use `startswith()` inside the Azure AI Search `$filter`, because that function is not supported by the Search OData filter syntax.
+
 ```bash
-az rest --method post --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexers/${SEARCH_INDEXER}/reset?api-version=2024-11-01-preview"
-az rest --method post --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexers/${SEARCH_INDEXER}/run?api-version=2024-11-01-preview"
+TARGET_USER="ORG_<company>"
+
+az rest --method post \
+  --resource https://search.azure.com \
+  --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexes/${SEARCH_INDEX}/docs/search?api-version=2024-11-01-preview" \
+  --headers '{"Content-Type": "application/json"}' \
+  --body "{
+    \"search\": \"*\",
+    \"filter\": \"user_id eq '${TARGET_USER}' and doc_id ne null\",
+    \"facets\": [\"user_folder,count:5000\"],
+    \"top\": 0
+  }" \
+| jq '
+  [(.["@search.facets"].user_folder // [])[]
+   | select(.value | startswith("SPAuto_"))] as $sp
+  | {
+      SPAutoFolders: ($sp | length),
+      SPAutoParentDocuments: ($sp | map(.count) | add // 0),
+      Folders: $sp
+    }
+'
+```
+
+**7. Nuclear Reset / Full Reprocessing:**
+Force a full re-processing if you change AI enrichment logic, chunking strategy, or otherwise need to completely reprocess the datasource after an upstream failure.
+
+`reset` clears the indexer's internal change-tracking/high-water mark. The subsequent `run` command performs the actual reprocessing.
+
+This is not required for normal incremental indexing and should not be used as a routine diagnostic command.
+
+Note: resetting and rerunning the indexer does not by itself remove arbitrary orphaned Search documents that no longer have a corresponding source document. Normal Blob deletions should instead be handled through the configured soft-delete detection policy.
+
+```bash
+az rest --method post \
+  --resource https://search.azure.com \
+  --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexers/${SEARCH_INDEXER}/reset?api-version=2024-11-01-preview"
+
+az rest --method post \
+  --resource https://search.azure.com \
+  --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexers/${SEARCH_INDEXER}/run?api-version=2024-11-01-preview"
 ```
