@@ -50,6 +50,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - Bug fix new chat name display
 - SharePoint cloning frontend and backend improvements (renaming, path flattening guards, R and Python alignment, company-wide dbs don't consume user db budget anymore)
 - Automatic JS versioning to ensure changes are captured by the browser
+- Floating bar at the bottom of the screen for audio recording, so that users can keep using the app and reading conversations while recording
 
 ### 09-19-26
 - custom DB and memories tabs now pinned
