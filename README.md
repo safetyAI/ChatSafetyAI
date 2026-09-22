@@ -47,8 +47,9 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 ### 09-23-26
 - Responsiveness improvements (tooltip JS, chat deletion buttons, sidebar generation after chat rename)
 - Bug fix chat deletion
+- Bug fix new chat name display
 - SharePoint cloning frontend and backend improvements (renaming, path flattening guards, R and Python alignment, company-wide dbs don't consume user db budget anymore)
-- automatic JS versioning to ensure changes are captured by the browser
+- Automatic JS versioning to ensure changes are captured by the browser
 
 ### 09-19-26
 - custom DB and memories tabs now pinned
