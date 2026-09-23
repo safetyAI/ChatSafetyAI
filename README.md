@@ -44,10 +44,11 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] advanced voice mode
 - [ ] image generation
 
-### 09-23-26
+### 09-24-26
 - Responsiveness improvements (tooltip JS, chat deletion buttons, sidebar generation after chat rename)
 - Bug fix chat deletion
 - Bug fix new chat name display
+- Bug fix: proper utilities API address in the server chat_sync calls
 - SharePoint cloning frontend and backend improvements (renaming, path flattening guards, R and Python alignment, company-wide dbs don't consume user db budget anymore)
 - Automatic JS versioning to ensure changes are captured by the browser
 - Floating bar at the bottom of the screen for audio recording, so that users can keep using the app and reading conversations while recording
