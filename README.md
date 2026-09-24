@@ -63,6 +63,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 ### 08-30-26
 - parallel text redaction (multiple requests, and within each request) for a 10x speedup
 - CSV files are now opened even if their encoding is not perfect UTF-8, with bad char replacement
+- file(s) now only accepted if their content(s) entirely fits in context (no silent truncation), file metadata placement improvement and persistence
 
 ### 08-28-26
 - more robust chat deletion code
