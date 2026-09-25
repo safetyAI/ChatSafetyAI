@@ -44,6 +44,9 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] advanced voice mode
 - [ ] image generation
 
+### 09-25-26
+- SaaS: now using only one organization account to maximize token caching opportunities (speed gains)
+
 ### 09-24-26
 - Responsiveness improvements (tooltip JS, chat deletion buttons, sidebar generation after chat rename)
 - Bug fix chat deletion
