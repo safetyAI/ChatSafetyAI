@@ -44,8 +44,9 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] advanced voice mode
 - [ ] image generation
 
-### 09-25-26
+### 09-26-26
 - SaaS: now using only one organization account to maximize token caching opportunities (speed gains)
+- added knowledge of the EEI operationalization of the LIFE criteria for SIF, and HE shortcuts (gracefully integrated with the energy equations)
 
 ### 09-24-26
 - Responsiveness improvements (tooltip JS, chat deletion buttons, sidebar generation after chat rename)
