@@ -45,6 +45,8 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] image generation
 
 ### 09-26-26
+- Astra for HECA and photo annotations
+- model now knows explicitly when memory use has been enabled/disabled by the user
 - SaaS: now using only one organization account to maximize token caching opportunities (speed gains)
 - added knowledge of the EEI operationalization of the LIFE criteria for SIF, and HE shortcuts (gracefully integrated with the energy equations)
 
