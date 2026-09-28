@@ -44,6 +44,11 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] advanced voice mode
 - [ ] image generation
 
+### 09-30-26
+- now relying on the GPT-6 family (Astra for HECA and photo annotations, Luna for classification tasks, Sol as the main engine)
+- optimized instructions and prompts for reasoning models
+- improved photo annotation instructions for more stable segmentation mask responses
+
 ### 09-28-26
 - Upgraded to GPT-6 Astra for the HECA and photo annotations mode (GPT-6 Astra is the best vision LLM currently available for object detection)
 - model now knows explicitly when memory use has been enabled/disabled by the user
