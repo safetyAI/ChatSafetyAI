@@ -844,7 +844,7 @@ assignments=(
   "csai-mre-utilities $RESOURCE_GROUP $AISERVICES_NAME cognitiveservices 'Cognitive Services OpenAI User'"
   "csai-mre-utilities $RESOURCE_GROUP $AISERVICES_NAME cognitiveservices 'Cognitive Services User'"
 
-  # === FOR OPTIONAL SHAREPOINT INTEGRATION ===
+  # === !!! FOR CHAT SEARCH ENGINE AND OPTIONAL SHAREPOINT INTEGRATION !!! ===
   # Required to trigger (POST /indexers/run) and inspect (GET /indexers/status) the Azure Search Indexer
   "csai-mre-utilities $RESOURCE_GROUP $SEARCH_SERVICE_NAME search 'Search Service Contributor'"
 )
