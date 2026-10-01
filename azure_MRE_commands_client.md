@@ -710,8 +710,8 @@ az containerapp update \
     NLP_ADDRESS="$NLP_ADDRESS" \
     OPENAI_MODEL_NAME_MAIN=gpt-6-sol \
     OPENAI_MODEL_NAME_FAST=gpt-6-luna \
-    OPENAI_MODEL_NAME_ASTRA=gpt-6-astra \
-    USE_ASTRA_ONE_SHOT_ANNOTATION=TRUE \
+    OPENAI_MODEL_NAME_HECA_ANNOTATION=gpt-6-astra \
+    USE_HECA_ANNOTATION_SPECIALIST=TRUE \
     SEARCH_ENDPOINT="https://$SEARCH_SERVICE_NAME.search.windows.net" \
     SEARCH_INDEXER="rag-indexer" \
     SEARCH_INDEX="rag-index" \
