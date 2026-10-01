@@ -251,6 +251,18 @@ The commands explicitly use `--resource https://search.azure.com` so Azure CLI r
 
 **1. Check Status & Throttling Warnings:**
 ```bash
+SEARCH_SERVICE_NAME="<search-service-name>"
+SEARCH_INDEXER="workspace-indexer"
+SEARCH_DATASOURCE="blob-workspace-ds"
+SEARCH_INDEX="workspace-chunks"
+
+# View recent indexer execution history
+az rest --method get \
+  --resource https://search.azure.com \
+  --url "https://$SEARCH_SERVICE_NAME.search.windows.net/indexers/${SEARCH_INDEXER}/status?api-version=2024-11-01-preview" \
+  --query "executionHistory[*].{Status:status,Items:itemsProcessed,Start:startTime,End:endTime}" \
+  --output table
+
 # Check the latest indexer execution status and progress
 az rest --method get \
   --resource https://search.azure.com \
