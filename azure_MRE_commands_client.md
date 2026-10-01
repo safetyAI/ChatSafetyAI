@@ -708,8 +708,10 @@ az containerapp update \
     UTILITIES_ADDRESS="$UTILITIES_ADDRESS" \
     PREDICTIONS_ADDRESS="$PREDICTIONS_ADDRESS" \
     NLP_ADDRESS="$NLP_ADDRESS" \
-    OPENAI_MODEL_NAME_GPT4=[Your deployment name for GPT-5.5 or 5.6] \
-    OPENAI_MODEL_NAME_GPT35=[Your deployment name for GPT-4.1-Mini] \
+    OPENAI_MODEL_NAME_MAIN=gpt-6-sol \
+    OPENAI_MODEL_NAME_FAST=gpt-6-luna \
+    OPENAI_MODEL_NAME_ASTRA=gpt-6-astra \
+    USE_ASTRA_ONE_SHOT_ANNOTATION=TRUE \
     SEARCH_ENDPOINT="https://$SEARCH_SERVICE_NAME.search.windows.net" \
     SEARCH_INDEXER="rag-indexer" \
     SEARCH_INDEX="rag-index" \
@@ -718,8 +720,8 @@ az containerapp update \
     AZURE_MODERATION_ADDRESS="${MAIN_ENDPOINT}contentsafety/text:analyze?api-version=2024-09-01" \
     AZURE_VISION_ADDRESS="${MAIN_ENDPOINT}" \
     AZURE_LANGUAGE_ADDRESS="${MAIN_ENDPOINT}" \
-    AZURE_OPENAI_RESPONSES_ADDRESS=https://csai-aiservices-mre.cognitiveservices.azure.com/openai/responses?api-version=2025-04-01-preview\
-    AZURE_OPENAI_ADDRESS_AUDIO=https://tixie-ml1ae2pw-eastus2.cognitiveservices.azure.com/openai/deployments/gpt-4o-transcribe/audio/transcriptions?api-version=2025-03-01-preview\
+    AZURE_OPENAI_RESPONSES_ADDRESS=https://csai-aiservices-mre.cognitiveservices.azure.com/openai/responses?api-version=2025-04-01-preview \
+    AZURE_OPENAI_ADDRESS_AUDIO=https://tixie-ml1ae2pw-eastus2.cognitiveservices.azure.com/openai/deployments/gpt-4o-transcribe/audio/transcriptions?api-version=2025-03-01-preview \
     SHOW_MEMORIES=TRUE \
     SHOW_CHAT_SEARCH=TRUE \
     USE_FILE_API=TRUE
