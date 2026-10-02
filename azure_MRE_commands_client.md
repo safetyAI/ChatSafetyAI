@@ -96,11 +96,12 @@ In Azure Portal:
 - a) Click "Generate Custom Domain name" to be able to use managed identities. Use the resource name (here, `$AISERVICES_NAME`), as the custom domain name.
 
 - b) Click "go to Azure AI Foundry portal", and on the "Models + endpoints" tab, deploy the following base models:
-  - gpt-5.5-2026-04-23
-  - gpt-4.1-mini-2025-04-14
+  - gpt-6-astra
+  - gpt-6-sol
+  - gpt-6-luna
   - gpt-4o-transcribe
   - text-embedding-3-large
-  - NOTE: Custom deployment names must not end with a raw timestamp. For example, gpt-5.5-2026-04-23-project is fine, but gpt-5.5-project-2026-04-23 is not. You can simply remove the timestamp is you want to use custom names, like: gpt-5.5-project.
+  - **NOTE**: if giving custom names to your deployments, abide by [these rules](https://github.com/safetyAI/ChatSafetyAI/blob/main/GPT6_migration_guide.md#2-azure-deployment-name-naming-convention)
   - NOTE: due to region availability, Azure may silently deploy one or more models in a different resource than `AISERVICES_NAME`. Save the names of the new resources created by Azure and pass them as `OUTSIDE_RESOURCES` at the beginning of Step 9.
   - NOTE: in "Customize", for all models:
     - Opt out of automatic model version upgrades !!!
