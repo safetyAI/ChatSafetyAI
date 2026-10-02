@@ -58,7 +58,7 @@ instead of separate GPT4/GPT35 keys.
 
 ---
 
-## 2. Important Azure deployment-name requirement
+## 2. Azure deployment-name naming convention
 Azure custom deployment names must begin with the canonical GPT family/model
 identifier used by the application.
 
@@ -545,49 +545,17 @@ This naming convention is required so the application can safely detect Astra-sp
 
 ---
 
-# Final cleanup after successful testing
+# Repository-wide cleanup regex
 
-After the deployment has been validated, perform a repository-wide search for retired names and remove any remaining commented legacy code.
+After the deployment has been validated, perform one final repository-wide search for retired model-routing names.
 
-Useful search targets include:
-
-```text
-openai_model_name_thinking
-openai_model_name_gpt4
-openai_model_name_gpt35
-
-OPENAI_MODEL_NAME_THINKING
-OPENAI_MODEL_NAME_GPT4
-OPENAI_MODEL_NAME_GPT35
-
-AZURE_OPENAI_ADDRESS_THINKING
-AZURE_OPENAI_ADDRESS_GPT4
-AZURE_OPENAI_ADDRESS_GPT35
-
-OWN_AZURE_OPENAI_ADDRESS_GPT4
-OWN_AZURE_OPENAI_ADDRESS_GPT35
-
-azure_openai_address_thinking
-azure_openai_address_gpt4
-azure_openai_address_gpt35
-
-azure_openai_key_gpt4
-azure_openai_key_gpt35
-
-AZURE_OPENAI_KEY_GPT4
-AZURE_OPENAI_KEY_GPT35
-
-OPENAI_MODEL_NAME_ASTRA
-openai_model_name_astra
-
-USE_ASTRA_ONE_SHOT_ANNOTATION
-use_astra_one_shot_annotation
-use_astra_for_this_call
+```regex
+\b(?:openai_model_name_thinking|openai_model_name_gpt4|openai_model_name_gpt35|openai_model_name_astra|OPENAI_MODEL_NAME_THINKING|OPENAI_MODEL_NAME_GPT4|OPENAI_MODEL_NAME_GPT35|OPENAI_MODEL_NAME_ASTRA|my_model_thinking|my_model_better_but_slow|my_model_fast_short_history|my_model_fast_long_history|my_model_function_calling|my_model_function_calling_for_suggestions|my_model_vision|use_astra_one_shot_annotation|USE_ASTRA_ONE_SHOT_ANNOTATION|use_astra_for_this_call|AZURE_OPENAI_ADDRESS_THINKING|AZURE_OPENAI_ADDRESS_GPT4|AZURE_OPENAI_ADDRESS_GPT35|OWN_AZURE_OPENAI_ADDRESS_GPT4|OWN_AZURE_OPENAI_ADDRESS_GPT35|azure_openai_address_thinking|azure_openai_address_gpt4|azure_openai_address_gpt35|AZURE_OPENAI_KEY_GPT4|AZURE_OPENAI_KEY_GPT35|azure_openai_key_gpt4|azure_openai_key_gpt35)\b
 ```
 
-Literal `astra` references should not be blindly removed.
+Once obsolete commented code has also been removed, this search should return **zero matches**.
 
-Astra-specific capability checks such as:
+Do not add generic `astra` or `gpt-6-astra` to this cleanup regex. Astra references are still intentionally used for model-specific capability detection, for example:
 
 ```python
 is_astra = (
@@ -596,8 +564,18 @@ is_astra = (
 )
 ```
 
-are intentionally retained where they control model-specific API behavior such as:
+That check controls Astra-specific API behavior such as:
 
 ```python
 new_part['detail'] = 'original'
 ```
+
+After the zero-match cleanup search, an optional second audit can be performed.
+
+Enable case-insensitive search and use:
+
+```regex
+\b(?:gpt4|gpt35|thinking|astra)\b
+```
+
+This second search is for **manual inspection only**. Its result does not need to be zero because legitimate Astra-specific references should remain.
