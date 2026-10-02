@@ -59,52 +59,29 @@ instead of separate GPT4/GPT35 keys.
 ---
 
 ## 2. Important Azure deployment-name requirement
-
-For ordinary routing, the Azure deployment name can be whatever is configured in:
-
-```text
-OPENAI_MODEL_NAME_MAIN
-OPENAI_MODEL_NAME_FAST
-OPENAI_MODEL_NAME_HECA_ANNOTATION
-```
-
-and it is sent to Azure unchanged.
-
-There is one deliberate exception to arbitrary naming.
-
-Astra-specific image handling currently detects Astra with logic equivalent to:
-
-```python
-is_astra = (
-    'gpt-6' in my_model.lower()
-    and 'astra' in my_model.lower()
-)
-```
-
-Therefore, if the HECA/annotation deployment really uses Astra, its custom Azure deployment name must contain both:
-
-```text
-gpt-6
-astra
-```
+Azure custom deployment names must begin with the canonical GPT family/model
+identifier used by the application.
 
 Examples:
-
-```text
-gpt-6-astra
-csai-gpt-6-astra
-prod-gpt-6-astra-v2
+```
+gpt-5.4-prod
+gpt-5.6-sol-prod
+gpt-6-sol-prod
+gpt-6-luna-prod
+gpt-6-astra-prod
 ```
 
-This requirement exists specifically so Python knows when it is safe to send:
+For Astra specifically, the deployment name must contain both `gpt-6` and `astra`.
 
-```python
-new_part['detail'] = 'original'
+Do not use names such as:
+
 ```
-
-It is not how general HECA/annotation specialist routing is determined.
-
----
+prod-main
+fast-prod
+heca-prod
+prod-gpt-6-sol
+```
+Because application logic currently inspects the model/deployment string to determine API family and certain model-specific capabilities.
 
 ## 3. R internal-name migration
 
