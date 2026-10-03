@@ -529,13 +529,13 @@ az webapp config appsettings set \
   --name csai-mre-utilities \
   --resource-group $RESOURCE_GROUP \
   --settings \
-    AZURE_STORAGE_ACCOUNT=$STORAGE_ACCOUNT \
+    AZURE_STORAGE_ACCOUNT="$STORAGE_ACCOUNT" \
     AZURE_STORAGE_ACCOUNT_CONTAINER_NAME=database \
     USE_MANAGED_IDENTITY=TRUE \
     IS_AZURE=TRUE \
     MAX_UPLOAD_MB=40 \
     UTILITIES_ADDRESS="https://$HOST_UTILITIES/" \
-    OPENAI_MODEL_NAME_GPT35="gpt-4.1-mini-2025-04-14" \
+    OPENAI_MODEL_NAME_FAST="gpt-6-luna" \
     AZURE_DOC_INTEL_ADDRESS="${MAIN_ENDPOINT}" \
     AZURE_MODERATION_ADDRESS="${MAIN_ENDPOINT}contentsafety/text:analyze?api-version=2024-09-01" \
     AZURE_VISION_ADDRESS="${MAIN_ENDPOINT}" \
