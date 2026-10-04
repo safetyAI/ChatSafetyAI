@@ -15,26 +15,37 @@ The main goals of the migration were:
 
 ## 0. Utilities API client-facing environment-variable migration
 
-The Utilities API now uses the unified Responses API and the new GPT-6 model names. Legacy per-model GPT environment variables can be removed.
+The Utilities API previously used a single fast-model environment variable:
 
-| Old environment variable | New environment variable / action |
+```text
+OPENAI_MODEL_NAME_GPT35=gpt-4.1-mini-csai
+```
+
+Replace it with:
+
+```text
+OPENAI_MODEL_NAME_FAST=gpt-6-luna
+```
+
+Environment-variable migration:
+
+| Old environment variable | New environment variable / status |
 |---|---|
-| `OPENAI_MODEL_NAME_THINKING` | **Deleted** → use `OPENAI_MODEL_NAME_MAIN` |
-| `OPENAI_MODEL_NAME_GPT4` | **Deleted** → use `OPENAI_MODEL_NAME_MAIN` or `OPENAI_MODEL_NAME_FAST`, depending on the call |
-| `OPENAI_MODEL_NAME_GPT35` | **Deleted** → use `OPENAI_MODEL_NAME_FAST` |
-| `AZURE_OPENAI_ADDRESS_THINKING` | **Deleted** → use `AZURE_OPENAI_RESPONSES_ADDRESS` |
-| `AZURE_OPENAI_ADDRESS_GPT4` | **Deleted** → use `AZURE_OPENAI_RESPONSES_ADDRESS` |
-| `AZURE_OPENAI_ADDRESS_GPT35` | **Deleted** → use `AZURE_OPENAI_RESPONSES_ADDRESS` |
-| `AZURE_OPENAI_KEY_GPT4` | **Deleted** → use `AZURE_OPENAI_KEY` |
-| `AZURE_OPENAI_KEY_GPT35` | **Deleted** → use `AZURE_OPENAI_KEY` |
+| `OPENAI_MODEL_NAME_GPT35` | `OPENAI_MODEL_NAME_FAST` |
+| `AZURE_OPENAI_RESPONSES_ADDRESS` | **Unchanged** |
+| `AZURE_OPENAI_ADDRESS_AUDIO` | **Unchanged** |
+| `USE_MANAGED_IDENTITY` | **Unchanged** |
+| `IS_AZURE` | **Unchanged** |
 
-Current intended model values (examples; Azure may use custom deployment names following the naming convention below):
+The Utilities API does **not** require `OPENAI_MODEL_NAME_MAIN` or `OPENAI_MODEL_NAME_HECA_ANNOTATION`.
+
+Current Utilities API model configuration:
 
 ```env
-OPENAI_MODEL_NAME_MAIN=gpt-6-sol
 OPENAI_MODEL_NAME_FAST=gpt-6-luna
-OPENAI_MODEL_NAME_HECA_ANNOTATION=gpt-6-astra
 ```
+
+The remaining Azure AI, storage, search, SharePoint, container, and application settings are unchanged by this model-role migration.
 
 ## 1. Chatbot client-facing environment-variable migration
 
