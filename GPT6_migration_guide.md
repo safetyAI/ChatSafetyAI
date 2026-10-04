@@ -15,18 +15,6 @@ The main goals of the migration were:
 
 ## 0. Utilities API client-facing environment-variable migration
 
-The Utilities API previously used a single fast-model environment variable:
-
-```text
-OPENAI_MODEL_NAME_GPT35=gpt-4.1-mini-csai
-```
-
-Replace it with:
-
-```text
-OPENAI_MODEL_NAME_FAST=gpt-6-luna
-```
-
 Environment-variable migration:
 
 | Old environment variable | New environment variable / status |
