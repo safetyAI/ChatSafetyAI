@@ -24,6 +24,7 @@ Environment-variable migration:
 | `AZURE_OPENAI_ADDRESS_AUDIO` | **Unchanged** |
 | `USE_MANAGED_IDENTITY` | **Unchanged** |
 | `IS_AZURE` | **Unchanged** |
+| `DEBUG_LLM_PAYLOAD` | `TRUE` **New** |
 
 The Utilities API does **not** require `OPENAI_MODEL_NAME_MAIN` or `OPENAI_MODEL_NAME_HECA_ANNOTATION`.
 
