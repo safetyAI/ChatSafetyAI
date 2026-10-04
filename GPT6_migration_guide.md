@@ -1,4 +1,4 @@
-# ChatSafetyAI Model / Azure Environment Migration Guide
+# Azure Environment Migration Guide for Chatbot and Utilities API
 
 This document summarizes the model-routing and Azure environment-variable changes made during the GPT-6 migration.
 
@@ -13,7 +13,30 @@ The main goals of the migration were:
 
 ---
 
-## 1. Client-facing environment-variable migration
+## 0. Utilities API client-facing environment-variable migration
+
+The Utilities API now uses the unified Responses API and the new GPT-6 model names. Legacy per-model GPT environment variables can be removed.
+
+| Old environment variable | New environment variable / action |
+|---|---|
+| `OPENAI_MODEL_NAME_THINKING` | **Deleted** → use `OPENAI_MODEL_NAME_MAIN` |
+| `OPENAI_MODEL_NAME_GPT4` | **Deleted** → use `OPENAI_MODEL_NAME_MAIN` or `OPENAI_MODEL_NAME_FAST`, depending on the call |
+| `OPENAI_MODEL_NAME_GPT35` | **Deleted** → use `OPENAI_MODEL_NAME_FAST` |
+| `AZURE_OPENAI_ADDRESS_THINKING` | **Deleted** → use `AZURE_OPENAI_RESPONSES_ADDRESS` |
+| `AZURE_OPENAI_ADDRESS_GPT4` | **Deleted** → use `AZURE_OPENAI_RESPONSES_ADDRESS` |
+| `AZURE_OPENAI_ADDRESS_GPT35` | **Deleted** → use `AZURE_OPENAI_RESPONSES_ADDRESS` |
+| `AZURE_OPENAI_KEY_GPT4` | **Deleted** → use `AZURE_OPENAI_KEY` |
+| `AZURE_OPENAI_KEY_GPT35` | **Deleted** → use `AZURE_OPENAI_KEY` |
+
+Current intended model values (examples; Azure may use custom deployment names following the naming convention below):
+
+```env
+OPENAI_MODEL_NAME_MAIN=gpt-6-sol
+OPENAI_MODEL_NAME_FAST=gpt-6-luna
+OPENAI_MODEL_NAME_HECA_ANNOTATION=gpt-6-astra
+```
+
+## 1. Chatbot client-facing environment-variable migration
 
 | Old env var | New env var / status | Meaning |
 |---|---|---|
@@ -280,13 +303,13 @@ This matters because Azure deployment names may be custom.
 For example:
 
 ```text
-prod-gpt-6-sol-2026-09-15
+gpt-6-sol-prod-2026-09-15
 ```
 
 must remain exactly:
 
 ```text
-prod-gpt-6-sol-2026-09-15
+gpt-6-sol-prod-2026-09-15
 ```
 
 and must not be shortened automatically.
@@ -513,7 +536,7 @@ astra
 Example:
 
 ```text
-OPENAI_MODEL_NAME_HECA_ANNOTATION=prod-gpt-6-astra-v2
+OPENAI_MODEL_NAME_HECA_ANNOTATION=gpt-6-astra-prod-v2
 ```
 
 This naming convention is required so the application can safely detect Astra-specific image behavior.
