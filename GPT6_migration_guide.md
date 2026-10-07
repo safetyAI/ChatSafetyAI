@@ -20,6 +20,7 @@ Environment-variable migration:
 | Old environment variable | New environment variable / status |
 |---|---|
 | `OPENAI_MODEL_NAME_GPT35` | `OPENAI_MODEL_NAME_FAST` |
+| `OPENAI_MODEL_NAME_MAIN` | `gpt-6.1-sol` **New** |
 | `AZURE_OPENAI_RESPONSES_ADDRESS` | **Unchanged** |
 | `AZURE_OPENAI_ADDRESS_AUDIO` | **Unchanged** |
 | `USE_MANAGED_IDENTITY` | **Unchanged** |
