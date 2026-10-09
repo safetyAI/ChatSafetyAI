@@ -546,26 +546,36 @@ az webapp config appsettings set \
     AZURE_OPENAI_ADDRESS_AUDIO="https://tixie-ml1ae2pw-eastus2.cognitiveservices.azure.com/openai/deployments/gpt-4o-transcribe/audio/transcriptions?api-version=2025-03-01-preview"
 ```
 
-To enable **chat search engine and memory recording**, add `MIRROR_CHAT_HISTORY_INTERVAL=5`.
+To enable chat search engine and memory recording, add these variables:
 
-For the optional SharePoint integration, add these variables:
+```bash
+MIRROR_CHAT_HISTORY_INTERVAL=5 \
+SEARCH_ENDPOINT="https://${SEARCH_SERVICE_NAME}.search.windows.net" \
+SEARCH_INDEXER="$SEARCH_INDEXER" \
+SEARCH_INDEX="$SEARCH_INDEX"
+```
+
+For the optional SharePoint integration, add these additional variables (the SEARCH_* variables above are shared by both features):
 
 ```bash
 CUSTOM_DB_EXTRACTED_IMGS_DIR="custom_db_extracted_imgs" \
 MIRROR_SHAREPOINT_INTERVAL=5 \
-SEARCH_ENDPOINT="https://${SEARCH_SERVICE_NAME}.search.windows.net" \
-SEARCH_INDEXER="$SEARCH_INDEXER" \
-SEARCH_INDEX="$SEARCH_INDEX" \
 COMPANY_NAME="$COMPANY_NAME" \
 SHAREPOINT_HOSTNAME="yourcompany.sharepoint.com" \
 SHAREPOINT_SITE_NAME="TargetSiteName" \
 SHAREPOINT_AZURE_TENANT_ID="$TENANT_ID" \
 SHAREPOINT_AZURE_CLIENT_ID="<your-app-client-id>" \
-SHAREPOINT_AZURE_CLIENT_SECRET="<your-app-client-secret>" \
-# === OPTIONAL SHAREPOINT ENGINE CONTROLS ===
-# SHAREPOINT_DRIVE_ID="" # Optional: Target specific document library drive ID (defaults to root drive) \
-# TEST_MAX_FILES_PER_FOLDER=5 # Optional: Set file limit per folder for testing (Remove for production)
+SHAREPOINT_AZURE_CLIENT_SECRET="<your-app-client-secret>"
 ```
+
+Optional SharePoint engine controls (add to the App Service settings only if needed):
+
+```bash
+SHAREPOINT_DRIVE_ID=""           # Optional: Target a specific document library drive ID (defaults to root drive)
+TEST_MAX_FILES_PER_FOLDER=5      # Optional: Set file limit per folder for testing (remove for production)
+```
+
+IMPORTANT: The Utilities API's managed identity must also have the "Search Service Contributor" RBAC role on the Azure AI Search service to trigger and inspect indexers.
 
 And place the JSON file below in `_sync_state/config.json`:
 
@@ -848,9 +858,9 @@ assignments=(
   "csai-mre-utilities $RESOURCE_GROUP $STORAGE_ACCOUNT storage 'Storage Blob Data Contributor'"
   "csai-mre-utilities $RESOURCE_GROUP $AISERVICES_NAME cognitiveservices 'Cognitive Services OpenAI User'"
   "csai-mre-utilities $RESOURCE_GROUP $AISERVICES_NAME cognitiveservices 'Cognitive Services User'"
-
+  
   # === !!! FOR CHAT SEARCH ENGINE AND OPTIONAL SHAREPOINT INTEGRATION !!! ===
-  # Required to trigger (POST /indexers/run) and inspect (GET /indexers/status) the Azure Search Indexer
+  # Required to trigger Azure AI Search indexer runs and inspect their execution status
   "csai-mre-utilities $RESOURCE_GROUP $SEARCH_SERVICE_NAME search 'Search Service Contributor'"
 )
 
