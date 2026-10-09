@@ -536,7 +536,7 @@ az webapp config appsettings set \
     MAX_UPLOAD_MB=40 \
     UTILITIES_ADDRESS="https://$HOST_UTILITIES/" \
     OPENAI_MODEL_NAME_FAST="gpt-6-luna" \
-    OPENAI_MODEL_NAME_MAIN="gpt-6.1-sol" \ 
+    OPENAI_MODEL_NAME_MAIN="gpt-6.1-sol" \
     DEBUG_LLM_PAYLOAD=TRUE \
     AZURE_DOC_INTEL_ADDRESS="${MAIN_ENDPOINT}" \
     AZURE_MODERATION_ADDRESS="${MAIN_ENDPOINT}contentsafety/text:analyze?api-version=2024-09-01" \
