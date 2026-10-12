@@ -97,7 +97,7 @@ In Azure Portal:
 
 - b) Click "go to Azure AI Foundry portal", and on the "Models + endpoints" tab, deploy the following base models:
   - gpt-6-astra
-  - gpt-6-sol
+  - gpt-6.1-sol
   - gpt-6-luna
   - gpt-4o-transcribe
   - text-embedding-3-large
