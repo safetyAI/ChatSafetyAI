@@ -44,6 +44,10 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] advanced voice mode
 - [ ] image generation
 
+### 10-14-26
+- Phase 1 of dashboard next gen: advanced stats collection from conversations
+- Multiple small bug fixes and improvements
+
 ### 10-04-26
 - now relying on the GPT-6 family (Astra for HECA and photo annotations, Luna for classification tasks, Sol as the main engine)
 - optimized instructions and prompts for reasoning models
