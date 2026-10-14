@@ -46,7 +46,8 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 
 ### 10-14-26
 - Phase 1 of dashboard next gen: advanced stats collection from conversations
-- Multiple small bug fixes and improvements
+- Multiple small bug fixes and improvements in chatbot and utilities API
+- Improved memory extraction instructions
 
 ### 10-04-26
 - now relying on the GPT-6 family (Astra for HECA and photo annotations, Luna for classification tasks, Sol as the main engine)
