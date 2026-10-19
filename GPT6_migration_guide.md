@@ -197,7 +197,7 @@ These are intentionally separate concepts.
 Current intended deployments:
 
 ```text
-MAIN             -> GPT-6 Sol
+MAIN             -> GPT-6.1 Sol
 FAST             -> GPT-6 Luna
 HECA_ANNOTATION  -> GPT-6 Astra
 ```
