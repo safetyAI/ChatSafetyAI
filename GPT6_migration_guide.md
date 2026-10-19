@@ -41,7 +41,7 @@ The remaining Azure AI, storage, search, SharePoint, container, and application 
 
 | Old env var | New env var / status | Meaning |
 |---|---|---|
-| `OPENAI_MODEL_NAME_GPT4` | `OPENAI_MODEL_NAME_MAIN` | `gpt-6-sol` Primary/general-purpose deployment |
+| `OPENAI_MODEL_NAME_GPT4` | `OPENAI_MODEL_NAME_MAIN` | `gpt-6.1-sol` Primary/general-purpose deployment |
 | `OPENAI_MODEL_NAME_GPT35` | `OPENAI_MODEL_NAME_FAST` | `gpt-6-luna` Fast/inexpensive internal deployment |
 | `OPENAI_MODEL_NAME_THINKING` | **Removed** | No separate "thinking" model role anymore; use MAIN where appropriate |
 | `OPENAI_MODEL_NAME_ASTRA` | `OPENAI_MODEL_NAME_HECA_ANNOTATION` | `gpt-6-astra` HECA/photo-annotation specialist deployment |
