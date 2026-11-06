@@ -546,6 +546,8 @@ az webapp config appsettings set \
     AZURE_OPENAI_ADDRESS_AUDIO="https://tixie-ml1ae2pw-eastus2.cognitiveservices.azure.com/openai/deployments/gpt-4o-transcribe/audio/transcriptions?api-version=2025-03-01-preview"
 ```
 
+After initial verifications, `DEBUG_LLM_PAYLOAD` can be set to `FALSE` to avoid spamming the logs.
+
 To enable chat search engine and memory recording, add these variables:
 
 ```bash
@@ -627,12 +629,28 @@ Needed when updating folder naming conventions, or performing structural changes
 - Rerun the Search Service configuration script (you may use [these commands](https://github.com/safetyAI/ChatSafetyAI/blob/main/configure_azure_search_enterprise_README.md#verification--debugging-commands) to check everything went fine)
 - Start the Utilities App Service, check the logs, visit `<utilities-service-address>/debug/sharepoint_sync`
 
+To perform the LLM-based qualitative analyses needed by the new version of the dashboard:
+
+```bash
+DASHBOARD_INSIGHTS_ENABLED=TRUE
+DASHBOARD_INSIGHTS_MAX_WORKERS=2
+DASHBOARD_INSIGHTS_MAX_NEW_CALLS=100
+DASHBOARD_INSIGHTS_INTERVAL_SECONDS=43200
+DASHBOARD_INSIGHTS_REASONING_EFFORT=medium
+DASHBOARD_INSIGHTS_MODEL=gpt-6-luna (or your custom deployment name)
+DASHBOARD_INSIGHTS_MIN_CHANGED_CONVERSATIONS=1
+DASHBOARD_INSIGHTS_MAX_REPORT_AGE_HOURS=12
+```
+
 **Debugging Endpoints**
 Query the endpoints below to see:
-- The progress of the SharePoint cloning process: `<utilities-service-address>/debug/sharepoint_sync`
-- Which sessions are served by which replica, with RAM metrics: `<utilities-service-address>/replica_session_stats?lookback_minutes=5&include_sessions=1`
-- How the asynchronous file ingestion process goes: `<utilities-service-address>/debug/tasks`
-- How the chat scraping and memory collection goes: `<utilities-service-address>/debug/chat_sync`
+- The progress of the SharePoint cloning process: `/debug/sharepoint_sync`
+- Which sessions are served by which replica, with RAM metrics: `/replica_session_stats?lookback_minutes=30&include_sessions=1`
+- How the asynchronous file ingestion process goes: `/debug/tasks`
+- How the chat scraping and memory collection goes: `/debug/chat_sync`
+- How many LLM calls the API makes: `/debug/llm_usage`
+- How the LLM-based qualitative analyses for the dashboard go: `/debug/dashboard_insights`
+- To dump an export of the logs to `/utilities_api_logs/latest.txt` in the Storage Account: `debug/utilities_logs/export`
 
 ---
 
