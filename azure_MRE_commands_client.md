@@ -309,6 +309,13 @@ for config in "${api_configs[@]}"; do
     --deployment-container-image-name "$ACR_NAME.azurecr.io/$image_name:latest" \
     --assign-identity "[system]"
 
+  az webapp config set \
+    --resource-group "$RESOURCE_GROUP" \
+    --name "$app_name" \
+    --always-on true \
+    --query alwaysOn \
+    --output tsv
+
   # Configure Port & Registry Access
   az webapp config appsettings set \
     --name "$app_name" \
