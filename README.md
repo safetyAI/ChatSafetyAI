@@ -42,23 +42,18 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - [ ] project-wide custom databases
 - [ ] incognito mode 
 - [ ] advanced voice mode
-- [ ] image generation
 
 ### 11-24-26
 
-- Combines tools in one request, from database search to photo annotation and PDF generation
-- Recreates PDF layouts from uploaded templates or custom database files
-- Fills forms from recordings, notes, and photos, and answers questions about the finished PDF
-- Generates safety signs, PPE illustrations, conceptual layouts, and variations of existing images
-- Uses high reasoning for specialist HECA and photo annotations
-- Provides a searchable file Library with single-file and ZIP downloads
-- Starts new chats with Library files, groups reused copies, and hides shared-chat PDFs by default
-- Retains custom database selections for follow-ups and shows indexing progress
-- Focuses web and regulatory searches on the requested location and preserves source links
-- Plans PowerPoint decks around the requested slide count and keeps citations clickable
+- Now based on GPT-6.2
+- Can now make and intelligently combine multiple tools to address the same user request, from database search to photo annotation and PDF generation
+- Can now generate photos, blueprints, engineering diagrams, drawings, illustrations...
+- New file library tab allowing downloads and re-using files in a new conversation
+- The custom databases selected are now called intelligently, only if needed
+- Improved PPTX presentations
+- Improved PDF document generation that can match any desired style, including that of a reference PDF file uploaded or from a custom DB
 - Shows live tool activity and flags attachments that are still loading
 - Redacts personal names more selectively, reducing false positives on job titles
-- Refreshes company dashboard reports automatically and tracks model usage and cost
 
 ### 10-14-26
 - Phase 1 of dashboard next gen: advanced stats collection from conversations
