@@ -53,7 +53,7 @@ Note: we do not currently offer plans for individuals, SafetyAI membership is fo
 - Improved PPTX presentations
 - Improved PDF document generation that can match any desired style, including that of a reference PDF file uploaded or from a custom DB
 - Shows live tool activity and flags attachments that are still loading
-- Numerous bug fixes
+- Numerous small bug fixes
 - Redacts personal names more selectively, reducing false positives on job titles
 
 ### 10-14-26
